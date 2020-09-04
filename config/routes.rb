@@ -1,23 +1,28 @@
 Rails.application.routes.draw do
-  namespace :admins do
-    get 'users/show'
-    get 'users/index'
-    get 'users/edit'
-  end
-  root to: 'homes#top'
 
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   passwords: 'users/passwords',
   registrations: 'users/registrations'
 }
-
-  get 'users/show'
-  get 'homes/about'
-
   devise_for :admins, controllers: {
   sessions: 'admins/sessions'
 }
+
+  root to: 'homes#top'
+  get '/user/exit' => 'users#exit'
+  patch 'users/withdraw'
+  resources :users, only: [:show, :edit, :update]
+  
+
+  resources :posts
+  resources :post_comments, only: [:create, :destroy]
+  get 'about' => 'homes#about'
+
+  namespace :admins do
+    resources :users, only: [:show, :edit, :update, :index]
+    resources :genres, except: :new
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

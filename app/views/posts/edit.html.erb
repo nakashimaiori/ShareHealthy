@@ -1,0 +1,37 @@
+<div class ="container">
+<div class="d-flex align-items-center">
+  <h1>記事編集</h1>
+  <div class="ml-auto posts_button">
+      <a class="btn btn-outline-info" href="/posts">投稿一覧</a>
+  </div>
+</div>
+<%= form_for @post do |f| %>
+
+    <div class="form-group">
+    <%= f.label :genre, '投稿カテゴリー' %>
+  <%= collection_select(:genre, :name, @genres, :id, :name) %><br>
+  <small id="title-tip" class="form-text text-muted">
+            カテゴリーを選択してください。
+        </small>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :title, '投稿タイトル' %>
+        <%= f.text_field :title, class: 'form-control' %>
+        <small id="title-tip" class="form-text text-muted">
+            タイトルを入力してください。
+        </small>
+    </div>
+    <div class="form-group">
+        <%= f.label :body, '投稿内容' %>
+        <%= f.text_area :body, class: 'form-control', rows:10 %>
+        <small id="content-tip" class="form-text text-muted">
+            投稿内容を入力してください。
+        </small>
+    </div>
+    <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
+    <small id="submit-tip" class="form-text text-muted">
+        投稿する前に投稿内容を見直してください!
+    </small>
+<% end %>
+</div>

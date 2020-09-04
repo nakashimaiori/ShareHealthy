@@ -1,0 +1,40 @@
+<h1>会員情報編集・入力</h1>
+
+  <%= form_for(@user, url:user_path(current_user.id)) do |f| %>
+
+    <p>Image</p>
+
+      <%= attachment_image_tag @user, :profile_image, :fill, 150,150, fallback: "no_image.jpg", size: "200x200" %>
+
+      <%= f.attachment_field :profile_image, class: 'image-prev' %>
+
+    <p>Name</p>
+      <%= f.text_field :name %>
+
+      <%= f.radio_button :sex, :男 %>
+      <%= f.label :男, class: "" %>
+
+      <%= f.radio_button :sex, :女 %>
+      <%= f.label :女, class: "" %>
+
+    <p>Email</p>
+      <%= f.text_field :email %>
+
+    <p>年齢</p>
+      <%= f.number_field :old, min: 0, max: 100 %>
+
+    <p>体重</p>
+      <%= f.number_field :weight, step: "0.1", min: 25, max: 200 %>
+    <p>目標体重</p>
+      <%= f.number_field :target, step: "0.1", min: 25, max: 200 %>
+
+    <p>身長</p>
+      <%= f.text_field :tall %>
+
+    <p>introduction</p>
+      <%= f.text_area :introduction %>
+
+    <%= f.submit "Update User" %>
+  <% end %>
+
+  <%= link_to "退会画面", user_exit_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_03_114822) do
+ActiveRecord::Schema.define(version: 2020_09_04_044901) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 2020_09_03_114822) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -34,6 +49,14 @@ ActiveRecord::Schema.define(version: 2020_09_03_114822) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "old"
+    t.integer "sex"
+    t.boolean "status", default: true, null: false
+    t.float "weight"
+    t.integer "tall"
+    t.text "introduction"
+    t.string "profile_image_id"
+    t.float "target"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

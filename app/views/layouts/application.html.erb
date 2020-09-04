@@ -16,13 +16,22 @@
       <% if user_signed_in? %>
         <li>ユーザー</li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "My Page", user_path(current_user.id) %></li>
+        <li><%= link_to "Top", root_path %></li>
+        <li><%= link_to "記事一覧", posts_path %></li>
+
+
       <% elsif admin_signed_in? %>
         <li>管理者</li>
         <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+        <li><%= link_to "ジャンル", admins_genres_path %></li>
       <% else %>
         <li>ゲストユーザー</li>
         <li><%= link_to "新規登録", new_user_registration_path %></li>
         <li><%= link_to "ログイン", new_user_session_path %></li>
+        <li><%= link_to "Top", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "記事一覧", posts_path %></li>
       <% end %>
     </ul>
   </nav>

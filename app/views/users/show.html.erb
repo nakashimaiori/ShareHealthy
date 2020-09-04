@@ -1,2 +1,23 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My Page</h1>
+
+<div><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></div>
+
+<div>
+
+
+
+<p>name</p><%= @user.name %>
+<%= @user.sex %>
+<p>email</p><%= @user.email %>
+<p><%= @user.old %>歳</p>
+<p>身長</p><p><%= @user.tall %>cm</p>
+<p>体重</p><p><%= @user.weight %>kg</p>
+<p>BMI</p><%= @user.userbmi %>
+<p>目標体重</p><p><%= @user.target %>kg</p>
+<p>introduction</p>
+<%= @user.introduction %>
+
+</div>
+
+<%= link_to "情報入力", edit_user_path(@user.id) %>
+<%= link_to "記事投稿へ", new_post_path %>
