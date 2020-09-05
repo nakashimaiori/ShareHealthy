@@ -1,2 +1,14 @@
 <h1>DayWeights#new</h1>
-<p>Find me in app/views/day_weights/new.html.erb</p>
+
+<%= form_with model: @day_weight, url: user_day_weights_path, local:true do |f| %>
+
+  <%= f.label :計測日 %>
+  <%= f.date_field :start_time %>
+
+  <%= f.label :体重 %>
+  <%= f.number_field :weight, step: "0.1", min: 30, max: 200 %>
+
+  <%= f.submit '登録', class: "btn-default btn-red", url: user_day_weights_path ,method: :post %>
+
+
+<% end %>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @day_weights = current_user.day_weights
   end
 
   def update

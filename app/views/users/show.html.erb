@@ -17,7 +17,25 @@
 <p>introduction</p>
 <%= @user.introduction %>
 
-</div>
+</div>e
 
 <%= link_to "情報入力", edit_user_path(@user.id) %>
 <%= link_to "記事投稿へ", new_post_path %>
+
+
+<%= link_to "今日の体重を記録", new_user_day_weight_path(@user.id) %>
+<%= month_calendar events: @day_weights do |date, weights| %>
+  <%= date.day %>
+  <% @day_weights.each do |training| %>
+    <% if date.day == training.start_time.day %>
+    <% if date.month == training.start_time.month %>
+    <% if date.year == training.start_time.year %>
+
+    <div>
+      <p><%= link_to training.weight, user_day_weight_path(training.id) %>kg</p>
+    </div>
+    <% end %>
+    <% end %>
+    <% end %>
+  <% end %>
+<% end %>

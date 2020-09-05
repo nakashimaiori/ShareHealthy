@@ -1,8 +1,17 @@
+
+
 <%= month_calendar events: @day_weights do |date, weights| %>
   <%= date.day %>
   <% @day_weights.each do |training| %>
+    <% if date.day == training.start_time.day %>
+    <% if date.month == training.start_time.month %>
+    <% if date.year == training.start_time.year %>
+
     <div>
-      <%= training.weight %>
+      <p><%= training.weight %>kg</p>
     </div>
+    <% end %>
+    <% end %>
+    <% end %>
   <% end %>
 <% end %>

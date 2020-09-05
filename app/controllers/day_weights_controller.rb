@@ -6,8 +6,9 @@ class DayWeightsController < ApplicationController
   end
 
   def show
+    @user_id = current_user.id
     @user = User.find(params[:id])
-  	@day_weight = current_user.day_weights.find(params[:id])
+  	#@day_weight = current_user.day_weights.find(params[:id])
   end
 
   def new
@@ -25,11 +26,13 @@ class DayWeightsController < ApplicationController
   end
 
   def create
+    #@user = User.find(current_user.id)
+    @user_id = current_user.id
   	@day_weight = current_user.day_weights.new(weight_memo)
     if @day_weight.save
-      redirect_to day_weights_path
+      redirect_to user_path(current_user.id)
     else
-      redirect_to new_training_path
+      render action: :new
     end
   end
 
@@ -38,7 +41,7 @@ class DayWeightsController < ApplicationController
 
   private
   def weight_memo
-    params.permit(:start_time,:title, :content,:user_id)
+    params.permit(:start_time, :title, :weight, :user_id)
   end
 
   # def set_user
