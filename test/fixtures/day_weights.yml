@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  weight: 1.5
+  start_time: 2020-09-04
+
+two:
+  user_id: 
+  weight: 1.5
+  start_time: 2020-09-04

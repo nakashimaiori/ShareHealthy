@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   passwords: 'users/passwords',
@@ -11,9 +12,14 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get '/user/exit' => 'users#exit'
-  patch 'users/withdraw'
-  resources :users, only: [:show, :edit, :update]
-  
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    member do
+    get "exit"
+    patch "withdraw"
+    end
+
+    resources :day_weights
+  end
 
   resources :posts
   resources :post_comments, only: [:create, :destroy]

@@ -27,9 +27,14 @@ class UsersController < ApplicationController
   end
 
   def exit
+    @user = User.find(current_user.id)
   end
 
   def withdraw
+    @user = User.find(params[:id])
+    @user.update(status: "退会済")
+    reset_session
+    redirect_to root_path
   end
 
   private

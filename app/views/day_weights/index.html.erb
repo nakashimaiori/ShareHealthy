@@ -1,0 +1,8 @@
+<%= month_calendar events: @day_weights do |date, weights| %>
+  <%= date.day %>
+  <% @day_weights.each do |training| %>
+    <div>
+      <%= training.weight %>
+    </div>
+  <% end %>
+<% end %>
