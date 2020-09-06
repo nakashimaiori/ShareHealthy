@@ -6,9 +6,9 @@ class DayWeightsController < ApplicationController
   end
 
   def show
-    @user_id = current_user.id
-    @user = User.find(params[:id])
-  	#@day_weight = current_user.day_weights.find(params[:id])
+    #@user = current_user
+    @user = current_user
+  	@day_weight = DayWeight.find(params[:id])
   end
 
   def new
@@ -29,6 +29,7 @@ class DayWeightsController < ApplicationController
     #@user = User.find(current_user.id)
     @user_id = current_user.id
   	@day_weight = current_user.day_weights.new(weight_memo)
+    # @now_day_weight = current_customer.day_weight.find_by(day_weight.id: @user.day_weight_id)
     if @day_weight.save
       redirect_to user_path(current_user.id)
     else
