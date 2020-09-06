@@ -16,6 +16,7 @@ class User < ApplicationRecord
   	bmi_tall = ( tall.to_f/100.to_f ) * (tall.to_f/100.to_f)
     userbmi = weight.to_f/bmi_tall.to_f
     userbmi = userbmi.floor(2)
+
   end
 
 end

@@ -1,23 +1,64 @@
-<h1>My Page</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-5">
+  <h1>My Page</h1>
 
-<div><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></div>
+    <div><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %>
+    </div>
 
-<div>
+    <div>
+      <p>name</p><%= @user.name %>
+      <%= @user.sex %>
+      <p><%= @user.old %>歳</p>
 
+      <% if user_signed_in? && current_user.id == @user.id %>
+      <p>身長</p><p><%= @user.tall %>cm</p>
+      <p>体重</p><p><%= @user.weight %>kg</p>
+      <p>BMI</p>
+        <% if @user.userbmi.nan? %>
+          <% else %>
+            <p><%= @user.userbmi %></p>
+          <% end %>
+      <p>目標体重</p><p><%= @user.target %>kg</p>
+      <% end %>
+      <p>introduction</p>
+      <%= @user.introduction %>
 
+    </div>
+  </div>
+    <div class="col-xs-7">
+      <h1>投稿記事</h1>
 
-<p>name</p><%= @user.name %>
-<%= @user.sex %>
-<p>email</p><%= @user.email %>
-<p><%= @user.old %>歳</p>
-<p>身長</p><p><%= @user.tall %>cm</p>
-<p>体重</p><p><%= @user.weight %>kg</p>
-<p>BMI</p><%= @user.userbmi %>
-<p>目標体重</p><p><%= @user.target %>kg</p>
-<p>introduction</p>
-<%= @user.introduction %>
+      <div>
+        <%= paginate @posts %>
+      </div>
 
+      <table class="table table-bordered border-primary table-hover table-sm posts_table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width: 700px">投稿タイトル</th>
+      <th scope="col">投稿日</th>
+      <th scope="col">更新日時</th>
+    </tr>
+  </thead>
+  <tbody>
+　　　<!-- 追加 -->
+      <% @posts.each do |post| %>
+        <tr>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+            <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
+    </div>
+  </div>
 </div>
+
+<div class="container">
+
 
 <%= link_to "情報入力", edit_user_path(@user.id) %>
 <%= link_to "記事投稿へ", new_post_path %>
@@ -38,3 +79,5 @@
     <% end %>
   <% end %>
 <% end %>
+
+</div>

@@ -1,15 +1,28 @@
-<h1><%= @post.title %></h1>
+<div class="container">
+  <div class="row">
 
 
-<p>投稿者</p>
-  <%= @post.user.name %>
-<p>カテゴリー</p>
-  <%= @post.genre.name %>
+  <div class="">
+  	<h1><%= @post.title %></h1>
 
-<p>内容</p>
-  <%== @post.content %>
 
-<% if user_signed_in? && current_user.id == @post.user_id %>
-<%= link_to "記事編集", edit_post_path(@post.id) %>
-<%= link_to "記事削除", post_path(@post.id), method: :delete,data: {confirm: "削除しますか？"} %>
-<% end %>
+      <p>投稿者</p>
+        <%= link_to user_path(@post.user.id) do %>
+          <%= @post.user.name %>
+        <% end %>
+      <p>カテゴリー</p>
+        <%= @post.genre.name %>
+
+      <p>内容</p>
+        <%== @post.content %>
+  </div>
+
+  <div class="">
+
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+    <%= link_to "記事編集", edit_post_path(@post.id) %>
+    <%= link_to "記事削除", post_path(@post.id), method: :delete,data: {confirm: "削除しますか？"} %>
+    <% end %>
+  </div>
+  </div>
+</div>

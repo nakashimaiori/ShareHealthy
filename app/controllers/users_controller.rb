@@ -3,13 +3,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts =@user.posts.page(params[:page]).reverse_order
     #一応これなら表示される↓
     # @day_weights = current_user.day_weights
-    start_time = params[:start_time]
-    if start_time.nil?
-      start_time = Date.today
-    end
-    @day_weights = DayWeight.where(user_id: params[:user_id]).where(start_time: start_time.in_time_zone.all_month)
+    # [#<DayWeight id: 19, user_id: 4, weight: 31.6, start_time: "2020-09-03", created_at: "2020-09-06 08:57:12", updated_at: "2020-09-06 08:57:12">, #<DayWeight id: 20, user_id: 4, weight: 30.2, start_time: "2020-09-02", created_at: "2020-09-06 08:59:41", updated_at: "2020-09-06 08:59:41">, #<DayWeight id: 21, user_id: 4, weight: 30.3, start_time: "2020-09-09", created_at: "2020-09-06 09:02:29", updated_at: "2020-09-06 09:02:29">]>
+     start_time = params[:start_time]
+     if start_time.nil?
+       start_time = Date.today
+     end
+     @day_weights = DayWeight.where(user_id: params[:id]).where(start_time: start_time.in_time_zone.all_month)
   end
 
   def update

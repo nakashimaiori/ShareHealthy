@@ -52,3 +52,33 @@ header {
   margin: 0 30px;
   color: #fafafa;
 }
+
+// ----------kaminari-------------------------------
+.pagination{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.pagination span{
+  background-color: rgba(158, 158, 158, 0.4);
+  text-align: center;
+  width: 50px;
+  border: solid 1px #344963;
+  color: rgb(197, 20, 159);
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.pagination span:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pagination span a:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+// -----------------------------------------------------
