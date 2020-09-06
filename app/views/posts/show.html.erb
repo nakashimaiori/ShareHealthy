@@ -1,12 +1,11 @@
-<h1>Posts#show</h1>
+<h1><%= @post.title %></h1>
 
 
 <p>投稿者</p>
   <%= @post.user.name %>
 <p>カテゴリー</p>
   <%= @post.genre.name %>
-<p>タイトル</p>
-  <%= @post.title %>
+
 <p>内容</p>
   <%== @post.content %>
 

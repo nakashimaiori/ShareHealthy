@@ -9,7 +9,6 @@
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col" style="width: 40px">No.</th>
       <th scope="col" style="width: 700px">投稿タイトル</th>
       <th scope="col">投稿者</th>
       <th scope="col">投稿日</th>
@@ -20,7 +19,6 @@
 　　　<!-- 追加 -->
       <% @posts.each do |post| %>
         <tr>
-            <th><%= post.id %></th>
             <td><%= link_to post.title, post_path(post.id) %></td>
             <td><%= post.user.name %></td>
             <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>

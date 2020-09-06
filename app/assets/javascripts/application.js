@@ -53,3 +53,11 @@ $(function(){
     reader.readAsDataURL(e.target.files[0]); 
 });
 });
+
+$(function() {
+  $('.form-froala').froalaEditor({
+    language: 'ja',
+    heightMin: 500,
+    heightMax: 750,
+  })
+});

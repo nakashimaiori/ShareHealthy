@@ -33,6 +33,10 @@
 @import 'plugins/table.min.css';
 @import 'plugins/video.min.css';
 
+* { margin: 0;
+　padding: 0;
+　box-sizing: border-box;
+}
 
 header {
   background-color: #EC715F;

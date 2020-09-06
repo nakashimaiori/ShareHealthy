@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <%= f.label :content, '投稿内容' %>
-        <%= f.text_area :content, class: 'form-control', rows:10 %>
+        <%= f.text_area :content, class: 'form-froala2', rows:10 %>
         <small id="content-tip" class="form-text text-muted">
             投稿内容を入力してください。
         </small>
@@ -35,6 +35,6 @@
     </small>
 <% end %>
   <script>
-new FroalaEditor('.form-control', {});
+new FroalaEditor('.form-froala2', {});
 </script>
 </div>
