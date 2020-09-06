@@ -72,7 +72,7 @@
     <% if date.month == day_weight.start_time.month %>
     <% if date.year == day_weight.start_time.year %>
     <div>
-      <p><%= link_to day_weight.weight, user_day_weight_path(current_user.id, day_weight.id) %>kg</p>
+      <p><%= link_to day_weight.weight, edit_user_day_weight_path(current_user.id, day_weight.id) %>kg</p>
     </div>
     <% end %>
     <% end %>

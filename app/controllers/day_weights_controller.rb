@@ -21,23 +21,31 @@ class DayWeightsController < ApplicationController
 
   def update
   	@day_weight = current_user.day_weights.find(params[:id])
-  	@day_weight.update(update_params)
-  	redirect_to day_weights_path
+  	@day_weight.update(day_weight_params)
+  	redirect_to user_path(current_user.id)
   end
 
   def create
     #@user = User.find(current_user.id)
     @user_id = current_user.id
   	@day_weight = current_user.day_weights.new(weight_memo)
-    # @now_day_weight = current_customer.day_weight.find_by(day_weight.id: @user.day_weight_id)
-    if @day_weight.save
-      redirect_to user_path(current_user.id)
-    else
-      render action: :new
-    end
+    @now = current_user.day_weights.find_by(@day_weight_id)
+      if @now
+        @now.update(weight: @now.weight)
+        redirect_to user_path(current_user.id)
+      else
+        if @day_weight.save
+          redirect_to user_path(current_user.id)
+        else
+          render action: :new
+        end
+      end
   end
 
   def destroy
+    @day_weight = DayWeight.find(params[:id])
+    @day_weight.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
@@ -49,7 +57,7 @@ class DayWeightsController < ApplicationController
   #   @user = User.find(params[:id])
   # end
 
-  def update_params
+  def day_weight_params
     params.require(:day_weight).permit(:start_time, :weight, :user_id)
   end
 end
