@@ -8,7 +8,7 @@
 <p>タイトル</p>
   <%= @post.title %>
 <p>内容</p>
-  <%= @post.content %>
+  <%== @post.content %>
 
 <% if user_signed_in? && current_user.id == @post.user_id %>
 <%= link_to "記事編集", edit_post_path(@post.id) %>
