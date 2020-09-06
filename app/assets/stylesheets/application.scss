@@ -18,3 +18,19 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+header {
+  background-color: #EC715F;
+  height: 70px;
+}
+
+.nav-list-item {
+  float: right;
+  width: 120px;
+  line-height: 70px;
+  list-style: none;
+  font-size: 16px;
+  margin: 0 30px;
+  color: #fafafa;
+}

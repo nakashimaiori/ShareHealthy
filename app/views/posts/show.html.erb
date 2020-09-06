@@ -10,5 +10,7 @@
 <p>内容</p>
   <%= @post.body %>
 
+<% if user_signed_in? && current_user.id == @post.user_id %>
 <%= link_to "記事編集", edit_post_path(@post.id) %>
 <%= link_to "記事削除", post_path(@post.id), method: :delete,data: {confirm: "削除しますか？"} %>
+<% end %>

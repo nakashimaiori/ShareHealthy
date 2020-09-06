@@ -3,7 +3,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @day_weights = current_user.day_weights
+    #一応これなら表示される↓
+    # @day_weights = current_user.day_weights
+    start_time = params[:start_time]
+    if start_time.nil?
+      start_time = Date.today
+    end
+    @day_weights = DayWeight.where(user_id: params[:user_id]).where(start_time: start_time.in_time_zone.all_month)
   end
 
   def update
