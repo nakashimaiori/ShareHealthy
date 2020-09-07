@@ -2,65 +2,36 @@
   <div class="row">
 
 
-  <div class="">
-  	<h1><%= @post.title %></h1>
+<%= render 'detail', post: @post %>
 
 
-      <p>投稿者</p>
-        <%= link_to user_path(@post.user.id) do %>
-          <%= @post.user.name %>
-        <% end %>
-      <p>カテゴリー</p>
-        <%= @post.genre.name %>
-
-      <p>内容</p>
-        <%== @post.content %>
-  </div>
-  <p>コメント<%= @post.post_comments.count %>件</p>
-  <% if @post.favorited_by?(current_user) %>
-<li>
-  <%= link_to post_favorites_path(@post), method: :delete do %>
-    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-    <%= @post.favorites.count %> いいね
-  <% end %>
-</li>
-<% else %>
-<li>
-  <%= link_to post_favorites_path(@post), method: :post do %>
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
-    <%= @post.favorites.count %> いいね
-  <% end %>
-</li>
-<% end %>
-
-  <div class="">
-
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-    <%= link_to "記事編集", edit_post_path(@post.id) %>
-    <%= link_to "記事削除", post_path(@post.id), method: :delete,data: {confirm: "削除しますか？"} %>
-    <% end %>
-  </div>
 
   <%= form_for [@post, @post_comment] do |f| %>
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-9">
       <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-    </div>
+    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
   </div>
-  <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+  </div>
 <% end %>
 
-  <% @post.post_comments.each do |post_comment| %>
 
-            <%= post_comment.user.name %>
-              <%= post_comment.created_at.strftime('%Y/%m/%d') %>
-          <%= post_comment.comment %>
+
+<table>
+  <% @post.post_comments.each do |post_comment| %>
+        <tr>
+          <td><%= post_comment.user.name %></td>
+          <td><%= post_comment.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= post_comment.comment %></td>
           <% if post_comment.user == current_user %>
-            <div>
+            <td>
               <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
-            </div>
+            </td>
           <% end %>
+        </tr>
   <% end %>
+</table>
+
 
   </div>
 </div>

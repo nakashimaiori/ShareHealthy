@@ -1,0 +1,1 @@
+$("#favorite_heart_<%= @post.id %>").html("<%= escape_javascript(render 'favorites/like', post: @post ) %>");
