@@ -16,6 +16,7 @@
       <p>内容</p>
         <%== @post.content %>
   </div>
+  <p>コメント<%= @post.post_comments.count %>件</p>
 
   <div class="">
 
@@ -24,5 +25,27 @@
     <%= link_to "記事削除", post_path(@post.id), method: :delete,data: {confirm: "削除しますか？"} %>
     <% end %>
   </div>
+
+  <%= form_for [@post, @post_comment] do |f| %>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+    </div>
+  </div>
+  <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+<% end %>
+
+  <% @post.post_comments.each do |post_comment| %>
+
+            <%= post_comment.user.name %>
+              <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+          <%= post_comment.comment %>
+          <% if post_comment.user == current_user %>
+            <div>
+              <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+            </div>
+          <% end %>
+  <% end %>
+
   </div>
 </div>

@@ -19,7 +19,10 @@
 　　　<!-- 追加 -->
       <% @posts.each do |post| %>
         <tr>
-            <td><%= link_to post.title, post_path(post.id) %></td>
+            <td>
+              <%= link_to post.title, post_path(post.id) %>
+              <%#= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
+              </td>
             <td><%= post.user.name %></td>
             <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
             <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts, dependent: :destroy
   has_many :day_weights
+  has_many :post_comments, dependent: :destroy
 
   enum status: { '有効': true, '退会済': false }
   enum sex: {男: 0, 女: 1}

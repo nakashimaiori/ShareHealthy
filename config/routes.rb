@@ -21,8 +21,9 @@ Rails.application.routes.draw do
     resources :day_weights
   end
 
-  resources :posts
-  resources :post_comments, only: [:create, :destroy]
+  resources :posts do
+    resources :post_comments, only: [:create, :destroy]
+  end
   get 'about' => 'homes#about'
 
   namespace :admins do
