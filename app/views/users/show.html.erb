@@ -84,6 +84,25 @@
 <% end %>
     </div>
     <div class="col-xs-6">
+      <table class="table table-bordered border-primary table-hover table-sm posts_table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width: 700px">お気に入り記事</th>
+      <th scope="col">投稿日</th>
+      <th scope="col">更新日時</th>
+    </tr>
+  </thead>
+  <tbody>
+　　　<!-- 追加 -->
+      <% @favorite_posts.each do |post| %>
+        <tr>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+            <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
     </div>
   </div>
 </div>

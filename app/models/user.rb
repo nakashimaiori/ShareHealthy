@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :day_weights
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
 
   enum status: { '有効': true, '退会済': false }
   enum sex: {男: 0, 女: 1}
