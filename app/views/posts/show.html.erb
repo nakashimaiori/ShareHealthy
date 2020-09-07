@@ -6,7 +6,7 @@
 
 
 
-  <%= form_for [@post, @post_comment] do |f| %>
+  <%= form_with model: [@post, @post_comment] do |f| %>
   <div class="row">
     <div class="col-sm-9">
       <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
@@ -15,23 +15,9 @@
   </div>
 <% end %>
 
-
-
-<table>
-  <% @post.post_comments.each do |post_comment| %>
-        <tr>
-          <td><%= post_comment.user.name %></td>
-          <td><%= post_comment.created_at.strftime('%Y/%m/%d') %></td>
-          <td><%= post_comment.comment %></td>
-          <% if post_comment.user == current_user %>
-            <td>
-              <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
-            </td>
-          <% end %>
-        </tr>
-  <% end %>
-</table>
-
+<div id="comments_area">
+  <%= render 'post_comments/comment', post: @post %>
+</div>
 
   </div>
 </div>

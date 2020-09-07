@@ -1,0 +1,1 @@
+$("#comments_area").html("<%= escape_javascript(render 'post_comments/comment', {post_comments: @post.post_comments, post: @post}) %>")
