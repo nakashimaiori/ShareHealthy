@@ -1,0 +1,13 @@
+<table class="table">
+	<thead>
+		<tr class="">
+			<th>Category<i class=""></i></th>
+		</tr>
+
+		<% genres.each do |genre| %>
+			<tr class="">
+				<td><%=link_to genre.name, search_posts_path(genre.id), method: :get, class: "link" %></td>
+			</tr>
+		<% end %>
+    </thead>
+</table>

@@ -21,9 +21,11 @@ class PostsController < ApplicationController
   def show
   	@post = Post.find(params[:id])
     @post_comment = PostComment.new
+    @user = @post.user
   end
 
   def index
+    @genres = Genre.all
   	@posts = Post.all
   end
 
@@ -50,6 +52,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
+  end
+
+  def search
+    @posts = Post.where(genre_id: params[:id])
+    @genre = Genre.find(params[:id])
+    @genres = Genre.all
+    render :index
   end
 
   private

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
+    get 'search/:id' => 'posts#search', as: 'search', on: :collection
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end

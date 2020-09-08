@@ -1,10 +1,18 @@
 
+
 <div class="container">
-<div class="d-flex align-items-center">
-    <h1>投稿一覧</h1>
+
+<%= render "genre_bar", genres: @genres %>
+
+    <% if controller.action_name == "search" %>
+        <h1 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h1>
+      <% else %>
+        <h1 class="title">投稿一覧<span>(全 <%= Post.all.count %> 件)</span></h1>
+      <% end %>
+
+
     <div class="ml-auto posts_button">
         <a class="btn btn-outline-info" href="/posts/new" role="button">新規投稿</a>
-    </div>
 </div>
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-dark">
@@ -16,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-　　　<!-- 追加 -->
+
       <% @posts.each do |post| %>
         <tr>
             <td>
