@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     resources :day_weights
   end
 
+  resources :tags do
+    get 'posts', to: 'posts#tagsearch'
+  end
+
   resources :posts do
     get 'search/:id' => 'posts#search', as: 'search', on: :collection
     resources :post_comments, only: [:create, :destroy]

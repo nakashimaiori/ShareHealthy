@@ -3,14 +3,17 @@ class PostsController < ApplicationController
   def new
   	@post = Post.new
   	@genres = Genre.all
+
   end
 
   def create
   	@post = Post.new(post_params)
+    tag_list = params[:post][:tag_name].split(nil)
     @genres = Genre.all
     @post.genre_id = params[:genre][:name]
     @post.user_id = current_user.id
     if @post.save
+      @post.save_tag(tag_list)
       # flash[:notice] = "successfully"
       redirect_to post_path(@post.id)
     else
@@ -22,10 +25,13 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
     @post_comment = PostComment.new
     @user = @post.user
+    @post_tags = @post.tags
   end
 
   def index
     @genres = Genre.all
+    @tag_list = Tag.all
+    @post = current_user.posts.new
   	# @posts = Post.all
   end
 
@@ -55,10 +61,17 @@ class PostsController < ApplicationController
   end
 
   def search
+    @tag_list = Tag.all
     @posts = Post.where(genre_id: params[:id])
     @genre = Genre.find(params[:id])
     @genres = Genre.all
     render :index
+  end
+
+  def tagsearch
+    @tag_list = Tag.all  #こっちの投稿一覧表示ページでも全てのタグを表示するために、タグを全取得
+    @tag = Tag.find(params[:tag_id])  #クリックしたタグを取得
+    @posts = @tag.posts.all           #クリックしたタグに紐付けられた投稿を全て表示
   end
 
   private

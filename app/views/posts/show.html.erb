@@ -5,6 +5,13 @@
 
 <%= render 'detail', post: @post %>
 
+<% @post_tags.each do |tag| %>
+  <span>
+    <%= link_to tag.tag_name, tag_posts_path(tag.id) %>
+    <%= "(#{tag.posts.count})" %>
+  </span>
+<% end %>
+
 
 
   <%= form_with model: [@post, @post_comment] do |f| %>

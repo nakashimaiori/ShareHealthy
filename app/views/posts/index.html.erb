@@ -4,17 +4,26 @@
 
 <%= render "genre_bar", genres: @genres %>
 
-    <% if controller.action_name == "search" %>
-        <h1 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h1>
-      <% else %>
-        <h1 class="title">投稿一覧<span>(全 <%= Post.all.count %> 件)</span></h1>
-      <% end %>
-
-
-   <%= search_form_for @search do |f| %>
+<%= search_form_for @search do |f| %>
   <%= f.search_field :title_or_content_cont %>
   <%= f.submit "検索" %>
 <% end %>
+
+<h3>タグリスト</h3>
+  <% @tag_list.each do |list| %>
+      <%= link_to tag_posts_path(list.id) do %>
+        <%= list.tag_name %>
+      <% end %>
+      <%= list.posts.count %>
+  <% end %>
+
+
+    <% if controller.action_name == "search" %>
+        <h1 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h1>
+      <% else %>
+
+      <% end %>
+
 
 
     <div class="ml-auto posts_button">

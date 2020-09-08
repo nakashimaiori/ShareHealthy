@@ -5,7 +5,7 @@
       <a class="btn btn-outline-info" href="/posts">投稿一覧</a>
   </div>
 </div>
-<%= form_for @post do |f| %>
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
 
     <div class="form-group">
     <%= f.label :genre, '投稿カテゴリー' %>
@@ -14,6 +14,11 @@
             カテゴリーを選択してください。
         </small>
     </div>
+
+    <%= "スペースを入力することで複数のタグをつけることができます。" %><br>
+    <%= "例：運動 ストレッチ 筋肉" %><br>
+    <%= f.label :tag_name, 'タグ' %>
+    <%= f.text_field :tag_name %>
 
     <div class="form-group">
         <%= f.label :title, '投稿タイトル' %>
@@ -26,7 +31,7 @@
         <%= f.label :content, '投稿内容' %>
         <%= f.text_area :content, class: 'form-froala', rows:10 %>
         <small id="content-tip" class="form-text text-muted">
-            投稿内容を入力してください。 
+            投稿内容を入力してください。
         </small>
     </div>
     <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
