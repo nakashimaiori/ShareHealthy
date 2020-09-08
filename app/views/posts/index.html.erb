@@ -11,6 +11,12 @@
       <% end %>
 
 
+   <%= search_form_for @search do |f| %>
+  <%= f.search_field :title_or_content_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+
+
     <div class="ml-auto posts_button">
         <a class="btn btn-outline-info" href="/posts/new" role="button">新規投稿</a>
 </div>
