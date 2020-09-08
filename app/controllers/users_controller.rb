@@ -36,6 +36,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def follows
+    @user = User.find(params[:id])
+    @users = @user.followings
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
+  end
+
   def exit
     @user = User.find(current_user.id)
   end
@@ -46,6 +56,7 @@ class UsersController < ApplicationController
     reset_session
     redirect_to root_path
   end
+
 
   private
 

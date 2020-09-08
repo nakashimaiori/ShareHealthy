@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'relationships/create'
+  get 'relationships/destroy'
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   passwords: 'users/passwords',
@@ -13,6 +15,10 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/user/exit' => 'users#exit'
   resources :users, only: [:show, :edit, :update, :destroy] do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+
     member do
     get "exit"
     patch "withdraw"

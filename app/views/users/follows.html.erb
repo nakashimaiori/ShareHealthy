@@ -1,0 +1,19 @@
+<h1>Users#follows</h1>
+<p>Find me in app/views/users/follows.html.erb</p>
+
+<% if @user.active_relationships.count == 0 %>
+<p>ユーザーがいません</p>
+<% else %>
+
+<% @users.each do |user| %>
+  <hr>
+    <% if current_user != user %>
+        <% if user.followed_by?(current_user) %>
+            <p><span>name: </span><%= link_to user.name, user_path(user.id) %></p>
+            <p><%=link_to "フォロー済み", user_relationships_path(user.id), method: :delete %></p>
+        <% else %>
+            <p><%= user.name %></p><p><%=link_to "フォローする", user_relationships_path(user.id), method: :post %></p>
+        <% end %>
+    <% end %>
+<% end %>
+<% end %>
