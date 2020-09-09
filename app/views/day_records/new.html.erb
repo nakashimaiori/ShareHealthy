@@ -1,0 +1,30 @@
+<h1>DayRecords#new</h1>
+
+<%= form_with model: @day_record, url: user_day_records_path, local:true do |f| %>
+
+  <%= f.label :記録日 %>
+  <%= f.date_field :start_time %>
+
+  <%= f.label :運動時間 %>
+  <%= f.number_field :training %>
+
+  <%= f.label :朝 %>
+  <%= f.text_field :breakfast %>
+
+  <%= f.label :昼 %>
+  <%= f.text_field :lunch %>
+
+  <%= f.label :夜 %>
+  <%= f.text_field :dinner %>
+
+  <%= f.label :間食 %>
+  <%= f.text_field :snack %>
+
+  <%= f.label :メモ %>
+  <%= f.text_area :memo %>
+
+  <%= f.submit '登録', class: "btn-default btn-red", url: user_day_records_path ,method: :post %>
+
+
+<% end %>
+

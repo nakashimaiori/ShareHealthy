@@ -1,0 +1,2 @@
+module DayRecordsHelper
+end

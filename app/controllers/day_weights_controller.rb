@@ -52,9 +52,9 @@ class DayWeightsController < ApplicationController
   end
 
   private
-  def weight_memo
-    params.permit(:start_time, :title, :weight, :user_id)
-  end
+  # def weight_memo
+  #   params.permit(:start_time, :title, :weight, :user_id)
+  # end
 
   def day_weight_params
     params.require(:day_weight).permit(:start_time, :weight, :user_id)

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'day_records/show'
+  get 'day_records/new'
   get 'relationships/create'
   get 'relationships/destroy'
   devise_for :users, controllers: {
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
     end
 
     resources :day_weights
+    resources :day_records, except: :index
   end
 
   resources :tags do

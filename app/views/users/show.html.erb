@@ -74,21 +74,45 @@
 
 
 <%= link_to "今日の体重を記録", new_user_day_weight_path(@user.id) %>
+<%= link_to "今日の食事・運動を記録", new_user_day_record_path(@user.id) %>
+
+
+
 <%= month_calendar events: @day_weights do |date, weights| %>
   <%= date.day %>
-  <% @day_weights.each do |day_weight| %>
-    <% if date.day == day_weight.start_time.day %>
-    <% if date.month == day_weight.start_time.month %>
-    <% if date.year == day_weight.start_time.year %>
-    <div>
-      <p><%= link_to day_weight.weight, edit_user_day_weight_path(current_user.id, day_weight.id) %>kg</p>
-    </div>
+    <% @day_weights.each do |day_weight| %>
+      <% if date.day == day_weight.start_time.day %>
+      <% if date.month == day_weight.start_time.month %>
+      <% if date.year == day_weight.start_time.year %>
+        <div>
+          <p><%= link_to day_weight.weight, edit_user_day_weight_path(current_user.id, day_weight.id) %>kg</p>
+        </div>
+      <% end %>
+      <% end %>
+      <% end %>
     <% end %>
+
+    <% @day_records.each do |day_record| %>
+      <% if date.day == day_record.start_time.day %>
+      <% if date.month == day_record.start_time.month %>
+      <% if date.year == day_record.start_time.year %>
+        <div>
+          <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
+            <p><i class="fas fa-apple-alt"></i></p>
+          <% end %>
+        </div>
+      <% end %>
+      <% end %>
+      <% end %>
     <% end %>
-    <% end %>
-  <% end %>
+
 <% end %>
+
+
+
+
     </div>
+
     <div class="col-xs-6">
 
       <%= line_chart @weights.chart_date,xtitle: "日付", ytitle: "体重(kg)", width: "600px", height: "400px", colors: ["#ff69b4", "#ff69b4"] %>
