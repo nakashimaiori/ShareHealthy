@@ -96,11 +96,15 @@
       <% if date.day == day_record.start_time.day %>
       <% if date.month == day_record.start_time.month %>
       <% if date.year == day_record.start_time.year %>
-        <div>
           <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
-            <p><i class="fas fa-apple-alt"></i></p>
+            <i class="fas fa-apple-alt"></i>
           <% end %>
-        </div>
+          <% if day_record.training != 0 %>
+            <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
+              <i class="fas fa-bicycle"></i>
+            <% end %>
+          <% else %>
+          <% end %>
       <% end %>
       <% end %>
       <% end %>

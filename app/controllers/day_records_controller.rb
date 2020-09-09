@@ -8,15 +8,13 @@ class DayRecordsController < ApplicationController
   	@user_id = current_user.id
   	@record = current_user.day_records.new(day_record_params)
   	@day_record = current_user.day_records.find_by(start_time: day_record_params[:start_time])
-      if@day_record
+      if @day_record
       	 @day_record.breakfast += @record.breakfast
       	 @day_record.lunch += @record.lunch
       	 @day_record.dinner += @record.dinner
       	 @day_record.snack += @record.snack
       	 @day_record.memo += @record.memo
-
       	 @day_record.training += @record.training
-
 
          @day_record.update(lunch: @day_record.lunch)
          @day_record.update(breakfast: @day_record.breakfast)

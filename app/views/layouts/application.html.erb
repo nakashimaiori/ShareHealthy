@@ -13,6 +13,7 @@
     <header>
   <nav>
     <ul class="nav-list">
+      <%= Date.current.strftime('%Y/%m/%d') %>
       <% if user_signed_in? %>
         <li class="nav-list-item"><%= current_user.name %></li>
         <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
