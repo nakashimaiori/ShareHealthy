@@ -16,13 +16,12 @@ class DayRecordsController < ApplicationController
       	 @day_record.memo += @record.memo
       	 @day_record.training += @record.training
 
-         @day_record.update(lunch: @day_record.lunch)
-         @day_record.update(breakfast: @day_record.breakfast)
-         @day_record.update(dinner: @day_record.dinner)
-         @day_record.update(snack: @day_record.snack)
-         @day_record.update(memo: @day_record.memo)
-         @day_record.update(training: @day_record.training)
-
+         @day_record.update(lunch: @day_record.lunch,
+         	                breakfast: @day_record.breakfast,
+                            dinner: @day_record.dinner,
+                            snack: @day_record.snack,
+                            memo: @day_record.memo,
+                            training: @day_record.training)
 
          redirect_to user_path(current_user.id)
       else @day_record = current_user.day_records.new(day_record_params)

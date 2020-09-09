@@ -1,36 +1,65 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-5">
-  <h1>My Page</h1>
 
-    <div><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %>
+    <div><%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %>
     </div>
 
-    <div>
-      <p>name</p><%= @user.name %>
+    <div class="profile_name"><%= @user.name %></div>
 
     <div id="foll_<%= @user.id %>">
       <%= render "follow_form", user: @user %>
     </div>
 
-      <%= @user.sex %>
-      <p><%= @user.old %>歳</p>
-
-      <% if user_signed_in? && current_user.id == @user.id %>
-      <p>身長</p><p><%= @user.tall %>cm</p>
-      <p>体重</p><p><%= @user.weight %>kg</p>
-      <p>BMI</p>
-        <% if @user.userbmi.nan? %>
-          <% else %>
-            <p><%= @user.userbmi %></p>
+      <div class="profile_box">
+        <% unless @user.old.present? || @user.sex.present? || @user.tall.present? || @user.weight.present? || @user.target.present? || @user.introduction? %>
+          <%= link_to "情報入力", edit_user_path(@user.id) %>
+        <% else %>
+      <table>
+        <tr>
+          <% if @user.old.present? %>
+            <td><p><%= @user.old %>歳</p></td>
           <% end %>
-      <p>目標体重</p><p><%= @user.target %>kg</p>
+          <% if @user.sex.present? %>
+            <td><p><%= @user.sex %>性</p></td>
+          <% end %>
+        </tr>
+      <% if user_signed_in? && current_user.id == @user.id %>
+      <tr>
+        <% if @user.tall.present? %>
+        <td><p>身長</p></td>
+        <td><p><%= @user.tall %>cm</p></td>
+        <% end %>
+      </tr>
+      <tr>
+        <% if @user.weight.present? %>
+        <td><p>体重</p></td>
+        <td><p><%= @user.weight %>kg</p></td>
+        <% end %>
+      </tr>
+      <tr>
+        <% if @user.userbmi.present? %>
+          <% if @user.userbmi.nan? %>
+            <% else %>
+              <td><p>BMI</p></td>
+              <td><p><%= @user.userbmi %></p></td>
+          <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <% if @user.target.present? %>
+        <td><p>目標体重　</p></td>
+        <td><p><%= @user.target %>kg</p></td>
+        <% end %>
+      </tr>
       <% end %>
-      <p>introduction</p>
-      <%= @user.introduction %>
+
+      <p><%= @user.introduction %></p>
+    </table>
+    <% end %>
+    </div>
 
     </div>
-  </div>
     <div class="col-xs-7">
       <h1>投稿記事</h1>
 
@@ -96,8 +125,15 @@
       <% if date.day == day_record.start_time.day %>
       <% if date.month == day_record.start_time.month %>
       <% if date.year == day_record.start_time.year %>
+        <% if day_record.breakfast.present? || day_record.lunch.present? || day_record.dinner.present? || day_record.snack.present? %>
           <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
             <i class="fas fa-apple-alt"></i>
+            <% end %>
+        <% end %>
+          <% if day_record.memo.present? %>
+            <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
           <% end %>
           <% if day_record.training != 0 %>
             <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
