@@ -31,8 +31,8 @@ class PostsController < ApplicationController
   def index
     @genres = Genre.all
     @tag_list = Tag.all
-    @post = current_user.posts.new
-  	# @posts = Post.all
+    # @post = current_user.posts.new
+  	 @posts = Post.all
   end
 
   def edit

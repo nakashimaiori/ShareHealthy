@@ -4,10 +4,6 @@
 
 <%= render "genre_bar", genres: @genres %>
 
-<%= search_form_for @search do |f| %>
-  <%= f.search_field :title_or_content_cont %>
-  <%= f.submit "検索" %>
-<% end %>
 
 <h3>タグリスト</h3>
   <% @tag_list.each do |list| %>
@@ -16,6 +12,11 @@
       <% end %>
       <%= list.posts.count %>
   <% end %>
+
+  <%= search_form_for @search do |f| %>
+  <%= f.search_field :title_or_content_cont %>
+  <%= f.submit "検索" %>
+<% end %>
 
 
     <% if controller.action_name == "search" %>
