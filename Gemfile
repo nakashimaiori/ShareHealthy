@@ -74,4 +74,4 @@ gem 'ransack'
 gem 'simple_calendar', '~> 2.0'
 gem 'wysiwyg-rails'
 gem 'chartkick'
-gem 'groupdate'
+
