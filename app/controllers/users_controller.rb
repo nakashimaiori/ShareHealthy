@@ -13,6 +13,7 @@ class UsersController < ApplicationController
        start_time = Date.today
      end
      @day_weights = DayWeight.where(user_id: params[:id]).where(start_time: start_time.in_time_zone.all_month)
+     @weights = current_user.day_weights
   end
 
   def update

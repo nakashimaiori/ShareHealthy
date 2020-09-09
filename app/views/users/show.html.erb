@@ -90,7 +90,15 @@
 <% end %>
     </div>
     <div class="col-xs-6">
-      <table class="table table-bordered border-primary table-hover table-sm posts_table">
+
+      <%= line_chart @weights.chart_date,xtitle: "日付", ytitle: "体重(kg)", width: "600px", height: "400px", colors: ["#ff69b4", "#ff69b4"] %>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-dark">
     <tr>
       <th scope="col" style="width: 700px">お気に入り記事</th>
@@ -109,6 +117,4 @@
       <% end %>
   </tbody>
 </table>
-    </div>
-  </div>
 </div>
