@@ -39,13 +39,23 @@
 }
 
 body {
-  background-color: #EEEEEE
+  background-color: #EEEEEE;
 }
 
 header {
   background-color: #0099FF;
   height: 70px;
+  position: fixed;
+  width: 100%;
+  margin:0;
+  padding:4px;
+  z-index:9999;
 }
+
+.header_fix {
+  padding-top: 70px;
+}
+
 
 
 // 投稿詳細ページ(posts/show)
@@ -74,6 +84,22 @@ header {
 
 #comments_area {
   margin-top: 30px;
+}
+
+.fixed_btn
+{
+  position: fixed;
+  bottom: 200px; 
+  right: 30px;
+  padding: 6px 40px;
+}
+
+.fa-heart {
+  font-size: 30px;
+}
+
+.like_btn {
+  padding-right: 8px;
 }
 
 // ------------------------------------------------
@@ -155,8 +181,8 @@ header {
 }
 // マイページ(users/show)--------------------------------------------------
 
-.mypage_box {
-  margin: 50px 0;
+.mypage_box, .day_record_box{
+  margin: 120px 0;
   background-color: #fff;
 }
 
@@ -209,6 +235,14 @@ header {
   font-size: 15px;
   margin-left: 50px;
 }
+
+.edit_btn {
+  font-size: 50px;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  padding: 6px 40px;
+}
 // footer------------------------------------------------------------
 
 footer {
@@ -225,3 +259,136 @@ footer {
   font-size: 50px;
 }
 
+//  day_records/new-----------day_weight/new-----------------------------
+
+.day_record_box_title {
+  padding: 50px;
+}
+
+.form_record_back {
+  background-color: #fff;
+  height: 550px;
+  padding-top: 30px;
+}
+
+.day_weight {
+  background-color: #fff;
+  height: 300px;
+  margin: 120px 70px 70px 70px;
+  padding: 30px 0 0 50px;
+}
+
+
+// top-------social
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.box {
+  /*設置する親要素ページ全体ならbodyなど*/
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.cp_snslink01 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.cp_snslink01 .cp_link {
+  position: relative;
+}
+.cp_snslink01 .cp_link {
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.cp_snslink01 .cp_link .nav-label {
+  line-height: 64px;
+  position: absolute;
+  z-index: 4;
+  top: 0rem;
+  display: block;
+  height: 60px;
+  margin-left: 50px;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.cp_snslink01 .cp_link,
+.cp_snslink01 .cp_link a,
+.cp_snslink01 .cp_link:hover,
+.cp_snslink01 .cp_link .nav-label {
+  color: #ffffff;
+}
+/*facebook*/
+.cp_snslink01 .facebook,
+.cp_snslink01 .facebook:hover,
+.cp_snslink01 .facebook:hover .nav-label {
+  background: #3b5998;
+}
+.cp_snslink01 .facebook .nav-label {
+  background: #1e2e4f;
+}
+/*twitter*/
+.cp_snslink01 .twitter,
+.cp_snslink01 .twitter:hover,
+.cp_snslink01 .twitter:hover .nav-label {
+  background: #55acee;
+}
+.cp_snslink01 .twitter .nav-label {
+  background: #0065d9;
+}
+/*google+*/
+.cp_snslink01 .google,
+.cp_snslink01 .google:hover,
+.cp_snslink01 .google:hover .nav-label {
+  background: #dd4b39;
+}
+.cp_snslink01 .google .nav-label {
+  background: #af0606;
+}
+/*instagram*/
+.cp_snslink01 .instagram,
+.cp_snslink01 .instagram:hover,
+.cp_snslink01 .instagram:hover .nav-label {
+  background: radial-gradient(circle at 0% 90%, #fdf498 0%, #fd5948 5%, #d6249d 45%,#285aea 60%,#285aea 90%);
+}
+/* effect */
+.cp_snslink01 .cp_link.nav-label, .cp_snslink01 .cp_link.cp_link:hover .nav-label {
+  -webkit-transition: -webkit-transform 0.4s ease, background 0.4s ease;
+          transition:         transform 0.4s ease, background 0.4s ease 0.1s;
+  -webkit-transition-delay: 0s, 0.1s;
+}
+.cp_snslink01 .cp_link.cp_link .nav-label {
+  -webkit-transition: -webkit-transform 0.4s ease;
+          transition:         transform 0.4s ease;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  -webkit-transform-origin: left 50%;
+          transform-origin: left 50%;
+}
+.cp_snslink01 .cp_link.cp_link:hover .nav-label {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+// 投稿一覧---------------------------------------------------
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 200px;
+}
+
+.genrebar {
+  width: 250px;
+  margin-left: 20px;
+}

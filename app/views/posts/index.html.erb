@@ -1,24 +1,28 @@
 
+<div class="sticky">
+  <div class="genrebar"><div class="searchbox">
+  <%= search_form_for @search do |f| %>
+    <%= f.search_field :title_or_content_cont,placeholder: '検索するワードを入力' %>
+    <%= f.submit "検索", class: "btn btn-primary" %>
+  <% end %>
+</div></div>
+</div>
 
-<div class="container">
+
+<div class="container header_fix">
+  <div class="row">
+    <div class="col-xs-offset-2">
 
 <%= render "genre_bar", genres: @genres %>
 
 
-<h5>タグリスト</h5>
-  <% @tag_list.each do |list| %>
-      <%= link_to tag_posts_path(list.id) do %>
-        <%= list.tag_name %>
-      <% end %>
-      <%= list.posts.count %>
-  <% end %>
-
-<div class="searchbox">
-  <%= search_form_for @search do |f| %>
-    <%= f.search_field :title_or_content_cont,placeholder: '検索するワードを入力' %>
-    <%= f.submit "検索" %>
-  <% end %>
-</div>
+<!-- <h5>タグリスト</h5>
+  <%# @tag_list.each do |list| %>
+      <%#= link_to tag_posts_path(list.id) do %>
+        <%#= list.tag_name %>
+      <%# end %>
+      <%#= list.posts.count %>
+  <%# end %> -->
 
 
     <% if controller.action_name == "search" %>
@@ -28,10 +32,6 @@
       <% end %>
 
 
-
-    <div class="ml-auto posts_button">
-        <a class="btn btn-outline-info" href="/posts/new" role="button">新規投稿</a>
-</div>
 <table class="table">
 
       <% @search_posts.each do |post| %>
@@ -44,4 +44,10 @@
         </tr>
       <% end %>
 </table>
+    </div>
+  </div>
 </div>
+
+<%= link_to new_post_path do %>
+  <i class="fas fa-edit edit_btn"></i>
+<% end %>

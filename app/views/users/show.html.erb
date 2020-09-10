@@ -1,4 +1,7 @@
 <div class="container">
+<%= link_to new_post_path do %>
+  <i class="fas fa-edit edit_btn"></i>
+<% end %>
   <div class="mypage_box">
     <div class="detail_box_in">
 
@@ -168,24 +171,17 @@
   </div>
 
   <div class="row">
-<table class="table table-bordered border-primary table-hover table-sm posts_table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col" style="width: 700px">お気に入り記事</th>
-      <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
-    </tr>
-  </thead>
-  <tbody>
-　　　<!-- 追加 -->
+    <h5>お気に入り記事</h5>
+<table class="table">
       <% @favorite_posts.each do |post| %>
         <tr>
-            <td><%= link_to post.title, post_path(post.id) %></td>
-            <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-            <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
-        </tr>
-      <% end %>
-  </tbody>
+              <td>
+                <p><%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
+                <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
+                <h5><%= link_to post.title, post_path(post.id) %></h5>
+              </td>
+            </tr>
+          <% end %>
 </table>
 
 </div>

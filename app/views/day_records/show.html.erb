@@ -1,22 +1,22 @@
-<h1>DayRecords#show</h1>
+<div class="container header_fix">
+  <h1>DayRecords#show</h1>
 
 
-<%= @day_record.start_time %>
+  <%= @day_record.start_time %>
 
-<%= @day_record.training %>
-
-
-<%= @day_record.breakfast %>
-
-<%= @day_record.lunch %>
-
-<%= @day_record.dinner %>
-
-<%= @day_record.snack %>
-
-<%= @day_record.memo %>
+  <%= @day_record.training %>
 
 
-<%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) %>
-<%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete %>
+  <%= @day_record.breakfast %>
+
+  <%= @day_record.dinner %>
+
+  <%= @day_record.snack %>
+
+  <%= @day_record.memo %>
+
+
+  <%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) %>
+  <%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete %>
+</div>
 

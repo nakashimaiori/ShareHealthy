@@ -1,4 +1,7 @@
-<h1>DayWeights#edit</h1>
+<div class="container">
+  <div class="day_weight">
+
+<h1>記録編集</h1>
 
 
 <%= form_with model: @day_weight, url: user_day_weight_path(current_user.id, @day_weight.id), local:true do |f| %>
@@ -9,8 +12,12 @@
   <%= f.label :体重 %>
   <%= f.number_field :weight, step: "0.1", min: 30, max: 200 %>
 
-  <%= f.submit '更新', class: "btn-default btn-red", url: user_day_weight_path(current_user.id, @day_weight.id) ,method: :patch %>
+  <%= f.submit '更新', class: "btn-default btn-red", url: user_day_weight_path(current_user.id, @day_weight.id) ,method: :patch, class: "btn btn-info" %>
 
 
 <% end %>
-<%= link_to "削除", user_day_weight_path(current_user.id, @day_weight.id), method: :delete,data: {confirm: "削除しますか？"} %>
+<%= link_to "削除", user_day_weight_path(current_user.id, @day_weight.id), method: :delete,data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
+  </div>
+</div>
+
+
