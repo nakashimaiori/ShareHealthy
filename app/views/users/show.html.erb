@@ -1,8 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-5">
+  <div class="mypage_box">
+    <div class="detail_box_in">
 
-    <div><%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %>
+  <div class="row">
+    <div class="col-xs-6">
+
+    <div><%= attachment_image_tag @user, :profile_image, :fill, 250, 250, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'250x250' %>
     </div>
 
     <div class="profile_name"><%= @user.name %></div>
@@ -10,10 +13,28 @@
     <div id="foll_<%= @user.id %>">
       <%= render "follow_form", user: @user %>
     </div>
+    <div>
+      <ul class="profile_follow">
+        <li class="profile_follow_li">
+          <div><%= @user.active_relationships.count %></div>
+          <div><%= link_to "フォロー中", follows_user_path(@user.id) %></div>
+        </li>
+        <li class="profile_follow_li">
+          <div><%= @user.passive_relationships.count %></div>
+          <div><%= link_to "フォロワー", followers_user_path(@user.id) %></div>
+        </li>
+        <li class="profile_follow_li">
+          <div><%= @posts.count %></div>
+          <div>投稿数</div>
+        </li>
+    </ul>
+   </div>
+
+
 
       <div class="profile_box">
         <% unless @user.old.present? || @user.sex.present? || @user.tall.present? || @user.weight.present? || @user.target.present? || @user.introduction? %>
-          <%= link_to "情報入力", edit_user_path(@user.id) %>
+          <%= link_to "プロフィール作成", edit_user_path(@user.id) %>
         <% else %>
       <table>
         <tr>
@@ -53,59 +74,43 @@
         <% end %>
       </tr>
       <% end %>
-
-      <p><%= @user.introduction %></p>
     </table>
+      <p><%= @user.introduction %></p>
     <% end %>
+      <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-cog"></i><%= link_to "Edit Profile", edit_user_path(@user.id)%></button>
     </div>
 
-    </div>
-    <div class="col-xs-7">
-      <h1>投稿記事</h1>
 
-      <div>
-        <%= paginate @posts %>
+    </div>
+    <div class="col-xs-6">
+      <div class="users_post_box">
+        <div class="">
+        <ul class="new">全ての投稿
+          <li class="new_post"><%= link_to "記事投稿へ", new_post_path, class: 'btn btn-success' %></li>
+        </ul>
       </div>
+        <div class="user_post_kaminari">
+          <%= paginate @posts %>
+        </div>
 
-      <table class="table table-bordered border-primary table-hover table-sm posts_table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col" style="width: 700px">投稿タイトル</th>
-      <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
-    </tr>
-  </thead>
-  <tbody>
-　　　<!-- 追加 -->
-      <% @posts.each do |post| %>
-        <tr>
-            <td><%= link_to post.title, post_path(post.id) %></td>
-            <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-            <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
-        </tr>
-      <% end %>
-  </tbody>
-</table>
-
+      <table class="table">
+          <% @posts.each do |post| %>
+            <tr>
+              <td>
+                <p><%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
+                <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
+                <h5><%= link_to post.title, post_path(post.id) %></h5>
+              </td>
+            </tr>
+          <% end %>
+      </table>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
+
   <div class="row">
     <div class="col-xs-6">
-
-
-<%= link_to "フォロー一覧", follows_user_path(@user.id) %>
-<%= link_to "フォロワー一覧", followers_user_path(@user.id) %>
-<%= link_to "情報入力", edit_user_path(@user.id) %>
-<%= link_to "記事投稿へ", new_post_path %>
-
-
-<%= link_to "今日の体重を記録", new_user_day_weight_path(@user.id) %>
-<%= link_to "今日の食事・運動を記録", new_user_day_record_path(@user.id) %>
-
-
 
 <%= month_calendar events: @day_weights do |date, weights| %>
   <%= date.day %>
@@ -149,19 +154,20 @@
 <% end %>
 
 
-
-
     </div>
 
     <div class="col-xs-6">
-
-      <%= line_chart @weights.chart_date,xtitle: "日付", ytitle: "体重(kg)", width: "600px", height: "400px", colors: ["#ff69b4", "#ff69b4"] %>
-
+      <div class="chart_box">
+        <div class="record_btn">
+          <%= link_to "今日の食事・運動を記録", new_user_day_record_path(@user.id), class: 'btn btn-success' %>
+          <%= link_to "今日の体重を記録", new_user_day_weight_path(@user.id), class: 'btn btn-warning' %>
+        </div>
+        <%= line_chart @weights.chart_date,xtitle: "日付", ytitle: "体重(kg)", width: "500px", height: "400px", colors: ["#ff69b4", "#ff69b4"] %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
+  <div class="row">
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-dark">
     <tr>
@@ -181,4 +187,8 @@
       <% end %>
   </tbody>
 </table>
+
+</div>
+    </div>
+  </div>
 </div>

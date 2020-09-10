@@ -1,31 +1,32 @@
 <div class="container">
   <div class="row">
 
-<%= render "users/follow_form", user: @user %>
+    <%#= render "users/follow_form", user: @user %>
 
-<%= render 'detail', post: @post %>
+    <%= render 'detail', post: @post %>
 
-<% @post_tags.each do |tag| %>
-  <span>
-    <%= link_to tag.tag_name, tag_posts_path(tag.id) %>
-    <%= "(#{tag.posts.count})" %>
-  </span>
-<% end %>
-
-
-
-  <%= form_with model: [@post, @post_comment] do |f| %>
-  <div class="row">
-    <div class="col-sm-9">
-      <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+    <% @post_tags.each do |tag| %>
+      <span>
+        <%= link_to tag.tag_name, tag_posts_path(tag.id) %>
+        <%= "(#{tag.posts.count})" %>
+      </span>
+    <% end %>
+  <div class="comment_box">
+    <div class="comment_box_in">
+      <p><i class="fas fa-comment"></i>コメント<%= @post.post_comments.count %>件</p>
+      <%= form_with model: [@post, @post_comment] do |f| %>
+        <div class="row">
+          <div class="col-sm-9">
+            <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに入力してください" %>
+            <%= f.submit "送信", class: "btn btn-secondary pull-right" %>
+          </div>
+        </div>
+      <% end %>
+      <div id="comments_area">
+        <%= render 'post_comments/comment', post: @post %>
+      </div>
+    </div>
   </div>
-  </div>
-<% end %>
-
-<div id="comments_area">
-  <%= render 'post_comments/comment', post: @post %>
-</div>
 
   </div>
 </div>

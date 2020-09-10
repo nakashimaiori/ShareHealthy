@@ -1,30 +1,29 @@
-<div class="">
-  	<h1><%= post.title %></h1>
 
-
-      <p>投稿者</p>
-        <%= link_to user_path(post.user.id) do %>
-          <%= post.user.name %>
-        <% end %>
-      <p>カテゴリー</p>
-        <%= post.genre.name %>
-
-      <p>内容</p>
-        <%== post.content %>
-  </div>
-
-
-  <div class="">
-
-    <% if user_signed_in? && current_user.id == post.user_id %>
-    <%= link_to "記事編集", edit_post_path(post.id) %>
-    <%= link_to "記事削除", post_path(post.id), method: :delete,data: {confirm: "削除しますか？"} %>
+<div class="detail_box">
+  <div class="detail_box_in">
+  <div class="detail_box_user">
+    <%= link_to user_path(post.user.id) do %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %> <%= post.user.name %>
     <% end %>
+    <%= post.updated_at.strftime('%Y/%m/%d') %>に更新
   </div>
-
+  <div class="detail_box_main">
+  	<h1><%= post.title %></h1>
+      <p><button type="button" class="btn btn-secondary"><%= post.genre.name %></button></p>
+        <div><%== post.content %></div>
+  </div>
 
   <div id="favorite_heart_<%= post.id %>">
     <%= render 'favorites/like', post: post %>
   </div>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+      <div class="">
+        <%= link_to "記事編集", edit_post_path(post.id),class: 'btn btn-default' %>
+        <%= link_to "記事削除", post_path(post.id), method: :delete,data: {confirm: "削除しますか？"},class: 'btn btn-default' %>
+      </div>
+    <% end %>
+  </div>
+  </div>
 
-  <p>コメント<%= post.post_comments.count %>件</p>
+
+  <!-- <p><i class="fas fa-comment"></i>コメント<%= post.post_comments.count %>件</p> -->

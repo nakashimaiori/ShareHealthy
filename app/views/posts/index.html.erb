@@ -5,7 +5,7 @@
 <%= render "genre_bar", genres: @genres %>
 
 
-<h3>タグリスト</h3>
+<h5>タグリスト</h5>
   <% @tag_list.each do |list| %>
       <%= link_to tag_posts_path(list.id) do %>
         <%= list.tag_name %>
@@ -32,28 +32,16 @@
     <div class="ml-auto posts_button">
         <a class="btn btn-outline-info" href="/posts/new" role="button">新規投稿</a>
 </div>
-<table class="table table-bordered border-primary table-hover table-sm posts_table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col" style="width: 700px">投稿タイトル</th>
-      <th scope="col">投稿者</th>
-      <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
-    </tr>
-  </thead>
-  <tbody>
+<table class="table">
 
       <% @search_posts.each do |post| %>
         <tr>
-            <td>
-              <%= link_to post.title, post_path(post.id) %>
-              <%#= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
-              </td>
-            <td><%= post.user.name %></td>
-            <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-            <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td><%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'20x20' %>
+            <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
+            <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
+            <h3><%= link_to post.title, post_path(post.id) %></h3>
+            </td>
         </tr>
       <% end %>
-  </tbody>
 </table>
 </div>

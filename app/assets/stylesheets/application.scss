@@ -38,10 +38,45 @@
 　box-sizing: border-box;
 }
 
+body {
+  background-color: #EEEEEE
+}
+
 header {
-  background-color: #99E1D9;
+  background-color: #0099FF;
   height: 70px;
 }
+
+
+// 投稿詳細ページ(posts/show)
+
+.detail_box {
+  margin-top: 50px;
+  background-color: #ffffff
+}
+
+.detail_box_in {
+  padding: 50px;
+}
+
+.detail_box_user {
+  margin-bottom: 30px;
+}
+
+.comment_box {
+  margin: 50px 0;
+  background-color: #ffffff
+}
+
+.comment_box_in {
+  padding: 50px;
+}
+
+#comments_area {
+  margin-top: 30px;
+}
+
+// ------------------------------------------------
 
 .nav-list-item {
   float: right;
@@ -54,32 +89,33 @@ header {
 }
 
 // ----------kaminari-------------------------------
-.pagination{
-  margin: auto;
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
-}
-.pagination span{
-  background-color: rgba(158, 158, 158, 0.4);
-  text-align: center;
-  width: 50px;
-  border: solid 1px #344963;
-  color: rgb(197, 20, 159);
-  transition: .3s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-.pagination span:hover{
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-.pagination span a:hover{
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
+// .pagination{
+//   margin: auto;
+//   width: 50%;
+//   display: flex;
+//   justify-content: flex-start;
+// }
+// .pagination span{
+//   background-color: rgba(158, 158, 158, 0.4);
+//   text-align: center;
+//   width: 50px;
+//   border: solid 1px #344963;
+//   color: rgb(197, 20, 159);
+//   transition: .3s;
+//   -webkit-transform: scale(1);
+//   transform: scale(1);
+// }
+// .pagination span:hover{
+//   transition: .3s;
+//   -webkit-transform: scale(1.1);
+//   transform: scale(1.1);
+// }
+// .pagination span a:hover{
+//   transition: .3s;
+//   -webkit-transform: scale(1.1);
+//   transform: scale(1.1);
+// }
+
 
 // -----------------------------------------------------
 
@@ -93,7 +129,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #99E1D9;
+  background: #ffffff;
   overflow: hidden;
   font-family: 'Rubik Mono One', sans-serif;
 }
@@ -117,11 +153,75 @@ header {
   50% { text-shadow: 0 15px 40px rgba(black, 0.6); }
   100% { transform: translate(33%, 0); }
 }
-// ------------------------------------------------------------------
+// マイページ(users/show)--------------------------------------------------
 
+.mypage_box {
+  margin: 50px 0;
+  background-color: #fff;
+}
+
+.profile_box {
+  margin: 30px 0 0 70px;
+}
 .profile_name {
   font-size: 40px
 }
 
+.users_post_box {
+  margin-top: 20px;
+}
 
+.chart_box {
+  margin-top: 60px;
+}
+
+.record_btn {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.post_index {
+  display: inline-block;
+}
+
+.profile_follow {
+  list-style: none;
+}
+.profile_follow_li {
+  display: inline-block;
+  margin-left: 10px;
+  text-align: center;
+}
+.genre_btn {
+  font-size: 3px;
+}
+
+.user_post_kaminari {
+  margin-bottom: 20px;
+}
+
+.new {
+  list-style: none;
+  font-size: 30px;
+}
+.new_post {
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 50px;
+}
+// footer------------------------------------------------------------
+
+footer {
+  height: 250px;
+  background-color: #444444;
+}
+
+.footer_box {
+  padding: 50px 0 50px 200px;
+  color: #fff;
+}
+
+.footer_box_title {
+  font-size: 50px;
+}
 
