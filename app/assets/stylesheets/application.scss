@@ -155,7 +155,8 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #ffffff;
+  // background: #ffffff;
+  background-image: url(ran.jpg);
   overflow: hidden;
   font-family: 'Rubik Mono One', sans-serif;
 }
@@ -391,4 +392,9 @@ footer {
 .genrebar {
   width: 250px;
   margin-left: 20px;
+}
+
+.like_in_table {
+  padding-left: 380px;
+  color: #808080;
 }

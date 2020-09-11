@@ -16,8 +16,8 @@
 
     <% if user_signed_in? && current_user.id == post.user_id %>
       <div class="">
-        <%= link_to "記事編集", edit_post_path(post.id),class: 'btn btn-default' %>
-        <%= link_to "記事削除", post_path(post.id), method: :delete,data: {confirm: "削除しますか？"},class: 'btn btn-default' %>
+        <%= link_to "記事編集", edit_post_path(post.id),class: 'btn btn-success' %>
+        <%= link_to "記事削除", post_path(post.id), method: :delete,data: {confirm: "削除しますか？"},class: 'btn btn-danger' %>
       </div>
     <% end %>
   </div>
