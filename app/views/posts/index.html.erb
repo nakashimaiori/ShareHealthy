@@ -38,7 +38,7 @@
               <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
               <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
               <h3><%= link_to post.title, post_path(post.id) %></h3>
-              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%></p>
+              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
             </td>
         </tr>
       <% end %>
@@ -58,7 +58,7 @@
               <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
               <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
               <h3><%= link_to post.title, post_path(post.id) %></h3>
-              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%></p>
+              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
             </td>
         </tr>
       <% end %>

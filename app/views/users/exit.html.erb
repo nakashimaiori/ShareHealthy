@@ -2,4 +2,8 @@
 
 
 
-<%= link_to "退会する", withdraw_user_path(@user.id), method: :patch, data: {confirm: "本当に退会しますか？"} %>
+<%#= link_to "退会する", withdraw_user_path(@user.id), method: :patch, data: {confirm: "本当に退会しますか？"} %>
+
+<h3>Cancel my account</h3>
+
+<p> <%= button_to "退会する",  user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
