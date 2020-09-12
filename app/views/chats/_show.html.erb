@@ -1,0 +1,20 @@
+<% if messages.present? %>
+ <% messages.each do |m| %>
+ <div class="chat-box">
+ 	<% if m.user == current_user %>
+ 	<div class="mychat">
+ 	  <div class="chat-face">
+      </div>
+      <div class="chat-hukidashi"><%= attachment_image_tag m.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'50x50' %><%= m.user.name %>：<table><tr><td><%= m.created_at.strftime('%Y/%m/%d %H:%M') %></td><td><strong><%= m.message %></strong></td></tr></table>
+      </div>
+    </div>
+
+   <% else %>
+   <div class="chat-face">
+   </div>
+   <div class="chat-hukidashi"><%= attachment_image_tag m.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'50x50' %><%= m.user.name %>：<table><tr><td><%= m.created_at.strftime('%Y/%m/%d %H:%M') %></td><td><strong><%= m.message %></strong></td></tr></table>
+   </div>
+   <% end %>
+ </div>
+ <% end %>
+ <% end %>

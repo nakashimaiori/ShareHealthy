@@ -34,8 +34,8 @@
 @import 'plugins/video.min.css';
 
 * { margin: 0;
-　padding: 0;
-　box-sizing: border-box;
+    padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -195,6 +195,9 @@ header {
   font-size: 40px
 }
 
+.btn_table {
+  padding-left: 50px;
+}
 .users_post_box {
   margin-top: 20px;
 }
@@ -427,4 +430,25 @@ footer {
 
 .index_back_box {
    padding-top: 50px;
+}
+
+
+// chatroom
+.mychat {
+  padding-left: 400px;
+}
+.message_form {
+  margin-top: 30px;
+}
+.chat-face {
+  height: 10px;
+}
+
+.chatroom-box {
+  background-color: #fff;
+  padding: 50px 0 50px 300px;
+  margin: 50px 0 50px 0;
+}
+
+.chatroom-box-title {
 }

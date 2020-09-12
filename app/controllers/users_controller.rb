@@ -14,6 +14,27 @@ class UsersController < ApplicationController
      @day_weights = DayWeight.where(user_id: params[:id]).where(start_time: start_time.in_time_zone.all_month)
      @day_records = DayRecord.where(user_id: params[:id]).where(start_time: start_time.in_time_zone.all_month)
      @weights = current_user.day_weights
+
+    # chat
+    @currentUserEntry=UserRoom.where(user_id: current_user.id)
+    @userEntry=UserRoom.where(user_id: @user.id)
+    unless @user.id == current_user.id
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+      if @isRoom
+      else
+        @room = Room.new
+        @user_room = UserRoom.new
+      end
+    end
+
+
   end
 
   def update

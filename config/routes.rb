@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get 'rooms/show'
   get 'day_records/show'
   get 'day_records/new'
   get 'relationships/create'
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   post '/homes/guest_sign_in', to: 'homes#new_guest'
   get '/user/exit' => 'users#exit'
+  resources :chats, only: [:create, :show]
+  resources :rooms, only: [:create,:show]
   resources :users, only: [:show, :edit, :update, :destroy] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member

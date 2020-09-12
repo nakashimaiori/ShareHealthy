@@ -13,9 +13,38 @@
 
     <div class="profile_name"><%= @user.name %></div>
 
-    <div id="foll_<%= @user.id %>">
-      <%= render "follow_form", user: @user %>
-    </div>
+<div class="btn_table">
+<table>
+  <tr>
+    <td>
+      <div id="foll_<%= @user.id %>">
+        <%= render "follow_form", user: @user %>
+      </div>
+    </td>
+
+    <td>
+      <div class="chat_btn">
+      <% unless @user.id == current_user.id %>
+        <% if (current_user.followed_by? @user) && (@user.followed_by? current_user)  %>
+        <% if @isRoom == true %>
+      <p class="user-show-room">　<a href="/chats/<%= @roomId %>" class="btn btn-primary">チャットへ</a></p>
+      <% else %>
+        <%= form_for @room do |f| %>
+          <%= fields_for @entry do |e| %>
+            <%= e.hidden_field :user_id, value: @user.id %>
+          <% end %>
+          <%= f.submit "チャットを始める", class:"btn btn-primary user-show-chat"%>
+        <% end %>
+      <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
+
+
     <div>
       <ul class="profile_follow">
         <li class="profile_follow_li">
