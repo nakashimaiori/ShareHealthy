@@ -1,13 +1,13 @@
-<table class="table">
-	<thead>
-		<tr class="">
-			<th>Category<i class=""></i></th>
-		</tr>
 
-		<% genres.each do |genre| %>
-			<tr class="">
-				<td><%=link_to genre.name, search_posts_path(genre.id), method: :get, class: "link" %></td>
-			</tr>
-		<% end %>
-    </thead>
-</table>
+
+<div>
+	<ul class="genre_box">
+	<li class="genre_box_title">Category</li>
+
+<% genres.each do |genre| %>
+  <li class="genre_box_content"><span style="background-color:#ffcc99"><%=link_to genre.name, search_posts_path(genre.id), method: :get, class: "link" %></span></li>
+<% end %>
+
+</ul>
+</div>
+

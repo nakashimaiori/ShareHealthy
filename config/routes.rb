@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 }
 
   root to: 'homes#top'
+  post '/homes/guest_sign_in', to: 'homes#new_guest'
   get '/user/exit' => 'users#exit'
   resources :users, only: [:show, :edit, :update, :destroy] do
     resource :relationships, only: [:create, :destroy]

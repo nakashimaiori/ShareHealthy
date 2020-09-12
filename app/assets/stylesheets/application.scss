@@ -89,7 +89,7 @@ header {
 .fixed_btn
 {
   position: fixed;
-  bottom: 200px; 
+  bottom: 200px;
   right: 30px;
   padding: 6px 40px;
 }
@@ -156,7 +156,8 @@ header {
   align-items: center;
   flex-direction: column;
   // background: #ffffff;
-  background-image: url(ran.jpg);
+  background-image: url(tutui.jpg);
+  background-size: cover;
   overflow: hidden;
   font-family: 'Rubik Mono One', sans-serif;
 }
@@ -397,4 +398,29 @@ footer {
 .like_in_table {
   padding-left: 380px;
   color: #808080;
+}
+
+.genre_box {
+  list-style: none;
+}
+
+.genre_box_title {
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+.genre_box_content {
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.index_back {
+  background-color: #fff;
+  margin: 25px 0 0 160px;
+}
+
+.index_back_box {
+   padding-top: 50px;
 }

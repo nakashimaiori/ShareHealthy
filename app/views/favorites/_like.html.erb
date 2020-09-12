@@ -1,3 +1,4 @@
+
 <% if post.favorited_by?(current_user) %>
 
   <%= link_to post_favorites_path(post), method: :delete, remote:true do %>
@@ -10,3 +11,5 @@
     <%= post.favorites.count %>
  <% end %>
 <% end %>
+
+

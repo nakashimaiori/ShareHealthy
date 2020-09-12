@@ -10,9 +10,13 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
+
   def favorited_by?(user)
+    # if user_id.nil?
     favorites.where(user_id: user.id).exists?
+    # end
   end
+
 
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?

@@ -27,12 +27,12 @@
         <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
         <li class="nav-list-item"><%= link_to "ジャンル", admins_genres_path %></li>
       <% else %>
-        <li class="nav-list-item">ゲストユーザー</li>
+        <li class="nav-list-item"></li>
         <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
         <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
+        <li class="nav-list-item"><%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post %></li>
         <li class="nav-list-item"><%= link_to "Top", root_path %></li>
         <li class="nav-list-item"><%= link_to "About", about_path %></li>
-        <li class="nav-list-item"><%= link_to "記事一覧", posts_path %></li>
       <% end %>
     </ul>
 

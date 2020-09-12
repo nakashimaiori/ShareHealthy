@@ -1,5 +1,8 @@
 <h1>会員情報編集・入力</h1>
 
+
+
+
   <%= form_for(@user, url:user_path(current_user.id)) do |f| %>
 
     <p>Image</p>
@@ -8,8 +11,15 @@
 
       <%= f.attachment_field :profile_image, class: 'image-prev' %>
 
-    <p>Name</p>
+
+    <% if @user.email == "guest@.com" %>
+      <p>ゲストユーザーの名前変更はできません</p>
+    <% else %>
+
+      <p>Name</p>
       <%= f.text_field :name %>
+    <% end %>
+
 
       <%= f.radio_button :sex, :男 %>
       <%= f.label :男, class: "" %>
@@ -17,8 +27,13 @@
       <%= f.radio_button :sex, :女 %>
       <%= f.label :女, class: "" %>
 
-    <p>Email</p>
+    <% if @user.email == "guest@.com" %>
+      <p>ゲストユーザーのemail変更はできません</p>
+    <% else %>
+
+      <p>Email</p>
       <%= f.text_field :email %>
+    <% end %>
 
     <p>年齢</p>
       <%= f.number_field :old, min: 0, max: 100 %>
