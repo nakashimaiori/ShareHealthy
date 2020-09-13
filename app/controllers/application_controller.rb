@@ -10,7 +10,7 @@ before_action :set_search
 
   def set_search
     @search = Post.ransack(params[:q])
-    @search_posts = @search.result
+    @search_posts = @search.result.order(id: "DESC")
   end
 
 

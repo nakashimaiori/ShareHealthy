@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/user/exit' => 'users#exit'
   resources :chats, only: [:create, :show]
   resources :rooms, only: [:create,:show]
+  get 'favorite/:id' => 'users#favorite', as: 'favorite'
   resources :users, only: [:show, :edit, :update, :destroy] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
 
     member do
     get "exit"
-    patch "withdraw"
+    # patch "withdraw"
     end
 
     resources :day_weights
@@ -37,7 +38,7 @@ Rails.application.routes.draw do
   resources :tags do
     get 'posts', to: 'posts#tagsearch'
   end
-
+  get 'select' => 'posts#select'
   resources :posts do
     get 'search/:id' => 'posts#search', as: 'search', on: :collection
     resources :post_comments, only: [:create, :destroy]

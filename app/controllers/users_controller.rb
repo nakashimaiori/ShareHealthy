@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts =@user.posts.page(params[:page]).reverse_order
+    @posts =@user.posts.page(params[:page]).reverse_order.order(id: "DESC")
     #一応これなら表示される↓
     # @day_weights = current_user.day_weights
-     @favorite_posts = @user.favorite_posts.page(params[:page]).reverse_order
+     @favorite_posts = @user.favorite_posts.page(params[:page]).reverse_order.order(id: "DESC")
      start_time = params[:start_time]
      if start_time.nil?
        start_time = Date.today
@@ -33,6 +33,8 @@ class UsersController < ApplicationController
         @user_room = UserRoom.new
       end
     end
+
+    # @chatroom = @userEntry.all
 
 
   end
@@ -77,6 +79,11 @@ class UsersController < ApplicationController
     @user.update(status: "退会済")
     reset_session
     redirect_to root_path
+  end
+
+  def favorite
+    @user = User.find(params[:id])
+    @favorite_posts = @user.favorite_posts.page(params[:page]).reverse_order.order(id: "DESC")
   end
 
 

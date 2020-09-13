@@ -66,7 +66,7 @@
 
       <div class="profile_box">
         <% unless @user.old.present? || @user.sex.present? || @user.tall.present? || @user.weight.present? || @user.target.present? || @user.introduction? %>
-          <%= link_to "プロフィール作成", edit_user_path(@user.id) %>
+          <p>↓↓プロフィールを登録してください</p>
         <% else %>
       <table>
         <tr>
@@ -119,6 +119,7 @@
         <div class="">
         <ul class="new">全ての投稿
           <li class="new_post"><%= link_to "記事投稿へ", new_post_path, class: 'btn btn-success' %></li>
+          <li class="new_post"><%= link_to "お気に入り記事", favorite_path(@user), class: 'btn btn-warning' %></li>
         </ul>
       </div>
         <div class="user_post_kaminari">
@@ -141,7 +142,7 @@
     </div>
   </div>
 
-
+  <% if user_signed_in? && current_user.id == @user.id %>
   <div class="row">
     <div class="col-xs-6">
 
@@ -199,6 +200,7 @@
       </div>
     </div>
   </div>
+  <% end %>
 
   <div class="row">
     <h5>お気に入り記事</h5>
@@ -219,3 +221,10 @@
     </div>
   </div>
 </div>
+
+
+<%#= @chatroom.each do |chatroom| %>
+  <%#= chatroom.user.name %>
+<%# end %>
+
+

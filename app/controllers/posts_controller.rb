@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @genres = Genre.all
     @tag_list = Tag.all
     # @post = current_user.posts.new
-  	 @posts = Post.all
+  	 @posts = Post.all.order(id: "DESC")
   end
 
   def edit
@@ -64,16 +64,24 @@ class PostsController < ApplicationController
 
   def search
     @tag_list = Tag.all
-    @posts = Post.where(genre_id: params[:id])
+    @posts = Post.where(genre_id: params[:id]).order(id: "DESC")
     @genre = Genre.find(params[:id])
     @genres = Genre.all
     render :index
   end
 
+  def select
+    @tag_list = Tag.all
+    @posts = Post.where(genre_id: params[:id]).order(id: "DESC")
+    @genres = Genre.all
+    selection = params[:keyword]
+    @select_posts = Post.sort(selection)
+  end
+
   def tagsearch
     @tag_list = Tag.all  #こっちの投稿一覧表示ページでも全てのタグを表示するために、タグを全取得
     @tag = Tag.find(params[:tag_id])  #クリックしたタグを取得
-    @posts = @tag.posts.all           #クリックしたタグに紐付けられた投稿を全て表示
+    @posts = @tag.posts.all.order(id: "DESC")        #クリックしたタグに紐付けられた投稿を全て表示
   end
 
   private
