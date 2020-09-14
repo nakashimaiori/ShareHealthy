@@ -15,9 +15,8 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
+
 //= require froala_editor.min.js
-//= require languages/ja.js
 //= require plugins/align.min.js
 //= require plugins/char_counter.min.js
 //= require plugins/code_beautifier.min.js
@@ -45,25 +44,46 @@
 //= require plugins/video.min.js
 //= require chartkick
 //= require Chart.bundle
+//= require_tree .
 
-$(function(){
-    $(document).on('change', '.image-prev', function (e) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        $(".profile_image").attr('src', e.target.result);
-    }
-    reader.readAsDataURL(e.target.files[0]); 
-});
+// -----------------------------------------------------------
+// $(function(){
+//     $(document).on('change', '.image-prev', function (e) {
+//     var reader = new FileReader();
+//     reader.onload = function (e) {
+//         $(".profile_image").attr('src', e.target.result);
+//     }
+//     reader.readAsDataURL(e.target.files[0]);
+// });
+// });
+
+
+$(document).on("turbolinks:load", function(){
+  // $('.form-froala').froalaEditor({
+  //   heightMin: 500,
+  //   heightMax: 750,
+  // })
+
+  $('#nav_btn').on('click', function(event) {
+    $("body").toggleClass("nav_open");// .menu-triggerクリック時に行われる処理
+  });
+  $('#nav_bg').on('click', function(event) {
+    $("body").removeClass("nav_open");// .menu-triggerクリック時に行われる処理
+  });
 });
 
-$(function() {
-  $('.form-froala').froalaEditor({
-    language: 'ja',
-    heightMin: 500,
-    heightMax: 750,
-  })
-});
 
+            /* SP menu */
+
+                // var body = document.body;
+                // var hamburger = document.getElementById('nav_btn');
+                // var blackBg = document.getElementById('nav_bg');
+                // hamburger.addEventListener('click', function() {
+                //     body.classList.toggle('nav_open'); //メニュークリックでnav-openというクラスがbodyに付与
+                // });
+                // blackBg.addEventListener('click', function() {
+                //     body.classList.remove('nav_open'); //もう一度クリックで解除
+                // });
 
 
 

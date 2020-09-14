@@ -42,15 +42,121 @@ body {
   background-color: #EEEEEE;
 }
 
-header {
-  background-color: #0099FF;
-  height: 70px;
-  position: fixed;
-  width: 100%;
-  margin: 0px;
-  padding: 4px 4px 4px 0px;
-  z-index:9999;
-  text-align: center;
+// header {
+//   background-color: #0099FF;
+//   height: 70px;
+//   position: fixed;
+//   width: 100%;
+//   margin: 0px;
+//   padding: 4px 4px 4px 0px;
+//   z-index:9999;
+//   text-align: center;
+// }
+
+#header {
+  background: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px 30px;
+}
+#header h1 {
+  margin-right: auto;
+}
+#header #navi {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  list-style: none;
+}
+#header #navi li {
+  margin: 0 15px;
+  line-height: 100%;
+}
+#header #navi li a {
+  color: #000;
+  text-decoration: none;
+}
+/*PCメニュー*/
+/*SPメニュー*/
+@media screen and (max-width: 768px) {
+  /* bager menu */
+  #header #navi {
+    transition: all 0.6s;
+    overflow-y: auto;
+    padding-top: 40px;
+    width: 300px;
+    height: 100vh;
+    z-index: 200;
+    top: 0;
+    right: -320px;
+    background-color: #fff;
+    position: fixed;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  #header #navi li {
+    padding: 10px;
+  }
+  #header .nav_btn {
+    width: 44px;
+    height: 44px;
+    z-index: 300;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    position: absolute;
+  }
+  .hamburger_line {
+    transition: all 0.6s;
+    width: 34px;
+    height: 2px;
+    left: 5px;
+    background-color: #000;
+    position: absolute;
+  }
+  .hamburger_line1 {
+    top: 10px;
+  }
+  .hamburger_line2 {
+    top: 21px;
+  }
+  .hamburger_line3 {
+    top: 32px;
+  }
+  .nav_bg {
+    opacity: 0;
+    transition: all 0.6s;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: #000;
+    cursor: pointer;
+    position: fixed;
+  }
+  /* 表示された時用のCSS */
+  .nav_open #header #navi {
+    right: 0;
+  }
+  .nav_open .nav_bg {
+    opacity: 0.8;
+    visibility: visible;
+  }
+  .nav_open .hamburger_line1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .nav_open .hamburger_line2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav_open .hamburger_line3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
 }
 
 
@@ -120,7 +226,7 @@ header {
 
 // ------------------------top-----------------------------
 
-@import 'https://fonts.googleapis.com/css?family=Rubik+Mono+One';
+// @import 'https://fonts.googleapis.com/css?family=Rubik+Mono+One';
 
 .picture{
   background-image: url(tutui.jpg);
@@ -158,11 +264,7 @@ header {
   }
 }
 
-@keyframes move {
-  0% { transform: translate(-25%, 0);}
-  50% { text-shadow: 0 15px 40px rgba(black, 0.6); }
-  100% { transform: translate(33%, 0); }
-}
+
 // マイページ(users/show)--------------------------------------------------
 
 .mypage_box, .day_record_box{
@@ -488,3 +590,122 @@ footer {
   text-align: center;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+#header {
+  background: orange;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px 30px;
+}
+#header h1 {
+  margin-right: auto;
+}
+#header #navi {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  list-style: none;
+}
+#header #navi li {
+  margin: 0 15px;
+  line-height: 100%;
+}
+#header #navi li a {
+  color: #000;
+  text-decoration: none;
+}
+/*PCメニュー*/
+/*SPメニュー*/
+@media screen and (max-width: 768px) {
+  /* bager menu */
+  #header #navi {
+    transition: all 0.6s;
+    overflow-y: auto;
+    padding-top: 40px;
+    width: 300px;
+    height: 100vh;
+    z-index: 200;
+    top: 0;
+    right: -320px;
+    background-color: #fff;
+    position: fixed;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  #header #navi li {
+    padding: 10px;
+  }
+  #header .nav_btn {
+    width: 44px;
+    height: 44px;
+    z-index: 300;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    position: absolute;
+  }
+  .hamburger_line {
+    transition: all 0.6s;
+    width: 34px;
+    height: 2px;
+    left: 5px;
+    background-color: #000;
+    position: absolute;
+  }
+  .hamburger_line1 {
+    top: 10px;
+  }
+  .hamburger_line2 {
+    top: 21px;
+  }
+  .hamburger_line3 {
+    top: 32px;
+  }
+  .nav_bg {
+    opacity: 0;
+    transition: all 0.6s;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: #000;
+    cursor: pointer;
+    position: fixed;
+  }
+  /* 表示された時用のCSS */
+  .nav_open #header #navi {
+    right: 0;
+  }
+  .nav_open .nav_bg {
+    opacity: 0.8;
+    visibility: visible;
+  }
+  .nav_open .hamburger_line1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .nav_open .hamburger_line2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav_open .hamburger_line3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+}
+

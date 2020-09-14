@@ -10,39 +10,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
-  <body>
-    <header>
-  <nav>
-    <ul class="nav-list">
-      <li class="nav-list-item navbar-left">
-        <div class="logo">Share Healthy</div>
-      </li>
-      <% if user_signed_in? %>
-        <li class="nav-list-item"><%= current_user.name %></li>
-        <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <li class="nav-list-item"><%= link_to "My Page", user_path(current_user.id) %></li>
-        <li class="nav-list-item"><%= link_to "Top", root_path %></li>
-        <li class="nav-list-item"><%= link_to "記事一覧", posts_path %></li>
-
-
-      <% elsif admin_signed_in? %>
-        <li class="nav-list-item">管理者</li>
-        <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-        <li class="nav-list-item"><%= link_to "ジャンル", admins_genres_path %></li>
-      <% else %>
-        <li class="nav-list-item"></li>
-        <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
-        <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
-        <li class="nav-list-item"><%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post %></li>
-        <li class="nav-list-item"><%= link_to "Top", root_path %></li>
-        <li class="nav-list-item"><%= link_to "About", about_path %></li>
-      <% end %>
-    </ul>
-
-
-  </nav>
-</header>
-    <%= yield %>
+  <body class="nav_open">
+    <!-- <header> -->
+  <div id="header">
+    <h1>Share Healthy</h1>
+      <nav>
+        <ul id="navi">
+          <li><a href="#">top</a></li>
+          <li><a href="#">sign up</a></li>
+          <li><a href="#">sign in</a></li>
+          <li><a href="#">gest</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">Mypage</a></li>
+        </ul>
+      </nav>
+<!-- ボタン部分ここを後で追加するだけ-->
+<div class="nav_btn" id="nav_btn">
+  <span class="hamburger_line hamburger_line1"></span>
+  <span class="hamburger_line hamburger_line2"></span>
+  <span class="hamburger_line hamburger_line3"></span>
+</div>
+<div class="nav_bg" id="nav_bg"></div>
+<!-- /ボタン部分ここを後で追加するだけ-->
+</div>
+<!-- </header>
+ -->    <%= yield %>
   </body>
 <footer>
       <div class="footer_box">
