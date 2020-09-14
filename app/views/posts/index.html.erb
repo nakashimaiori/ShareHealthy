@@ -2,10 +2,12 @@
 <div class="sticky">
   <div class="genrebar">
     <div class="searchbox">
+      <div class="">
       <%= search_form_for @search do |f| %>
         <%= f.search_field :title_or_content_cont,placeholder: '検索するワードを入力' %>
-        <%= f.submit "検索", class: "btn btn-primary" %>
+        <%= f.submit "検索", class: "btn btn-primary" %><p> </p>
       <% end %>
+      </div>
 
       <div class="sortbox">
         <%= form_with model: @post, url: select_path, method: :get, local: true do |form| %>
@@ -22,7 +24,7 @@
 </div>
 
 
-<div class="container header_fix">
+<div class="header_fix">
   <div class="row">
     <div class="index_back">
       <div class="index_back_box">

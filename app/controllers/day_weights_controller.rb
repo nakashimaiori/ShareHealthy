@@ -4,10 +4,6 @@ class DayWeightsController < ApplicationController
   	@day_weights = current_user.day_weights
   end
 
-  def show
-    @user = current_user
-  	@day_weight = DayWeight.find(params[:id])
-  end
 
   def new
     @day_weight = DayWeight.new

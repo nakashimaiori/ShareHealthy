@@ -1,14 +1,18 @@
-<h1>Users#followers</h1>
-<% if @user.passive_relationships.count == 0 %>
-<p>ユーザーがいません</p>
-<% else %>
+<div class="container">
+  <div class="row header_fix">
+  <h1>フォロワー</h1>
+    <% if @user.passive_relationships.count == 0 %>
+      <p>ユーザーがいません</p>
+    <% else %>
 
-  <p><%= @user.passive_relationships.count %>人</p>
-<% @users.each do |user| %>
-  <hr>
-  <p><span>name: </span><%= link_to user.name, user_path(user.id) %></p>
+      <p><%= @user.passive_relationships.count %>人</p>
+    <% @users.each do |user| %>
+    <hr>
+      <p><span>name: </span><%= link_to user.name, user_path(user.id) %></p>
 
       <%= render "users/follow_form", user: user %>
 
-<% end %>
-<% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

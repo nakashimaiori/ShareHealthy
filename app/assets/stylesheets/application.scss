@@ -35,7 +35,7 @@
 
 * { margin: 0;
     padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -47,11 +47,14 @@ header {
   height: 70px;
   position: fixed;
   width: 100%;
-  margin:0;
-  padding:4px;
+  margin: 0px;
+  padding: 4px 4px 4px 0px;
   z-index:9999;
+  text-align: center;
 }
 
+
+// 複数適用
 .header_fix {
   padding-top: 70px;
 }
@@ -109,44 +112,21 @@ header {
   width: 120px;
   line-height: 70px;
   list-style: none;
+  text-decoration: none;
   font-size: 16px;
   margin: 0 30px;
   color: #fafafa;
 }
 
-// ----------kaminari-------------------------------
-// .pagination{
-//   margin: auto;
-//   width: 50%;
-//   display: flex;
-//   justify-content: flex-start;
-// }
-// .pagination span{
-//   background-color: rgba(158, 158, 158, 0.4);
-//   text-align: center;
-//   width: 50px;
-//   border: solid 1px #344963;
-//   color: rgb(197, 20, 159);
-//   transition: .3s;
-//   -webkit-transform: scale(1);
-//   transform: scale(1);
-// }
-// .pagination span:hover{
-//   transition: .3s;
-//   -webkit-transform: scale(1.1);
-//   transform: scale(1.1);
-// }
-// .pagination span a:hover{
-//   transition: .3s;
-//   -webkit-transform: scale(1.1);
-//   transform: scale(1.1);
-// }
-
-
-// -----------------------------------------------------
+// ------------------------top-----------------------------
 
 @import 'https://fonts.googleapis.com/css?family=Rubik+Mono+One';
 
+.picture{
+  background-image: url(tutui.jpg);
+  background-size: cover;
+  height: 800px
+}
 .top {
   height: 800px;
   width: 100%;
@@ -162,17 +142,19 @@ header {
   font-family: 'Rubik Mono One', sans-serif;
 }
 
+
 .words {
-  color: #99E1E0;
+  color: black;
+  // color: #99E1E0;
   font-size: 0;
   line-height: 1;
   span {
     font-size: 130px;
     display: inline-block;
-    animation: move 4s ease-in-out infinite;
-    &:nth-child(2) { animation-delay: 0.4s; }
-    &:nth-child(3) { animation-delay: 0.8s; }
-    &:nth-child(4) { animation-delay: 1.3s; }
+    // animation: move 4s ease-in-out infinite;
+    // &:nth-child(2) { animation-delay: 0.4s; }
+    // &:nth-child(3) { animation-delay: 0.8s; }
+    // &:nth-child(4) { animation-delay: 1.2s; }
   }
 }
 
@@ -451,4 +433,58 @@ footer {
 }
 
 .chatroom-box-title {
+}
+
+
+//------------------------------------------------------------
+
+@media screen and (max-width:1024px) {
+  header {
+    background-color: green;
+  }
+
+  .nav-list-item {
+  float: right;
+  width: 120px;
+  line-height: 70px;
+  list-style: none;
+  font-size: 15px;
+  margin: 0 16px;
+  color: #fff;
+}
+
+
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  header {
+    background-color: orange;
+  }
+
+  .nav-list-item {
+  float: right;
+  width: 95px;
+  line-height: 70px;
+  list-style: none;
+  font-size: 12px;
+  margin: 0px 0px 0px 10px;
+  color: #fff;
+  text-align: center;
+}
+}
+
+@media screen and (max-width:425px) {
+  header {
+    background-color: red;
+  }
+  .nav-list-item {
+  float: right;
+  width: 90px;
+  line-height: 70px;
+  list-style: none;
+  font-size: 9px;
+  margin-left: 2px;
+  color: #fff;
+  text-align: center;
+}
 }

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   passwords: 'users/passwords',
   registrations: 'users/registrations'
 }
+
   devise_for :admins, controllers: {
   sessions: 'admins/sessions'
 }
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
     # patch "withdraw"
     end
 
-    resources :day_weights
+    resources :day_weights, except: :show
     resources :day_records, except: :index
   end
 

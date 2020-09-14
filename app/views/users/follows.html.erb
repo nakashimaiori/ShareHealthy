@@ -1,4 +1,6 @@
-<h1>Users#follows</h1>
+<div class="container">
+  <div class="row header_fix">
+  	<h1>フォロー中</h1>
 
   <p><%= @user.active_relationships.count %>人</p>
 <% if @user.active_relationships.count == 0 %>
@@ -13,3 +15,6 @@
 
 <% end %>
 <% end %>
+
+  </div>
+</div>

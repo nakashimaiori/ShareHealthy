@@ -1,6 +1,0 @@
-<h1>消す</h1>
-
-
-<p><%= @day_weight.weight %></p>
-<%= link_to "編集", edit_user_day_weight_path(current_user.id, @day_weight.id) %>
-<%= link_to "削除", user_day_weight_path(current_user.id, @day_weight.id), method: :delete,data: {confirm: "削除しますか？"} %>

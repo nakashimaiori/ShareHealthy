@@ -7,13 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
   <body>
     <header>
   <nav>
     <ul class="nav-list">
-      <%= Date.current.strftime('%Y/%m/%d') %>
+      <li class="nav-list-item navbar-left">
+        <div class="logo">Share Healthy</div>
+      </li>
       <% if user_signed_in? %>
         <li class="nav-list-item"><%= current_user.name %></li>
         <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -40,10 +43,10 @@
   </nav>
 </header>
     <%= yield %>
-    <footer>
+  </body>
+<footer>
       <div class="footer_box">
         <div class="footer_box_title">Share Healthy</div><p>Health is wealth</p>
       </div>
     </footer>
-  </body>
 </html>
