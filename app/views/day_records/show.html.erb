@@ -1,22 +1,24 @@
 <div class="container header_fix">
-  <h1>DayRecords#show</h1>
+  <div class="row">
+    <h1><%= @day_record.start_time %></h1>
+  </div>
+  <div class="row">
+    <p>運動時間(計)　<%= @day_record.training %>分</p>
+  </div>
+
+      <p>朝食　<%= @day_record.breakfast %></p>
+
+      <p>朝食　<%= @day_record.lunch %></p>
+
+      <p>昼食　<%= @day_record.dinner %></p>
+
+      <p>夜食　<%= @day_record.snack %></p>
+
+      <p>メモ　<%= @day_record.memo %></p>
 
 
-  <%= @day_record.start_time %>
-
-  <%= @day_record.training %>
-
-
-  <%= @day_record.breakfast %>
-
-  <%= @day_record.dinner %>
-
-  <%= @day_record.snack %>
-
-  <%= @day_record.memo %>
-
-
-  <%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) %>
-  <%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete %>
+        <%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) , class: "btn btn-success"%>
+        <%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
 

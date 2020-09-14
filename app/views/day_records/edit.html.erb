@@ -1,29 +1,82 @@
-<h1>DayRecords#edit</h1>
+<div class="container">
+  <div class="day_record_box">
+    <h1 class="day_record_box_title">編集</h1>
+
+  <div class="col-xs-4 form_record_back">
+  </div>
+  <div class="col-xs-4 form_record_back">
 
 <%= form_with model: @day_record, url: user_day_record_path(current_user.id, @day_record.id), local:true do |f| %>
 
-  <%= f.label :記録日 %>
-  <%= f.date_field :start_time %>
 
-  <%= f.label :運動時間 %>
-  <%= f.number_field :training %>
-
-  <%= f.label :朝 %>
-  <%= f.text_field :breakfast %>
-
-  <%= f.label :昼 %>
-  <%= f.text_field :lunch %>
-
-  <%= f.label :夜 %>
-  <%= f.text_field :dinner %>
-
-  <%= f.label :間食 %>
-  <%= f.text_field :snack %>
-
-  <%= f.label :メモ %>
-  <%= f.text_area :memo %>
-
-  <%= f.submit '登録', class: "btn-default btn-red", url: user_day_record_path(current_user.id, @day_record.id) ,method: :patch %>
-
+  <table class="table">
+      <tr>
+        <td class="form_record_li">
+          <%= f.label :記録日 %>
+        </td>
+        <td>
+          <%= f.date_field :start_time %>
+        </td>
+      </tr>
+      <tr>
+        <td class="form_record_li">
+          <%= f.label :朝食 %>
+        </td>
+        <td>
+          <%= f.text_field :breakfast,placeholder: "りんご", class: "form-eating" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="form_record_li">
+          <%= f.label :昼食 %>
+        </td>
+        <td>
+          <%= f.text_field :lunch,placeholder: "うどん、サラダ", class: "form-eating" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="form_record_li">
+          <%= f.label :夜食 %>
+        </td>
+        <td>
+          <%= f.text_field :dinner,placeholder: "カレー、サラダ", class: "form-eating" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="form_record_li">
+          <%= f.label :間食 %>
+        </td>
+        <td>
+          <%= f.text_field :snack,placeholder: "プロテイン", class: "form-eating" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="form_record">
+          <%= f.label :運動時間 %>(分)
+        </td>
+        <td>
+          <%= f.number_field :training %>分
+        </td>
+      </tr>
+      <tr>
+        <td class="form_record_li">
+          <%= f.label :メモ %>
+        </td>
+        <td>
+          <%= f.text_area :memo %>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= f.submit '更新', class: "btn btn-success", url: user_day_record_path(current_user.id, @day_record.id) ,method: :patch %>
+        </td>
+      </tr>
+  </table>
 
 <% end %>
+
+</div>
+  <div class="col-xs-4 form_record_back">
+  </div>
+  </div>
+</div>
