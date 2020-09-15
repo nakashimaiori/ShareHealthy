@@ -13,15 +13,31 @@
   <body class="nav_open">
     <!-- <header> -->
   <div id="header">
-    <h1>Share Healthy</h1>
+    <h1 class="header_title">Share Healthy</h1>
       <nav>
         <ul id="navi">
-          <li><a href="#">top</a></li>
-          <li><a href="#">sign up</a></li>
-          <li><a href="#">sign in</a></li>
-          <li><a href="#">gest</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">Mypage</a></li>
+          <% if user_signed_in? %>
+        <li class="nav-list-item"><%= link_to "Top", root_path %></li>
+        <li class="nav-list-item"><%= link_to "My Page", user_path(current_user.id) %></li>
+        <li class="nav-list-item"><%= link_to "記事一覧", posts_path %></li>
+        <li class="nav-list-item nav-list-item-sp"><%= link_to "記事投稿", new_post_path %></li>
+
+        <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li class="nav-list-item"><%= current_user.name %></li>
+
+
+      <% elsif admin_signed_in? %>
+        <li class="nav-list-item">管理者</li>
+        <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+        <li class="nav-list-item"><%= link_to "ジャンル", admins_genres_path %></li>
+      <% else %>
+        <li class="nav-list-item"></li>
+        <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
+        <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
+        <li class="nav-list-item"><%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post %></li>
+        <li class="nav-list-item"><%= link_to "Top", root_path %></li>
+        <li class="nav-list-item"><%= link_to "About", about_path %></li>
+      <% end %>
         </ul>
       </nav>
 <!-- ボタン部分ここを後で追加するだけ-->

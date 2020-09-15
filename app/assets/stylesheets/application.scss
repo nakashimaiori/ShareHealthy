@@ -203,12 +203,16 @@ body {
   padding: 6px 40px;
 }
 
-.fa-heart {
+.heart_btn {
   font-size: 30px;
 }
 
 .like_btn {
   padding-right: 8px;
+}
+
+.like_responsive {
+  display: none;
 }
 
 // ------------------------------------------------
@@ -221,7 +225,7 @@ body {
   text-decoration: none;
   font-size: 16px;
   margin: 0 30px;
-  color: #fafafa;
+  color: brack;
 }
 
 // ------------------------top-----------------------------
@@ -509,7 +513,7 @@ footer {
 
 .index_back {
   background-color: #fff;
-  margin: 25px 0 0 160px;
+  // margin: 25px 100px 0 140px;
 }
 
 .index_back_box {
@@ -537,13 +541,21 @@ footer {
 .chatroom-box-title {
 }
 
+.index_table {
+  width: 550px;
+}
+
+.genre_responsive {
+  display: none;
+}
+
+.nav-list-item-sp {
+  display: none;
+}
 
 //------------------------------------------------------------
 
 @media screen and (max-width:1024px) {
-  header {
-    background-color: green;
-  }
 
   .nav-list-item {
   float: right;
@@ -555,53 +567,88 @@ footer {
   color: #fff;
 }
 
-
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
-  header {
-    background-color: orange;
+  #header {
+    background-color: green;
   }
 
-  .nav-list-item {
-  float: right;
-  width: 95px;
-  line-height: 70px;
-  list-style: none;
-  font-size: 12px;
-  margin: 0px 0px 0px 10px;
-  color: #fff;
-  text-align: center;
+  .like_in_table {
+  padding-left: 260px;
+  color: #808080;
 }
+
+.comments_in_table {
+  display: inline-block;
+}
+
+.index_table {
+  width: 350px;
+}
+
+.genrebar {
+  width: 250px;
+  margin-left: 20px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+
+
+.edit_btn {
+  display:none;
+}
+
+.genrebar {
+  display:none;
+}
+
+.genre_responsive {
+  margin-left: 30px;
+  display: block;
+}
+
+.fixed_btn {
+  display: none;
+}
+
+.heart_btn {
+  font-size: 15px;
+}
+.like_responsive {
+  display: block;
+}
+
+.like_side {
+  display: inline-block;
+}
+
 }
 
 @media screen and (max-width:425px) {
-  header {
+  #header {
     background-color: red;
-  }
-  .nav-list-item {
-  float: right;
-  width: 90px;
-  line-height: 70px;
-  list-style: none;
-  font-size: 9px;
-  margin-left: 2px;
-  color: #fff;
-  text-align: center;
 }
+
 }
 
 
 
 
 
+// ヘッダー--------------------------------------------------
 
+.header_title {
+  font-size: 17px;
+}
 
-
-
-
-
-
+ nav {
+  margin-top: 10px;
+ }
 
 #header {
   background: orange;
@@ -629,7 +676,8 @@ footer {
 }
 /*PCメニュー*/
 /*SPメニュー*/
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 950px) {
   /* bager menu */
   #header #navi {
     transition: all 0.6s;
@@ -707,5 +755,9 @@ footer {
     transform: rotate(-45deg);
     top: 20px;
   }
+
+  .nav-list-item-sp {
+  display: block;
 }
+ }
 
