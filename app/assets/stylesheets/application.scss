@@ -214,6 +214,15 @@ body {
 .like_responsive {
   display: none;
 }
+// post/fovorite
+
+.fovorite_box {
+  padding: 80px;
+  margin-bottom: 50px;
+ }
+.fovorite_title {
+  margin-bottom: 65px;
+}
 
 // ------------------------------------------------
 
@@ -256,7 +265,8 @@ body {
 .words {
   color: black;
   // color: #99E1E0;
-  font-size: 0;
+  // ↓0だったけど変えた。
+  font-size: 150px;
   line-height: 1;
   span {
     font-size: 130px;
@@ -634,6 +644,7 @@ footer {
     background-color: red;
 }
 
+
 }
 
 
@@ -759,5 +770,7 @@ footer {
   .nav-list-item-sp {
   display: block;
 }
+
  }
+
 

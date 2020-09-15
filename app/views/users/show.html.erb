@@ -1,12 +1,14 @@
 <div class="container">
-<%= link_to new_post_path do %>
-  <i class="fas fa-edit edit_btn"></i>
-<% end %>
+  <%= link_to new_post_path do %>
+    <i class="fas fa-edit edit_btn"></i>
+  <% end %>
   <div class="mypage_box">
+
     <div class="detail_box_in">
 
   <div class="row">
-    <div class="col-xs-6">
+
+    <div class="col-xs-6 try">
 
     <div><%= attachment_image_tag @user, :profile_image, :fill, 250, 250, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'250x250' %>
     </div>
@@ -114,7 +116,7 @@
 
 
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-6 try">
       <div class="users_post_box">
         <div class="">
         <ul class="new">全ての投稿
