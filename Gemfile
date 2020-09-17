@@ -74,4 +74,7 @@ gem 'ransack'
 gem 'simple_calendar', '~> 2.0'
 gem 'wysiwyg-rails'
 gem 'chartkick'
+group :production do
+  gem 'mysql2'
+end
 

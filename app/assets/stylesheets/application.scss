@@ -339,12 +339,23 @@ body {
   margin-left: 50px;
 }
 
+.favorite_post {
+  display: inline-block;
+  font-size: 15px;
+}
+
 .edit_btn {
   font-size: 50px;
   position: fixed;
   bottom: 40px;
   right: 20px;
   padding: 6px 40px;
+}
+
+.chartkick {
+  width: 500px;
+  height: 400px;
+  color: #ff69b4;
 }
 // footer------------------------------------------------------------
 
@@ -576,6 +587,7 @@ footer {
   margin: 0 16px;
   color: #fff;
 }
+
 
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */

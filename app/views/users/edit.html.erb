@@ -1,11 +1,11 @@
-<h1>会員情報編集・入力</h1>
+<div class="container">
+  <h2>会員情報編集・入力</h2>
 
 
 
 
   <%= form_for(@user, url:user_path(current_user.id)) do |f| %>
 
-    <p>Image</p>
 
       <%= attachment_image_tag @user, :profile_image, :fill, 150,150, fallback: "no_image.jpg", size: "200x200" %>
 
@@ -53,3 +53,5 @@
   <% end %>
 
   <%= link_to "退会画面", user_exit_path %>
+
+</div>
