@@ -248,7 +248,7 @@ body {
 // @import 'https://fonts.googleapis.com/css?family=Rubik+Mono+One';
 
 .picture{
-  background-image: image-url(tutui.jpg);
+  background-image: image-url("tutui.jpg");
   background-size: cover;
   height: 800px
 }
@@ -261,7 +261,7 @@ body {
   align-items: center;
   flex-direction: column;
   // background: #ffffff;
-  background-image: image-url(tutui.jpg);
+  background-image: image-url("tutui.jpg");
   background-size: cover;
   overflow: hidden;
   font-family: 'Rubik Mono One', sans-serif;
