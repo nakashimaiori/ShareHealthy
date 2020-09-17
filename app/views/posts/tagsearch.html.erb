@@ -1,17 +1,28 @@
-<h2>投稿一覧</h2>
+<div class="container">
+  <div class="row header_fix">
+  	<div class="index_back">
+  	  <div class="index_back_box">
 
- <% @tag_list.each do |list| %>
-  <span>
-    <%= link_to list.tag_name, tag_posts_path(post_tag_id: list.id) %>
-    <%= "(#{list.posts.count})" %>
-  </span>
-<% end %>
-<br>
+          <h2>投稿一覧</h2>
+		<%= "タグが" %>
+		<strong><%= "#{@tag.tag_name}" %></strong>
+		<%= "の投稿一覧" %>
 
-<%= "タグが" %>
-<strong><%= "#{@tag.tag_name}" %></strong>
-<%= "の投稿一覧" %>
-<br>
-<% @posts.each do |post| %>
-  <p><%= link_to post.title, post_path(post.id) %></p>
-<% end %>
+		  <table>
+		    <% @posts.each do |post| %>
+		      <tr>
+		        <td><%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'20x20' %>
+		         <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
+		        <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
+		              <h3><%= link_to post.title, post_path(post.id) %></h3>
+		              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
+		          </td>
+		      </tr>
+		    <% end %>
+		  </table>
+		</div>
+
+      </div>
+    </div>
+  </div>
+</div>

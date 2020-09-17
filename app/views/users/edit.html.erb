@@ -1,6 +1,8 @@
 <div class="container">
-  <h2>会員情報編集・入力</h2>
+  <div class="row">
+    <div class="profile-edit">
 
+  <h2>会員情報編集・入力</h2>
 
 
 
@@ -8,18 +10,15 @@
 
 
       <%= attachment_image_tag @user, :profile_image, :fill, 150,150, fallback: "no_image.jpg", size: "200x200" %>
-
       <%= f.attachment_field :profile_image, class: 'image-prev' %>
+      <% if @user.email == "guest@.com" %>
+        <p>ゲストユーザーの名前変更はできません</p>
+      <% else %>
 
+        <p>Name</p>
 
-    <% if @user.email == "guest@.com" %>
-      <p>ゲストユーザーの名前変更はできません</p>
-    <% else %>
-
-      <p>Name</p>
-      <%= f.text_field :name %>
-    <% end %>
-
+         <%= f.text_field :name %>
+      <% end %>
 
       <%= f.radio_button :sex, :男 %>
       <%= f.label :男, class: "" %>
@@ -49,9 +48,13 @@
     <p>introduction</p>
       <%= f.text_area :introduction %>
 
-    <%= f.submit "Update User" %>
+    <%= f.submit "Update", class: "btn btn-success" %>
   <% end %>
 
-  <%= link_to "退会画面", user_exit_path %>
+  <%= link_to "退会画面", user_exit_path, class: "btn btn-danger" %>
 
+</table>
+
+    </div>
+  </div>
 </div>

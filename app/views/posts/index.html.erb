@@ -1,8 +1,7 @@
 <div class="container">
 
 
-<div class="sticky">
-  <div class="genrebar">
+
     <div class="searchbox">
       <div class="">
       <%= search_form_for @search do |f| %>
@@ -22,35 +21,14 @@
         <% end %>
       </div>
     </div>
-  </div>
-</div>
 
 
-<div class="header_fix">
+<div class="">
   <div class="row">
 
-    <div class="genre_responsive">
-      <%= search_form_for @search do |f| %>
-      <%= f.search_field :title_or_content_cont,placeholder: '検索するワードを入力' %>
-      <%= f.submit "検索", class: "btn btn-primary" %><p> </p>
-    <% end %>
-
-
-      <div class="sortbox">
-        <%= form_with model: @post, url: select_path, method: :get, local: true do |form| %>
-          <%= form.select :keyword, [ ['投稿が新しい順', 'new'],
-                                    ['投稿が古い順', 'old'],
-                                    ['いいねが多い順', 'likes'],
-                                    ['いいねが少ない順', 'dislikes'],
-                                  ], { :include_blank => "選択してください ▼" }, :required => true  %>
-           <%= form.submit '並び替え' %>
-        <% end %>
-
-  </div>
-</div>
     <div class="index_back">
       <div class="index_back_box">
-        <div class="col-xs-offset-3">
+        <div class="col-xs-offset-2">
 
           <%= render "genre_bar", genres: @genres %>
 
@@ -60,13 +38,7 @@
           <h4 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h4>
 
           <table class="table index_table">
-            <thead>
-              <tr class="d-flex">
-                <th class="col-xs-6">Size</th>
-                <th class="col-xs-6">Bust</th>
-              </tr>
-            </thead>
-            <tbody>
+
 
             <% @posts.each do |post| %>
             <tr>
@@ -80,7 +52,6 @@
             </tr>
             <% end %>
           </table>
-        </tbody>
 
 
         <% else %>

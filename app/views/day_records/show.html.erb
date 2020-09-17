@@ -1,24 +1,69 @@
-<div class="container header_fix">
+<div class="container">
   <div class="row">
-    <h1><%= @day_record.start_time %></h1>
-  </div>
-  <div class="row">
-    <p>運動時間(計)　<%= @day_record.training %>分</p>
-  </div>
-
-      <p>朝食　<%= @day_record.breakfast %></p>
-
-      <p>朝食　<%= @day_record.lunch %></p>
-
-      <p>昼食　<%= @day_record.dinner %></p>
-
-      <p>夜食　<%= @day_record.snack %></p>
-
-      <p>メモ　<%= @day_record.memo %></p>
-
-
-        <%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) , class: "btn btn-success"%>
-        <%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete, class: "btn btn-danger" %>
+      <div class="col-xs-1 col-md-3"></div>
+      <div class="col-xs-10 col-md-6">
+        <div class="dayrecord-box">
+      <h1><%= @day_record.start_time %></h1>
+          <table>
+            <tr>
+              <td>
+                運動時間(計)
+              </td>
+              <td>
+                <%= @day_record.training %>分
+              </td>
+            </tr>
+            <tr>
+              <td>
+                朝食
+              </td>
+              <td>
+                <%= @day_record.breakfast %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                朝食
+              </td>
+              <td>
+                <%= @day_record.lunch %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                昼食
+              </td>
+              <td>
+                <%= @day_record.dinner %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                夜食
+              </td>
+              <td>
+                <%= @day_record.snack %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                メモ
+              </td>
+              <td>
+                <%= @day_record.memo %>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+              <%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) , class: "btn btn-success"%>
+              <%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        </table>
+        </div>
+      </div>
+      <div class="col-xs-1 col-md-3"></div>
   </div>
 </div>
 

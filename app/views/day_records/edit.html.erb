@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="day_record_box">
-    <h1 class="day_record_box_title">編集</h1>
+  <div class="row" >
 
-  <div class="col-xs-4 form_record_back">
+  <div class="col-xs-1 col-md-3 form_record_back">
   </div>
-  <div class="col-xs-4 form_record_back">
+  <div class="col-xs-10 col-md-6 form_record_back ">
+    <h2>編集</h2>
 
 <%= form_with model: @day_record, url: user_day_record_path(current_user.id, @day_record.id), local:true do |f| %>
 
@@ -76,7 +76,7 @@
 <% end %>
 
 </div>
-  <div class="col-xs-4 form_record_back">
+  <div class="col-xs-1 col-md-3 form_record_back">
   </div>
-  </div>
+</div>
 </div>

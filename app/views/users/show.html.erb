@@ -8,7 +8,7 @@
 
   <div class="row">
 
-    <div class="col-xs-6 try">
+    <div class="try col-md-6">
 
     <div><%= attachment_image_tag @user, :profile_image, :fill, 250, 250, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'250x250' %>
     </div>
@@ -116,7 +116,7 @@
 
 
     </div>
-    <div class="col-xs-6 try">
+    <div class="try col-md-6">
       <div class="users_post_box">
         <div class="">
         <ul class="new">全ての投稿
@@ -144,9 +144,12 @@
     </div>
   </div>
 
+
+
+
   <% if user_signed_in? && current_user.id == @user.id %>
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-md-6">
 
 <%= month_calendar events: @day_weights do |date, weights| %>
   <%= date.day %>
@@ -192,13 +195,13 @@
 
     </div>
 
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <div class="chart_box">
         <div class="record_btn">
           <%= link_to "今日の食事・運動を記録", new_user_day_record_path(@user.id), class: 'btn btn-success' %>
           <%= link_to "今日の体重を記録", new_user_day_weight_path(@user.id), class: 'btn btn-warning' %>
         </div>
-        <%= line_chart @weights.chart_date,xtitle: "日付", ytitle: "体重(kg)", class: 'chartkick' %>
+        <%= line_chart @weights.chart_date,xtitle: "日付", ytitle: "体重(kg)", class: 'chartkick', colors: ["#ff69b4", "#ff69b4"] %>
       </div>
     </div>
   </div>

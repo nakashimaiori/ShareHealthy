@@ -74,8 +74,8 @@ class PostsController < ApplicationController
     @tag_list = Tag.all
     @posts = Post.where(genre_id: params[:id]).order(id: "DESC")
     @genres = Genre.all
-    selection = params[:keyword]
-    @select_posts = Post.sort(selection)
+    @selection = params[:keyword]
+    @select_posts = Post.sort(@selection)
   end
 
   def tagsearch

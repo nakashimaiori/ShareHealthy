@@ -1,13 +1,13 @@
 <div class="container">
   <div class="day_record_box">
-    <h2 class="day_record_box_title">食事・運動を記録</h2>
 
-  <div class="col-xs-2 form_record_back">
+  <div class="col-xs-1 col-md-3 form_record_back">
   </div>
-  <div class="col-xs-8 form_record_back">
+  <div class="col-xs-10 col-md-6 form_record_back">
+    <h2 class="record-box">食事・運動を記録</h2>
   <%= form_with model: @day_record, url: user_day_records_path, local:true do |f| %>
 
-    <table class="table table-responsive">
+    <table class="table">
       <tr>
         <td class="form_record_li">
           <%= f.label :記録日 %>
@@ -73,7 +73,7 @@
 
   <% end %>
   </div>
-  <div class="col-xs-2 form_record_back">
+  <div class="col-xs-1 col-md-3 form_record_back">
   </div>
   </div>
 </div>

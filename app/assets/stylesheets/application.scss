@@ -224,6 +224,12 @@ body {
   margin-bottom: 65px;
 }
 
+.chartkick {
+  width: 500px;
+  height: 400px;
+}
+
+
 // ------------------------------------------------
 
 .nav-list-item {
@@ -242,7 +248,7 @@ body {
 // @import 'https://fonts.googleapis.com/css?family=Rubik+Mono+One';
 
 .picture{
-  background-image: url(tutui.jpg);
+  background-image: image-url(tutui.jpg);
   background-size: cover;
   height: 800px
 }
@@ -255,7 +261,7 @@ body {
   align-items: center;
   flex-direction: column;
   // background: #ffffff;
-  background-image: url(tutui.jpg);
+  background-image: image-url(tutui.jpg);
   background-size: cover;
   overflow: hidden;
   font-family: 'Rubik Mono One', sans-serif;
@@ -281,7 +287,7 @@ body {
 
 // マイページ(users/show)--------------------------------------------------
 
-.mypage_box, .day_record_box{
+.mypage_box{
   margin: 120px 0;
   background-color: #fff;
 }
@@ -357,6 +363,18 @@ body {
   height: 400px;
   color: #ff69b4;
 }
+
+.profile-edit {
+  text-align: center;
+}
+
+// 記録ページ----------------------------------------------------------
+
+.dayrecord-box {
+  background-color: #fff;
+  margin: 45px;
+  padding: 20px;
+}
 // footer------------------------------------------------------------
 
 footer {
@@ -382,7 +400,7 @@ footer {
 .form_record_back {
   background-color: #fff;
   height: 550px;
-  padding-top: 30px;
+  margin: 50px 0;
 }
 
 .day_weight {
@@ -390,6 +408,10 @@ footer {
   height: 300px;
   margin: 120px 70px 70px 70px;
   padding: 30px 0 0 50px;
+}
+
+.record-box {
+  margin-bottom: 20px;
 }
 
 
@@ -541,6 +563,10 @@ footer {
    padding-top: 50px;
 }
 
+.tag_box {
+  padding: auto;
+}
+
 
 // chatroom
 .mychat {
@@ -573,6 +599,11 @@ footer {
 .nav-list-item-sp {
   display: none;
 }
+
+.header-top {
+  padding-left: 30px;
+}
+
 
 //------------------------------------------------------------
 
@@ -655,7 +686,13 @@ footer {
   #header {
     background-color: red;
 }
-
+.index_table {
+  width: 300px;
+}
+.like_in_table {
+  padding-left: 150px;
+  color: #808080;
+}
 
 }
 
