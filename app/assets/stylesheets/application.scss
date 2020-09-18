@@ -559,12 +559,14 @@ footer {
 
 // 投稿一覧---------------------------------------------------
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 200px;
-}
 
+.searchbox {
+  height: 95px;
+  padding-top: 10px;
+}
+.searchbox_in {
+
+}
 .genrebar {
   width: 250px;
   margin-left: 20px;
@@ -643,6 +645,13 @@ footer {
 
 .header-top {
   padding-left: 30px;
+}
+
+
+// フォロー ---------------------------------------------------
+
+.follower-title {
+  font-size: 20px;
 }
 
 

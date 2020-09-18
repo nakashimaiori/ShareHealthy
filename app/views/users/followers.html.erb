@@ -1,18 +1,32 @@
 <div class="container">
   <div class="row header_fix">
-  <h1>フォロワー</h1>
+  <h1 class="follower-title">フォロワー</h1>
     <% if @user.passive_relationships.count == 0 %>
       <p>ユーザーがいません</p>
     <% else %>
 
-      <p><%= @user.passive_relationships.count %>人</p>
+  <table class="table">
     <% @users.each do |user| %>
-    <hr>
-      <p><span>name: </span><%= link_to user.name, user_path(user.id) %></p>
-
+    <tr>
+      <td class="col-xs-2">
+        <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'40x40' %>
+      </td>
+      <td class="col-xs-2">
+      <p><%= link_to user.name, user_path(user.id) %></p>
+      </td>
+      <td class="col-xs-6">
+        <% if user.introduction %>
+          <%= user.introduction %>
+        <% else %>
+          ーーーーーー
+        <% end %>
+      </td>
+      <td class="col-xs-2">
       <%= render "users/follow_form", user: user %>
-
+      </td>
+    </tr>
     <% end %>
+  </table>
     <% end %>
   </div>
 </div>

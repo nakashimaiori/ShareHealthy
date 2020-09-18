@@ -1,20 +1,30 @@
 <div class="container">
   <div class="row header_fix">
-  	<h1>フォロー中</h1>
+  	<h1 class="follower-title">フォロー中</h1>
 
-  <p><%= @user.active_relationships.count %>人</p>
 <% if @user.active_relationships.count == 0 %>
 <p>ユーザーがいません</p>
 <% else %>
 
-<% @users.each do |user| %>
-  <hr>
-    <p><span>name: </span><%= link_to user.name, user_path(user.id) %></p>
-
-    <%= render "users/follow_form", user: user %>
-
-<% end %>
-<% end %>
+<table class="table">
+    <% @users.each do |user| %>
+    <tr>
+      <td class="col-xs-2">
+        <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'40x40' %>
+      </td>
+      <td class="col-xs-2">
+      <p><%= link_to user.name, user_path(user.id) %></p>
+      </td>
+      <td class="col-xs-6">
+          <%= user.introduction %>
+      </td>
+      <td class="col-xs-2">
+      <%= render "users/follow_form", user: user %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+    <% end %>
 
   </div>
 </div>
