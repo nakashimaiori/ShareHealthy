@@ -57,7 +57,7 @@ body {
   background: #fff;
   display: flex;
   flex-flow: row wrap;
-  padding: 20px 30px;
+  padding: 15px 20px;
 }
 #header h1 {
   margin-right: auto;
@@ -164,13 +164,26 @@ body {
   height: 300px;
 }
 .about_title {
-  font-size: 77px;
+  font-size: 60px;
   text-align: center;
   margin-top: 112px;
 }
 
 .about_content {
   margin-top: 100px;
+}
+
+@keyframes typing { from { width: 0; } }
+@keyframes caret { 50% { border-color: transparent; } }
+
+.about-text {
+font-family: monospace;
+width: 11ch;
+border-right: .08em solid;
+overflow: hidden;
+font-size: 4em;
+white-space: nowrap;
+animation: typing 9s steps(11, end);
 }
 // 複数適用
 .header_fix {
@@ -211,12 +224,12 @@ body {
 // 投稿詳細ページ(posts/show)
 
 .detail_box {
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: #ffffff
 }
 
 .detail_box_in {
-  padding: 50px;
+  padding: 30px;
 }
 
 .detail_box_user {
@@ -329,7 +342,7 @@ body {
 // マイページ(users/show)--------------------------------------------------
 
 .mypage_box{
-  margin: 120px 0;
+  margin: 100px 0;
   background-color: #fff;
 }
 
@@ -405,8 +418,19 @@ body {
   color: #ff69b4;
 }
 
-.profile-edit {
-  text-align: center;
+.profile-weight {
+  padding-top: 85px;
+}
+
+.update-btn {
+  text-align: right;
+  padding-right: 90px;
+}
+
+@media screen and (max-width:992px) {
+  .profile-weight {
+    display: none;
+  }
 }
 
 // 記録ページ----------------------------------------------------------
@@ -564,9 +588,7 @@ footer {
   height: 95px;
   padding-top: 10px;
 }
-.searchbox_in {
 
-}
 .genrebar {
   width: 250px;
   margin-left: 20px;
@@ -604,6 +626,7 @@ footer {
 
 .index_back_box {
    padding-top: 50px;
+   margin-bottom: 90px;
 }
 
 .tag_box {
