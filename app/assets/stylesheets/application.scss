@@ -158,11 +158,52 @@ body {
     top: 20px;
   }
 }
+// about-----------------------------------
 
+.about {
+  height: 300px;
+}
+.about_title {
+  font-size: 77px;
+  text-align: center;
+  margin-top: 112px;
+}
 
+.about_content {
+  margin-top: 100px;
+}
 // 複数適用
 .header_fix {
   padding-top: 70px;
+}
+
+// kaminari -----------------------------
+
+.pagination{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.pagination span{
+  background-color: #fff;
+  text-align: center;
+  width: 50px;
+  border: solid 1px #CCCCCC;
+  color: #0066FF;
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.pagination span:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pagination span a:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 
