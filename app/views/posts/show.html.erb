@@ -18,7 +18,22 @@
 
 
 
+
+
+
       <%= form_with model: [@post, @post_comment] do |f| %>
+
+        <% if @post_comment.errors.any? %>
+          <div id="error_explanation">
+
+          <ul>
+            <% @post_comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+          </ul>
+          </div>
+        <% end %>
+
         <div class="row">
           <div class="col-sm-9">
             <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに入力してください" %>

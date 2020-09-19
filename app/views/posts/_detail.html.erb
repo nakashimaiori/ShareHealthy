@@ -22,6 +22,7 @@
   </div>
   </div>
 
+
     <% if user_signed_in? && current_user.id == post.user_id %>
       <div class="">
         <%= link_to "記事編集", edit_post_path(post.id),class: 'btn btn-success' %>
@@ -31,9 +32,6 @@
   </div>
   </div>
 
-<button class="fixed_btn"><p class="like_btn">いいね</p>
-  <div id="favorite_heart_<%= post.id %>">
-    <%= render 'favorites/like', post: post %>
-  </div></i></button>
+
 
   <!-- <p><i class="fas fa-comment"></i>コメント<%= post.post_comments.count %>件</p> -->

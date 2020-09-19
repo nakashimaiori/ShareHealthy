@@ -257,17 +257,11 @@ animation: typing 9s steps(11, end);
   padding: 6px 40px;
 }
 
-.heart_btn {
-  font-size: 30px;
-}
 
 .like_btn {
   padding-right: 8px;
 }
 
-.like_responsive {
-  display: none;
-}
 // post/fovorite
 
 .fovorite_box {
@@ -702,6 +696,10 @@ footer {
   padding-left: 30px;
 }
 
+.like_side {
+  display: inline-block;
+}
+
 
 // フォロー ---------------------------------------------------
 
@@ -777,13 +775,7 @@ footer {
 .heart_btn {
   font-size: 15px;
 }
-.like_responsive {
-  display: block;
-}
 
-.like_side {
-  display: inline-block;
-}
 
 
 }

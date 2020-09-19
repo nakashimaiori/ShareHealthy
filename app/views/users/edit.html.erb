@@ -10,9 +10,10 @@
 
   <%= form_for(@user, url:user_path(current_user.id)) do |f| %>
 
-
+      <div class="">
       <%= attachment_image_tag @user, :profile_image, :fill, 120,120, fallback: "no_image.jpg", size: "120x120" %>
       <%= f.attachment_field :profile_image, class: 'image-prev' %>
+    </div>
 
 
       <% if @user.email == "guest@.com" %>
