@@ -111,8 +111,8 @@
     </table>
       <p><%= @user.introduction %></p>
     <% end %>
-      <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-cog"></i><%= link_to "Edit Profile", edit_user_path(@user.id)%></button>
     </div>
+      <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-cog"></i> <%= link_to "　　　　　Edit Profile　　　　　", edit_user_path(@user.id),class: "profile-edit-btn"%></button>
 
 
     </div>
@@ -171,17 +171,17 @@
       <% if date.year == day_record.start_time.year %>
         <% if day_record.breakfast.present? || day_record.lunch.present? || day_record.dinner.present? || day_record.snack.present? %>
           <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
-            <i class="fas fa-apple-alt"></i>
+            <i class="fas fa-apple-alt apple"></i>
             <% end %>
         <% end %>
           <% if day_record.memo.present? %>
             <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
-              <i class="fas fa-pencil-alt"></i>
+              <i class="fas fa-pencil-alt pen"></i>
             <% end %>
           <% end %>
           <% if day_record.training != 0 %>
             <%= link_to user_day_record_path(current_user.id, day_record.id) do %>
-              <i class="fas fa-bicycle"></i>
+              <i class="fas fa-bicycle bike"></i>
             <% end %>
           <% else %>
           <% end %>

@@ -229,7 +229,7 @@ animation: typing 9s steps(11, end);
 }
 
 .detail_box_in {
-  padding: 30px;
+  padding: 50px 50px 50px 80px;
 }
 
 .detail_box_user {
@@ -341,10 +341,11 @@ animation: typing 9s steps(11, end);
 }
 
 .profile_box {
-  margin: 30px 0 0 70px;
+  margin: 30px 0 0 30px;
 }
 .profile_name {
-  font-size: 40px
+  font-size: 40px;
+  margin: 20px 0 20px 0;
 }
 
 .btn_table {
@@ -406,6 +407,10 @@ animation: typing 9s steps(11, end);
   padding: 6px 40px;
 }
 
+.profile-edit-btn {
+  color: #fff;
+}
+
 .chartkick {
   width: 500px;
   height: 400px;
@@ -419,6 +424,18 @@ animation: typing 9s steps(11, end);
 .update-btn {
   text-align: right;
   padding-right: 90px;
+}
+
+.apple {
+  color: red;
+}
+
+.pen {
+ color: #009966;
+}
+
+.bike {
+color: #3366CC;
 }
 
 @media screen and (max-width:992px) {
