@@ -6,18 +6,40 @@
      <div class="chat-box">
  	     <% if m.user == current_user %>
  	        <div class="mychat">
- 	           <div class="chat-face">
-              </div>
-              <div class="chat-hukidashi"><%= attachment_image_tag m.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'50x50' %><%= m.user.name %>：<table><tr><td><%= m.created_at.strftime('%Y/%m/%d %H:%M') %></td><td><strong><%= m.message %></strong></td></tr></table>
+
+              <div class="chat-hukidashi">
+
+               <table ~~~ style="table-layout:fixed;width:100%;">
+                 <colgroup>
+                    <col style="width:20%;">
+                    <col style="width:70%;">
+                    <col style="width:10%;">
+
+                  </colgroup>
+                  <tr>
+                     <td class="timestamp"><%= m.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+                     <td ~~~ style="word-wrap:break-word;"><strong class="myhukidasi"><%= m.message %></strong></td>
+                     <td></td>
+                  </tr>
+               </table>
               </div>
            </div>
 
   <% else %>
-   <div class="chat-face">
-   </div>
-   <div class="chat-hukidashi"><%= attachment_image_tag m.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'50x50' %><%= m.user.name %>：<table><tr><td><%= m.created_at.strftime('%Y/%m/%d %H:%M') %></td><td><strong><%= m.message %></strong></td></tr></table>
-   </div>
+     <div class="chat-hukidashi"><%= attachment_image_tag m.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'50x50' %>　<%= m.user.name %>
+      <table ~~~ style="table-layout:fixed;width:50%;">
+        <colgroup>
+            <col style="width:15%;">
+            <col style="width:75%;">
+        </colgroup>
+         <tr>
+            <td class="timestamp"><%= m.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td><strong class="hukidasi"><%= m.message %></strong></td>
+         </tr>
+      </table>
+     </div>
   <% end %>
+
     </div>
    </div>
  <% end %>

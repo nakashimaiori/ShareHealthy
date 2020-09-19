@@ -1,9 +1,10 @@
-<h1>退会ページ</h1>
+<div class="container">
+  <div class="">
+	<h1>退会ページ</h1>
+
+      <p>退会すると今までのデータを復元することが出来ません。</p>
 
 
-
-<%#= link_to "退会する", withdraw_user_path(@user.id), method: :patch, data: {confirm: "本当に退会しますか？"} %>
-
-<h3>Cancel my account</h3>
-
-<p> <%= button_to "退会する",  user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
+	<p> <%= button_to "退会する",  user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+  </div>
+</div>

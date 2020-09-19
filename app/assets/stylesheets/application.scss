@@ -641,9 +641,6 @@ footer {
 .message_form {
   margin-top: 30px;
 }
-.chat-face {
-  height: 10px;
-}
 
 .chatroom-box {
   background-color: #fff;
@@ -657,6 +654,36 @@ footer {
 .chat-box {
   padding-left: 60px;
 }
+
+.posts {
+  padding: 50px;
+}
+
+.chat-hukidashi {
+  margin-top: 10px;
+}
+
+.myhukidasi {
+  background-color: #00CC33;
+  padding: 0.2em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+
+.hukidasi {
+  background-color: #CCCCCC;
+  padding: 0.2em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+
+.timestamp {
+  color: #666666;
+  font-size: 9px;
+}
+
+.user-show-chat {
+  margin-left: 10px;
+}
+
 
 // ---------------------------------------------------------
 .index_table {
@@ -702,7 +729,7 @@ footer {
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
   #header {
-    background-color: green;
+    background-color: #8EB8FF;
   }
 
   .like_in_table {
@@ -758,6 +785,7 @@ footer {
   display: inline-block;
 }
 
+
 }
 
 @media screen and (max-width:425px) {
@@ -775,9 +803,6 @@ footer {
 }
 
 
-
-
-
 // ヘッダー--------------------------------------------------
 
 .header_title {
@@ -789,7 +814,7 @@ footer {
  }
 
 #header {
-  background: orange;
+  background: #8EB8FF;
   display: flex;
   flex-flow: row wrap;
   padding: 20px 30px;

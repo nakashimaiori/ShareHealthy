@@ -29,10 +29,11 @@
           <div class="message_form">
             <%= f.text_field :message, placeholder: "メッセージを入力" , size: 60, class:"form-text-field" %>
             <%= f.hidden_field :room_id, value: @room.id %>
-            <%= f.submit "投稿",class: 'form-submit'%>
+            <%= f.submit "投稿",class: 'form-submit btn btn-priary'%>
           </div>
         <% end %>
       </div>
+
     </div>
   </div>
 
