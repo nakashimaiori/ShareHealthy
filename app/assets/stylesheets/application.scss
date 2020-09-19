@@ -636,7 +636,7 @@ footer {
 
 // chatroom
 .mychat {
-  padding-left: 400px;
+  padding-left: 600px;
 }
 .message_form {
   margin-top: 30px;
@@ -647,13 +647,18 @@ footer {
 
 .chatroom-box {
   background-color: #fff;
-  padding: 50px 0 50px 300px;
-  margin: 50px 0 50px 0;
+  margin-bottom: 85px;
 }
 
 .chatroom-box-title {
+  padding: 30px 0 0 60px;
 }
 
+.chat-box {
+  padding-left: 60px;
+}
+
+// ---------------------------------------------------------
 .index_table {
   width: 550px;
 }

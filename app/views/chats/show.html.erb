@@ -2,39 +2,39 @@
   <div class="row">
 
 
-  <div class="chatroom-box">
-    <div class="chatroom-box-title">
-    <h1 class="rooms-title">Chat Room</h1>
-    <div class="user-name">
+    <div class="chatroom-box">
+      <div class="chatroom-box-title">
+        <h1 class="rooms-title">Chat Room</h1>
+        <div class="user-name">
 
-<% @entries.each do |e| %>
-  <strong>
-    <a class="rooms-user-link" href="/users/<%= e.user.id %>">
-      <%= e.user.name %>さん<br>
-    </a>
-  </strong>
-<% end %>
+          <% @entries.each do |e| %>
+            <strong>
+              <a class="rooms-user-link" href="/users/<%= e.user.id %>">
+                <%= e.user.name %>さん<br>
+              </a>
+            </strong>
+          <% end %>
+        </div>
+      </div>
 
-  </div>
-</div>
 
-<div class="chats">
+    <div class="chats">
 
-  <div id="allchat" class="chat">
-    <%= render 'chats/show', messages: @messages %>
-  </div>
+      <div id="allchat" class="chat">
+        <%= render 'chats/show', messages: @messages %>
+      </div>
 
-  <div class="posts">
-  	<%= form_with(model:@message, remote: true) do |f| %>
-    <div class="message_form">
-    <%= f.text_field :message, placeholder: "メッセージを入力" , size: 60, class:"form-text-field" %>
-    <%= f.hidden_field :room_id, value: @room.id %>
-        <%= f.submit "投稿",class: 'form-submit'%>
+      <div class="posts">
+  	    <%= form_with(model:@message, remote: true) do |f| %>
+          <div class="message_form">
+            <%= f.text_field :message, placeholder: "メッセージを入力" , size: 60, class:"form-text-field" %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.submit "投稿",class: 'form-submit'%>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
   </div>
-</div>
-</div>
 
   </div>
 </div>
