@@ -1,6 +1,15 @@
 <div class="container">
   <div class="day_weight">
   <h2>体重記録</h2>
+    <% if @day_weight.errors.any? %>
+  <div>
+    <ul style="color: red">
+      <% @day_weight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
   <%= form_with model: @day_weight, url: user_day_weights_path, local:true do |f| %>
 

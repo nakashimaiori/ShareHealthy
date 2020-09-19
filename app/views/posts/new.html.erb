@@ -1,6 +1,16 @@
 <div class ="container header_fix">
 <div class="d-flex align-items-center">
   <h1>記事投稿</h1>
+
+  <% if @post.errors.any? %>
+  <div>
+    <ul style="color: red">
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
   <div class="ml-auto posts_button">
       <a class="btn btn-outline-info" href="/posts">投稿一覧</a>
   </div>

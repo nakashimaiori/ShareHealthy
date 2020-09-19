@@ -1,6 +1,15 @@
 <div class ="container header_fix">
 <div class="d-flex align-items-center">
   <h1>記事編集</h1>
+    <% if @post.errors.any? %>
+  <div>
+    <ul style="color: red">
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
   <div class="ml-auto posts_button">
       <a class="btn btn-outline-info" href="/posts">投稿一覧</a>
   </div>
@@ -10,7 +19,7 @@
 
     <div class="form-group">
     <%= f.label :genre, '投稿カテゴリー' %>
-  <%= collection_select(:genre, :name, @genres, :id, :name) %><br>
+  <%= collection_select(:genre, :name, Genre.all, :id, :name) %><br>
   <small id="title-tip" class="form-text text-muted">
             カテゴリーを選択してください。
         </small>

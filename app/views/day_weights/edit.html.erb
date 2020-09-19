@@ -1,7 +1,17 @@
 <div class="container">
   <div class="day_weight">
 
-<h1>記録編集</h1>
+<h3>記録編集</h3>
+
+  <% if @day_weight.errors.any? %>
+  <div>
+    <ul style="color: red">
+      <% @day_weight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 <%= form_with model: @day_weight, url: user_day_weight_path(current_user.id, @day_weight.id), local:true do |f| %>

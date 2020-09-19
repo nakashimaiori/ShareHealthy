@@ -4,7 +4,16 @@
   <div class="col-xs-1 col-md-3 form_record_back">
   </div>
   <div class="col-xs-10 col-md-6 form_record_back ">
-    <h2>編集</h2>
+    <h3>編集</h3>
+      <% if @day_record.errors.any? %>
+  <div>
+    <ul style="color: red">
+      <% @day_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_with model: @day_record, url: user_day_record_path(current_user.id, @day_record.id), local:true do |f| %>
 
