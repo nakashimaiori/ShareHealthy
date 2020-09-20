@@ -58,7 +58,12 @@
 
     <p class="update-btn"><%= f.submit "Update", class: "btn btn-success" %></p>
   <% end %>
-  <%= link_to "退会画面へ", user_exit_path %>
+  <% if @user.email == "guest@.com" %>
+    <p>ゲストユーザーは退会できません</p>
+  <% else %>
+      <%= link_to "退会画面へ", user_exit_path %>
+  <% end %>
+
 
 </div>
     <div class="col-md-2">

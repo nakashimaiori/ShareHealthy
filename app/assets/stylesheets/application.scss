@@ -186,9 +186,7 @@ white-space: nowrap;
 animation: typing 9s steps(11, end);
 }
 // 複数適用
-.header_fix {
-  padding-top: 70px;
-}
+
 
 // kaminari -----------------------------
 
@@ -391,7 +389,7 @@ animation: typing 9s steps(11, end);
 .new_post {
   display: inline-block;
   font-size: 15px;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .favorite_post {
@@ -606,8 +604,15 @@ footer {
 }
 
 .like_in_table {
-  padding-left: 380px;
+  padding-left: 350px;
   color: #808080;
+}
+
+@media screen and (max-width:1200px) {
+  .like_in_table {
+  padding-left: 260px;
+  color: #808080;
+}
 }
 
 .comments_in_table {
@@ -807,7 +812,7 @@ footer {
   width: 300px;
 }
 .like_in_table {
-  padding-left: 150px;
+  padding-left: 200px;
   color: #808080;
 }
 
@@ -815,6 +820,28 @@ footer {
   padding: 50px 10px 50px 10px;
 }
 
+.dayrecord-box {
+  background-color: #fff;
+  margin: 20px;
+}
+.start-time {
+  font-size: 21px;
+}
+
+.profile-image {
+  text-align: center;
+}
+
+.profile_name {
+  text-align: center;
+}
+.profile_follow {
+  text-align: center;
+}
+.mypage_box{
+  margin: 50px 0;
+  background-color: #fff;
+}
 }
 
 
