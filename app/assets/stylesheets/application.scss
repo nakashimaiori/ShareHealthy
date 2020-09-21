@@ -39,7 +39,10 @@
 }
 
 body {
-  background-color: #EEEEEE;
+  // background-color: #EEEEEE;
+  background-image: image-url("tutui.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 // header {
@@ -296,38 +299,53 @@ animation: typing 9s steps(11, end);
 .picture{
   background-image: image-url("tutui.jpg");
   background-size: cover;
+  background-position: center;
   height: 800px
 }
 .top {
   height: 800px;
-  width: 100%;
+  background-image: image-url("tutui.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // background: #ffffff;
-  background-image: image-url("tutui.jpg");
-  background-size: cover;
+  background-color: #fff;
+  opacity: 0.80;
   overflow: hidden;
   font-family: 'Rubik Mono One', sans-serif;
 }
 
 
+
+.sub-title {
+  font-size: 38px;
+  font-family: "serif";
+  font-weight: 100;
+}
 .words {
   color: black;
-  // color: #99E1E0;
-  // ↓0だったけど変えた。
-  font-size: 150px;
+  font-weight: 900;
   line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 800px;
+  padding: 10px;
   span {
-    font-size: 130px;
-    display: inline-block;
-    // animation: move 4s ease-in-out infinite;
-    // &:nth-child(2) { animation-delay: 0.4s; }
-    // &:nth-child(3) { animation-delay: 0.8s; }
-    // &:nth-child(4) { animation-delay: 1.2s; }
+    font-size: 80px;
+    text-align: center;
+    // display: inline-block;
   }
+}
+
+.login-btn {
+  font-size: 40px;
+  color: #000000;
+  margin-top: 20px;
 }
 
 
@@ -452,13 +470,12 @@ color: #3366CC;
 // footer------------------------------------------------------------
 
 footer {
-  height: 250px;
-  background-color: #444444;
+  height: 200px;
+  background-color: #666;
 }
 
 .footer_box {
-  padding: 50px 0 50px 200px;
-  color: #fff;
+  padding: 50px 0 50px 100px;
 }
 
 .footer_box_title {
@@ -499,7 +516,89 @@ footer {
   position: relative;
   margin: 0;
   padding: 0;
+  background-color: #fff;
 }
+
+
+.red {
+  height: 800px;
+  background-image: image-url("tutui.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.orange {
+  height: 800px;
+  background-color: #fff;
+   // text-align: center;
+}
+
+.abo {
+  height: 800px;
+  background-color: #fff;
+  background-image: image-url("abo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.green {
+  height: 780px;
+  background-color: #fff;
+  border: 5px solid black;
+  margin: 10px;
+}
+
+.kakugen {
+  height: 800px;
+  background-color: #fff;
+}
+
+.green-title {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.tag-title {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 100px;
+}
+.tag-list {
+  padding-top: 10px;
+  height: 500px;
+  padding: 10px 60px;
+  word-break: normal;
+
+}
+
+.yellow {
+  height: 800px;
+  background-image: image-url("top.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: grayscale(100%);
+
+}
+
+.vvv {
+  padding: 0;
+}
+
+.top-tag {
+  display: inline-block;
+}
+
+.top-healthy {
+  font-size: 50px;
+  color: red;
+  padding-top: 70px;
+}
+
 
 .cp_snslink01 {
   position: fixed;
@@ -638,6 +737,15 @@ footer {
 .index_back {
   background-color: #fff;
   // margin: 25px 100px 0 140px;
+}
+.select_index {
+  padding: 30px;
+  margin: 50px 0;
+}
+
+.select-title {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .index_back_box {
@@ -805,9 +913,7 @@ footer {
 }
 
 @media screen and (max-width:425px) {
-  #header {
-    background-color: red;
-}
+
 .index_table {
   width: 300px;
 }
@@ -857,6 +963,7 @@ footer {
 
 #header {
   background: #8EB8FF;
+  background: rgba(0,0,0,0.1);
   display: flex;
   flex-flow: row wrap;
   padding: 20px 30px;

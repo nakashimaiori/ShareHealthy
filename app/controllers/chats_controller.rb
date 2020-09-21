@@ -3,9 +3,6 @@ class ChatsController < ApplicationController
 
   def create
   	if UserRoom.where(user_id: current_user.id, room_id: params[:chat][:room_id]).present?
-      # 存在していた場合という意味
-      # user_id: current_user.idにならないのでは？
-      # メッセージとルームIDがあるかのチェック、これUserRoomじゃないの？？
       @room = Room.find(params[:chat][:room_id])
       @message = Chat.create(params.require(:chat).permit(:user_id, :message, :room_id).merge(user_id: current_user.id))
       @messages = @room.chats

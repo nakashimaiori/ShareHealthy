@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   def top
+    @tag_list = Tag.all.limit(30)
   end
 
   def about

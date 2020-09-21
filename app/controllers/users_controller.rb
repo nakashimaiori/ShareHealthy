@@ -86,6 +86,29 @@ class UsersController < ApplicationController
     @favorite_posts = @user.favorite_posts.page(params[:page]).reverse_order.order(id: "DESC")
   end
 
+  def mychat
+    @user = User.all
+    user = current_user
+
+    @currentUserEntry=UserRoom.where(user_id: current_user.id)
+    @userEntry=UserRoom.where(user_id: @user)
+
+    unless @user == current_user.id
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @roomId = cu.room_id
+          end
+        end
+      end
+    end
+
+    @nowchat = Chat.where(user_id: current_user.id).group(:room_id).order(updated_at: :desc)
+    @gest = Chat.where(room_id: 6).group(:user_id).pluck(:user_id)[1]
+    # binding.pry
+
+  end
+
 
   private
 

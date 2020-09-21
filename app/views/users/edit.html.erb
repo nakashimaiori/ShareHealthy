@@ -5,15 +5,11 @@
   </div>
   <div class="row">
 
-    <div class="col-md-1"></div>
-    <div class="col-md-5">
 
   <%= form_for(@user, url:user_path(current_user.id)) do |f| %>
 
-      <div class="">
       <%= attachment_image_tag @user, :profile_image, :fill, 120,120, fallback: "no_image.jpg", size: "120x120" %>
       <%= f.attachment_field :profile_image, class: 'image-prev' %>
-    </div><br>
 
 
       <% if @user.email == "guest@.com" %>
@@ -32,28 +28,25 @@
       <%= f.label :女, class: "" %>
 
     <% if @user.email == "guest@.com" %>
-      <p> </p><p>ゲストユーザーのemail変更はできません</p>
+      <p>ゲストユーザーのemail変更はできません</p>
     <% else %>
 
       <p>Email
       <%= f.text_field :email %></p>
     <% end %>
 
-    <p>年齢　　　　
+    <p>年齢
       <%= f.number_field :old, min: 0, max: 100 %>歳</p>
-    </div>
-    <div class="col-md-4">
-    <div class="profile-weight"></div>
 
-    <p>体重　　　　  
+    <p>体重
       <%= f.number_field :weight, step: "0.1", min: 25, max: 200 %>kg</p>
-    <p>目標体重　　  
+    <p>目標体重
       <%= f.number_field :target, step: "0.1", min: 25, max: 200 %>kg</p>
 
-    <p>身長　　　　  
+    <p>身長
       <%= f.text_field :tall %>cm</p>
 
-    <p>introduction　
+    <p>introduction
       <%= f.text_area :introduction %></p>
 
     <p class="update-btn"><%= f.submit "Update", class: "btn btn-success" %></p>
@@ -65,8 +58,7 @@
   <% end %>
 
 
-</div>
-    <div class="col-md-2">
-    </div>
+  </div>
+  </div>
   </div>
 </div>

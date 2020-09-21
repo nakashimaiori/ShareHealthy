@@ -1,7 +1,18 @@
 <div class ="container">
-  <div class ="row　header_fix">
-    <div class="index_back">
-  <h1><%= @selection %></h1>
+  <div class ="row">
+    <div class="index_back select_index">
+      <div class="col-xs-offset-2 col-md-offset-3">
+  <div>
+    <% if @selection == "new" %>
+      <h1 class="select-title">投稿が新しい順</h1>
+    <% elsif @selection == "old" %>
+      <h1 class="select-title">投稿が古い順</h1>
+    <% elsif @selection == "likes" %>
+      <h1 class="select-title">いいねが多い順</h1>
+    <% elsif @selection == "minilikes" %>
+      <h1 class="select-title">いいねが少ない順</h1>
+    <% end %>
+  </div>
     <div class="sortbox">
         <%= form_with model: @post, url: select_path, method: :get, local: true do |form| %>
           <%= form.select :keyword, [ ['投稿が新しい順', 'new'],
@@ -14,7 +25,7 @@
       </div>
 
 
-  <table class="table">
+  <table class="table index_table">
 
             <% @select_posts.each do |post| %>
             <tr>
@@ -27,6 +38,7 @@
             </tr>
             <% end %>
           </table>
+    </div>
     </div>
   </div>
 </div>

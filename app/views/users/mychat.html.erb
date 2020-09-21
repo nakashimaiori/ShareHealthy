@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h1>メッセージ　</h1>
+
+    <% @nowchat.each do |chat| %>
+      <%= link_to chat.room_id, chat_path(chat.room_id) %>
+      <%= @gest.user.id %>
+    <% end %>
+
+  </div>
+</div>
+
+

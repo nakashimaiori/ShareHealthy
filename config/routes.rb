@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :chats, only: [:create, :show]
   resources :rooms, only: [:create,:show]
   get 'favorite/:id' => 'users#favorite', as: 'favorite'
+  get 'mychat/:id' => 'users#mychat', as: 'mychat'
+
   resources :users, only: [:show, :edit, :update, :destroy] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member

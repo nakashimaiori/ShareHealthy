@@ -1,40 +1,60 @@
-<div class="box">
-  <div class="contents"></div>
-    <ul class="cp_snslink01">
-      <li class="cp_link facebook"><a href="#"><i class="fab fa-facebook-f"></i>
-        <div class="nav-label"><span>facebook Button</span></div></a>
-      </li>
-      <li class="cp_link twitter"><a href="#"><i class="fab fa-twitter"></i>
-        <div class="nav-label"><span>twitter Button</span></div></a>
-      </li>
-      <li class="cp_link google"><a href="#"><i class="fab fa-google-plus-g"></i>
-        <div class="nav-label"><span>google+ Button</span></div></a>
-      </li>
-      <li class="cp_link instagram"><a href="#"><i class="fab fa-instagram"></i>
-        <div class="nav-label"><span>instagram Button</span></div></a>
-      </li>
-    </ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6  col-xs-12 vvv">
+      <div class="red"></div>
+    </div>
+    <div class="col-md-6 col-xs-12 vvv">
+      <div class="orange">
 
-    <div class="top">
+        <div class="words">
+          <span><div class="sub-title">Health is wealth</div>SHARE<br>HEALTHY</span>
 
-      <div class="words words-1">
-        <span>S</span>
-        <span>H</span>
-        <span>A</span>
-        <span>R</span>
-        <span>E</span>
-      </div>
-      <div class="words words-1">
-        <span>H</span>
-        <span>E</span>
-        <span>A</span>
-        <span>L</span>
-        <span>T</span>
-        <span>H</span>
-        <span>Y</span>
+          <div class="login-btn-box">
+            <%= link_to new_user_session_path do %>
+              <i class="fas fa-sign-in-alt login-btn"></i>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-</div>
 
+    <div class="col-md-6 col-xs-12 vvv">
+      <div class="green">
+        <div class="green-title">
+        <div class="">SHRE HEALTHY</div>
+      </div>
+
+        <div class="tag-title">Tags</div>
+        <div class="tag-list">
+          <% @tag_list.each do |post| %>
+              <p class="top-tag">#<%= post.tag_name %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-xs-12 vvv">
+      <div class="yellow"></div>
+    </div>
+
+    <div class="col-md-6 col-xs-12 vvv">
+      <div class="abo"></div>
+    </div>
+    <div class="col-md-6 col-xs-12 vvv">
+      <div class="kakugen">
+
+        <div class="top-kakugen">
+             <p class="top-healthy">Healthy is not meant to be a sprint. It’s a marathon.</p>
+             <p>A one hour workout is 4% of your day. No excuses!</p>
+             <p>Being challenged in life is inevitable. Being defeated is optional.</p>
+             <p class="top-healthy">You only fail when you stop trying.</p>
+             <p>When you want to give up, remember why you started.</p>
+             <p>A healthy body is a guest chamber for the soul. A sick body is a prison.</p>
+             <p>All the money in the world can’t buy you back good health.</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
 
