@@ -392,6 +392,10 @@ animation: typing 9s steps(11, end);
   margin-left: 10px;
   text-align: center;
 }
+
+.follow-fix {
+  height: 800px;
+}
 .genre_btn {
   font-size: 3px;
 }
@@ -458,6 +462,16 @@ color: #3366CC;
   .profile-weight {
     display: none;
   }
+}
+
+// プロフィール編集ページ-------------------------------
+
+.user-edit {
+  background-color: #fff;
+  margin: 30px;
+  padding: 60px 200px;
+  background-color: rgba(255,255,255,0.8);
+
 }
 
 // 記録ページ----------------------------------------------------------
@@ -852,6 +866,11 @@ filter: grayscale(100%);
   color: #fff;
 }
 
+.user-edit {
+  padding: 60px;
+}
+
+
 
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
@@ -909,7 +928,6 @@ filter: grayscale(100%);
   padding: 50px 50px 50px 50px;
 }
 
-
 }
 
 @media screen and (max-width:425px) {
@@ -947,6 +965,9 @@ filter: grayscale(100%);
 .mypage_box{
   margin: 50px 0;
   background-color: #fff;
+}
+.user-edit {
+  padding: 60px 20px;
 }
 }
 

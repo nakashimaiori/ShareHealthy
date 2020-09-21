@@ -1,5 +1,8 @@
-<div class="container">
-  <div class="row header_fix">
+<div class="container follow-fix">
+  <div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+
   	<h1 class="follower-title">フォロー中</h1>
 
 <% if @user.active_relationships.count == 0 %>
@@ -25,6 +28,8 @@
     <% end %>
   </table>
     <% end %>
+  </div>
+    <div class="col-xs-2"></div>
 
   </div>
 </div>
