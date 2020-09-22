@@ -1,17 +1,16 @@
 <div class="container">
+  <div class="genre-box">
 
-<h1>Admins::Genres#index</h1>
+<h3>ジャンル登録</h3>
 
 <%= form_for @genre, url: admins_genres_path do |f| %>
 
      <div class="form-group">
         <%= f.label :ジャンル %>
         <%= f.text_field :name %>
+        <%= f.submit '追加' %>
      </div>
-
-     <%= f.submit '追加' %>
-
-        <% end %>
+<% end %>
 
 
 <table>
@@ -24,10 +23,16 @@
 			<% @genres.each do |genre| %>
             <tr>
               <td><%= genre.name %></td>
-              <td><%= link_to "Destroy", admins_genre_path(genre.id), method: :delete, "data-confirm" => "Are you sure？" %></td>
+              <td><%= link_to admins_genre_path(genre.id), method: :delete, "data-confirm" => "Are you sure？" do %>
+                    <i class="fas fa-trash-alt"></i>
+                  <% end %>
+              </td>
             <% end %>
             </tr>
 	</tbody>
 </table>
 
+<%= paginate @genres %>
+
+  </div>
 </div>

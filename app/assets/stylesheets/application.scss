@@ -33,28 +33,19 @@
 @import 'plugins/table.min.css';
 @import 'plugins/video.min.css';
 
-* { margin: 0;
+* {
+  margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
-  // background-color: #EEEEEE;
   background-image: image-url("tutui.jpg");
   background-size: cover;
   background-position: center;
 }
 
-// header {
-//   background-color: #0099FF;
-//   height: 70px;
-//   position: fixed;
-//   width: 100%;
-//   margin: 0px;
-//   padding: 4px 4px 4px 0px;
-//   z-index:9999;
-//   text-align: center;
-// }
 
 #header {
   background: #fff;
@@ -161,6 +152,12 @@ body {
     top: 20px;
   }
 }
+
+// genre-----------------------------------
+
+.genre-box {
+  height: 500px;
+}
 // about-----------------------------------
 
 .about {
@@ -172,14 +169,27 @@ body {
   margin-top: 112px;
 }
 
+.about-subtitle {
+  text-align: center;
+}
+
 .about_content {
   margin-top: 60px;
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
   background-color: rgba(255,255,255,0.8);
-
 }
+
+.about_contents {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+
+// -----------------------------------------------------------
 
 @keyframes typing { from { width: 0; } }
 @keyframes caret { 50% { border-color: transparent; } }
@@ -489,10 +499,12 @@ color: #3366CC;
 footer {
   height: 200px;
   background-color: #666;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer_box {
-  padding: 50px 0 50px 100px;
+  padding: 50px 0 0px 100px;
 }
 
 .footer_box_title {
@@ -537,6 +549,15 @@ footer {
   background-color: #fff;
 }
 
+@media (max-width:480px) {
+   .about-how {
+    flex-wrap: wrap;
+   }
+
+   .box {
+       width: 100%;
+   }
+}
 
 .red {
   height: 800px;
@@ -569,6 +590,11 @@ footer {
 .kakugen {
   height: 800px;
   background-color: #fff;
+  padding: 15px;
+}
+
+.Dotum {
+  font-family: Dotum;
 }
 
 .green-title {
@@ -596,16 +622,17 @@ footer {
   background-size: cover;
   background-position: center;
   -webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
--ms-filter: grayscale(100%);
--o-filter: grayscale(100%);
-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
 
 }
 
 .vvv {
   padding: 0;
 }
+
 
 .top-tag {
   display: inline-block;
@@ -615,6 +642,7 @@ filter: grayscale(100%);
   font-size: 50px;
   color: red;
   padding-top: 70px;
+  font-family: arial black;
 }
 
 
@@ -881,6 +909,10 @@ text-overflow: ellipsis;
   padding: 60px;
 }
 
+.mychat {
+  padding-left: 500px;
+}
+
 
 
 }
@@ -939,19 +971,6 @@ text-overflow: ellipsis;
   padding: 50px 50px 50px 50px;
 }
 
-.about {
-  height: 230px;
-}
-
-.about_content {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 10px 10px 0 10px;
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.8);
-
-}
-
 }
 
 @media screen and (max-width:425px) {
@@ -998,7 +1017,30 @@ text-overflow: ellipsis;
   font-size: 10px;
 }
 
+.about-box {
+  background-color: red;
+  height: 190px;
+  width: 190px;
+  margin: 10px 3px 5px 10px;
 }
+
+.about_contents {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.about_content {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+}
+// ------------------------------------------------------
 .sign {
   text-align: center;
   padding-top: 50px;
