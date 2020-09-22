@@ -175,7 +175,7 @@ body {
 .about_content {
   margin-top: 60px;
   background-color: #fff;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   background-color: rgba(255,255,255,0.8);
 
@@ -192,6 +192,12 @@ overflow: hidden;
 font-size: 4em;
 white-space: nowrap;
 animation: typing 9s steps(11, end);
+}
+
+.about-gest {
+  font-size: 8px;
+  color: #666;
+  text-align: right;
 }
 // 複数適用
 
@@ -490,7 +496,8 @@ footer {
 }
 
 .footer_box_title {
-  font-size: 50px;
+  font-size: 40px;
+  color: #fff;
 }
 
 //  day_records/new-----------day_weight/new-----------------------------
@@ -939,7 +946,7 @@ text-overflow: ellipsis;
 .about_content {
   margin-top: 20px;
   background-color: #fff;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   border-radius: 10px;
   background-color: rgba(255,255,255,0.8);
 
@@ -992,7 +999,13 @@ text-overflow: ellipsis;
 }
 
 }
-
+.sign {
+  text-align: center;
+  padding-top: 50px;
+}
+.login-up {
+  color: #fff;
+}
 
 // ヘッダー--------------------------------------------------
 

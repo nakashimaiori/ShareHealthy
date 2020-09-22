@@ -56,8 +56,12 @@
             <tr>
               <td></td>
               <td>
-              <%= link_to "編集", edit_user_day_record_path(current_user.id, @day_record.id) , class: "btn btn-success"%>
-              <%= link_to "削除", user_day_record_path(current_user.id, @day_record.id), method: :delete, class: "btn btn-danger" %>
+              <%= link_to  edit_user_day_record_path(current_user.id, @day_record.id) do %>
+                <i class="fas fa-pen-nib"></i>
+              <% end %>
+              <%= link_to user_day_record_path(current_user.id, @day_record.id), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
             </td>
           </tr>
         </table>

@@ -1,10 +1,8 @@
 
 <div class="picture">
 <div class="container">
-  <div class="row">
-    <div class="col-xs-1"></div>
-      <div class="col-xs-11">
-  <h2>Log in</h2>
+  <div class="row sign">
+  <h1 class="login-up">Log in</h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -31,7 +29,6 @@
 
 <%= render "devise/shared/links" %>
 
-  </div>
 </div>
 </div>
 </div>
