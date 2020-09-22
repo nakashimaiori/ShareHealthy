@@ -173,7 +173,12 @@ body {
 }
 
 .about_content {
-  margin-top: 100px;
+  margin-top: 60px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+
 }
 
 @keyframes typing { from { width: 0; } }
@@ -193,31 +198,22 @@ animation: typing 9s steps(11, end);
 
 // kaminari -----------------------------
 
-.pagination{
-  margin: auto;
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
+
+
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
 }
-.pagination span{
-  background-color: #fff;
-  text-align: center;
-  width: 50px;
-  border: solid 1px #CCCCCC;
-  color: #0066FF;
-  transition: .3s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
 }
-.pagination span:hover{
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-.pagination span a:hover{
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
 }
 
 
@@ -383,6 +379,7 @@ animation: typing 9s steps(11, end);
 .post_index {
   display: inline-block;
 }
+
 
 .profile_follow {
   list-style: none;
@@ -782,7 +779,7 @@ filter: grayscale(100%);
 
 .chatroom-box {
   background-color: #fff;
-  margin-bottom: 85px;
+  margin: 85px 0;
 }
 
 .chatroom-box-title {
@@ -816,6 +813,7 @@ filter: grayscale(100%);
 .timestamp {
   color: #666666;
   font-size: 9px;
+  text-align: right;
 }
 
 .user-show-chat {
@@ -849,6 +847,12 @@ filter: grayscale(100%);
 
 .follower-title {
   font-size: 20px;
+}
+
+.introduction-epi {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 
 
@@ -928,6 +932,19 @@ filter: grayscale(100%);
   padding: 50px 50px 50px 50px;
 }
 
+.about {
+  height: 230px;
+}
+
+.about_content {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+
+}
+
 }
 
 @media screen and (max-width:425px) {
@@ -969,6 +986,11 @@ filter: grayscale(100%);
 .user-edit {
   padding: 60px 20px;
 }
+
+.intt {
+  font-size: 10px;
+}
+
 }
 
 

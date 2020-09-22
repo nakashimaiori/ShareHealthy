@@ -19,7 +19,7 @@
       <p><%= link_to user.name, user_path(user.id) %></p>
       </td>
       <td class="col-xs-6">
-          <%= user.introduction %>
+          <p class="intt"><%= cut_off( user.introduction , 15) %></p>
       </td>
       <td class="col-xs-2">
       <%= render "users/follow_form", user: user %>

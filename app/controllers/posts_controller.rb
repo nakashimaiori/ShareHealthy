@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def index
     @genres = Genre.all
-    @tag_list = Tag.all
+    # @tag_list = Tag.all
     # @post = current_user.posts.new
   	 @posts = Post.all.order(id: "DESC")
   end

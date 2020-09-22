@@ -11,20 +11,16 @@
   <table class="table">
     <% @users.each do |user| %>
     <tr>
-      <td class="col-xs-2">
+      <td class="col-md-2">
         <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'40x40' %>
       </td>
-      <td class="col-xs-2">
+      <td class="col-md-2">
       <p><%= link_to user.name, user_path(user.id) %></p>
       </td>
-      <td class="col-xs-6">
-        <% if user.introduction %>
-          <%= user.introduction %>
-        <% else %>
-          ーーーーーー
-        <% end %>
+      <td class="col-md-6">
+          <p class="intt"><%= cut_off( user.introduction , 15) %></p>
       </td>
-      <td class="col-xs-2">
+      <td class="col-md-2">
       <%= render "users/follow_form", user: user %>
       </td>
     </tr>
