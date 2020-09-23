@@ -17,26 +17,26 @@
       <nav>
         <ul id="navi">
           <% if user_signed_in? %>
-        <li class="nav-list-item"><%= link_to "Top", root_path %></li>
-        <li class="nav-list-item"><%= link_to "My Page", user_path(current_user.id) %></li>
-        <li class="nav-list-item"><%= link_to "記事一覧", posts_path %></li>
-        <li class="nav-list-item nav-list-item-sp"><%= link_to "記事投稿", new_post_path %></li>
+        <li class="nav-list-item"><%= link_to "Top", root_path, class: "font" %></li>
+        <li class="nav-list-item"><%= link_to "My Page", user_path(current_user.id), class: "font" %></li>
+        <li class="nav-list-item"><%= link_to "記事一覧", posts_path, class: "font" %></li>
+        <li class="nav-list-item nav-list-item-sp"><%= link_to "記事投稿", new_post_path, class: "font" %></li>
 
-        <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "font" %></li>
         <li class="nav-list-item"><%= current_user.name %></li>
 
 
       <% elsif admin_signed_in? %>
         <li class="nav-list-item">管理者</li>
-        <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-        <li class="nav-list-item"><%= link_to "ジャンル", admins_genres_path %></li>
+        <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "font" %></li>
+        <li class="nav-list-item"><%= link_to "ジャンル", admins_genres_path, class: "font" %></li>
       <% else %>
         <li class="nav-list-item"></li>
-        <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
-        <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
-        <li class="nav-list-item"><%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post , class: "nav-gest" %></li>
-        <li class="nav-list-item header-top"><%= link_to "Top", root_path %></li>
-        <li class="nav-list-item"><%= link_to "About", about_path %></li>
+        <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path, class: "font" %></li>
+        <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path, class: "font" %></li>
+        <li class="nav-list-item"><%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post , class: "nav-gest font" %></li>
+        <li class="nav-list-item header-top"><%= link_to "Top", root_path, class: "font" %></li>
+        <li class="nav-list-item"><%= link_to "About", about_path, class: "font" %></li>
       <% end %>
         </ul>
       </nav>
@@ -54,7 +54,7 @@
   </body>
 <footer>
       <div class="footer_box">
-        <div class="footer_box_title">Share Healthy</div><p>Health is wealth</p>
+        <div class="footer_box_title">Share Healthy</div><p class="footer-sub">Health is wealth</p>
       </div>
     </footer>
 </html>

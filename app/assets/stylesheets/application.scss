@@ -71,8 +71,76 @@ body {
   color: #000;
   text-decoration: none;
 }
-/*PCメニュー*/
-/*SPメニュー*/
+
+// ボタン----------------------------------------------------------
+.btn-gradation {
+  display: inline-block;
+  text-align: left;
+  background-image: linear-gradient(#eaeaea 0%, #c6c6c6 100%);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  color: #a5a5a5;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+  padding: 6px 30px;
+  border-radius: 4px;
+  font-size: 7px;
+  margin-top: 5px;
+}
+
+.btn-gradation:hover {
+  opacity: 0.8;
+}
+
+.btn-gradation2 {
+  display: inline-block;
+  text-align: left;
+  background-image: linear-gradient(#eaeaea 0%, #c6c6c6 100%);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  color: #a5a5a5;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+  padding: 6px 80px;
+  border-radius: 4px;
+  font-size: 7px;
+  margin-top: 5px;
+}
+
+.btn-gradation2:hover {
+  opacity: 0.8;
+}
+
+.btn-gradation3 {
+  display: inline-block;
+  text-align: left;
+  background-image: linear-gradient(#eaeaea 0%, #c6c6c6 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  color: #a5a5a5;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 7px;
+  margin-top: 5px;
+}
+
+.btn-gradation3:hover {
+  opacity: 0.8;
+}
+
+
+.url {
+  text-decoration: none !important;
+  color: #666666;
+}
+
+
+
 @media screen and (max-width: 768px) {
   /* bager menu */
   #header #navi {
@@ -193,6 +261,12 @@ body {
 .about-howtotitle {
   margin-bottom: 20px;
 }
+
+.about-top {
+  margin-top: 35px;
+}
+
+
 
 // -----------------------------------------------------------
 
@@ -507,6 +581,7 @@ footer {
   background-color: #666;
   bottom: 0;
   width: 100%;
+
 }
 
 .footer_box {
@@ -516,6 +591,15 @@ footer {
 .footer_box_title {
   font-size: 40px;
   color: #fff;
+  font-family: baby kruffy;
+}
+
+.footer-sub {
+  font-family: baby kruffy;
+}
+
+.font {
+  font-family: baby kruffy;
 }
 
 //  day_records/new-----------day_weight/new-----------------------------
@@ -646,7 +730,7 @@ footer {
 
 .top-healthy {
   font-size: 50px;
-  color: red;
+  color: #99CCCC;
   padding-top: 70px;
   font-family: arial black;
 }
@@ -812,23 +896,30 @@ footer {
 
 // chatroom
 .mychat {
-  padding-left: 600px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
+.yourchat {
+  display: flex;
+  flex-direction: row;
 }
 .message_form {
   margin-top: 30px;
 }
 
 .chatroom-box {
-  background-color: #fff;
   margin: 85px 0;
 }
 
 .chatroom-box-title {
-  padding: 30px 0 0 60px;
+  padding: 30px 60px 0 60px;
 }
 
 .chat-box {
-  padding-left: 60px;
+  padding: 0 60px;
+  margin: 0 auto;
 }
 
 .posts {
@@ -837,28 +928,60 @@ footer {
 
 .chat-hukidashi {
   margin-top: 10px;
+  width: 200px;
 }
 
 .myhukidasi {
-  background-color: #00CC33;
   padding: 0.2em;/*文字周りの余白*/
-  border-radius: 0.5em;/*角丸*/
+  margin:10px;
+  width:200px;
+  word-wrap:break-word;
+
 }
 
 .hukidasi {
-  background-color: #CCCCCC;
   padding: 0.2em;/*文字周りの余白*/
-  border-radius: 0.5em;/*角丸*/
+  width: 200px;
+  word-wrap:break-word;
+}
+
+.test {
+  background-color: #66CC33;
+  border-radius: 20px;/*角丸*/
+  padding: 8px;
+}
+
+.you-message {
+  background-color: #CCCCCC;
+  border-radius: 20px;/*角丸*/
+  padding: 8px;
+  margin-top: 5px;
 }
 
 .timestamp {
   color: #666666;
   font-size: 9px;
   text-align: right;
+  display: inline-block;
+}
+
+.name {
+  font-size: 6px;
+}
+
+.timestamp-left {
+  color: #666666;
+  font-size: 9px;
+  text-align: left;
 }
 
 .user-show-chat {
   margin-left: 10px;
+}
+
+.message-form {
+  width:500px;
+  height:30px;
 }
 
 
@@ -915,9 +1038,7 @@ text-overflow: ellipsis;
   padding: 60px;
 }
 
-.mychat {
-  padding-left: 500px;
-}
+
 
 
 
@@ -975,6 +1096,15 @@ text-overflow: ellipsis;
 }
 .detail_box_in {
   padding: 50px 50px 50px 50px;
+}
+
+.message-form {
+  width:400px;
+  height:30px;
+}
+
+.chat-box {
+  padding: 0 30px;
 }
 
 }
@@ -1045,6 +1175,15 @@ text-overflow: ellipsis;
   background-color: rgba(255,255,255,0.8);
 }
 
+.message-form {
+  width:300px;
+  height:30px;
+}
+
+.chat-box {
+  padding: 0 10px;
+}
+
 }
 // ------------------------------------------------------
 .sign {
@@ -1059,6 +1198,7 @@ text-overflow: ellipsis;
 
 .header_title {
   font-size: 17px;
+  font-family: baby kruffy;
 }
 
  nav {
@@ -1177,5 +1317,8 @@ text-overflow: ellipsis;
 }
 
  }
+
+
+
 
 

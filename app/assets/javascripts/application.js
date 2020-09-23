@@ -73,6 +73,7 @@ $(document).on("turbolinks:load", function(){
 });
 
 
+
             /* SP menu */
 
                 // var body = document.body;

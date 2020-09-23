@@ -1,14 +1,14 @@
 <div class="container">
   <div class="genre-box">
 
-<h3>ジャンル登録</h3>
+<h3>カテゴリー登録</h3>
 
 <%= form_for @genre, url: admins_genres_path do |f| %>
 
      <div class="form-group">
-        <%= f.label :ジャンル %>
+        <%= f.label :カテゴリー %>
         <%= f.text_field :name %>
-        <%= f.submit '追加' %>
+        <%= f.submit '追加', class: "btn-gradation" %>
      </div>
 <% end %>
 
@@ -16,7 +16,7 @@
 <table>
 	<thead>
 		<tr>
-			<th>genre一覧</th>
+			<th>category一覧</th>
 		</tr>
 	</thead>
 	<tbody>

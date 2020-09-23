@@ -4,7 +4,7 @@
       <div class="searchbox_in">
       <%= search_form_for @search do |f| %>
         <%= f.search_field :title_or_content_cont,placeholder: '検索するワードを入力' %>
-        <%= f.submit "検索", class: "btn btn-primary" %><p> </p>
+        <%= f.submit "検索", class: "btn-gradation3" %><p> </p>
       <% end %>
       </div>
 
@@ -15,7 +15,7 @@
                                     ['いいねが多い順', 'likes'],
                                     ['いいねが少ない順', 'dislikes'],
                                   ], { :include_blank => "選択してください ▼" }, :required => true  %>
-           <%= form.submit '並び替え' %>
+           <%= form.submit '並び替え', class: "btn-gradation3" %>
         <% end %>
       </div>
     </div>

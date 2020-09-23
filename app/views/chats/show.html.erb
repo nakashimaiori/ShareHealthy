@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="">
 
     <div class="chatroom-box">
       <div class="chatroom-box-title">
@@ -25,9 +25,9 @@
       <div class="posts">
   	    <%= form_with(model:@message, remote: true) do |f| %>
           <div class="message_form">
-            <%= f.text_field :message, placeholder: "メッセージを入力" , size: 60, class:"form-text-field" %>
+            <%= f.text_field :message, placeholder: "メッセージを入力" , class:"message-form" %>
             <%= f.hidden_field :room_id, value: @room.id %>
-            <%= f.submit "投稿",class: 'form-submit btn btn-priary'%>
+            <%= f.submit "投稿",class: 'form-submit btn-gradation'%>
           </div>
         <% end %>
       </div>
