@@ -9,7 +9,6 @@
       	　このサイトは、健康的な理想の体型を手に入れるためにダイエットやトレーニングを頑張る人たち同士で情報を交換できる場を設けたいと思い作りました。<br>
         　また、コロナ禍で変化する食生活、運動不足の解消のためにも、このサイトを通して励ましあいながらみんなが健康的な体型を手に入れることが出来たら嬉しいです。</p>
 
-        <p class="about-gest">※閲覧のみはゲストログインを使用ください。</p>
       </div>
   	</div>
   </div>
@@ -18,16 +17,16 @@
     <div class="col-md-6 col-xs-12 about">
       <div class="about_contents">
         <h1>How to use</h1>
-        <p>Share healthyの使い方を簡単に紹介します。<br>
+        <p>Share Healthyの使い方を簡単に紹介します。<br>
            </p>
 
-        <p class="about-gest">※閲覧のみはゲストログインを使用ください。</p>
+        <p class="about-gest">※閲覧のみ利用はゲストログインを使用ください。</p>
       </div>
     </div>
     <div class="col-md-6 col-xs-12 about">
       <div class="about_contents">
-        <h3>①記録する</h3>
-        <p>マイページの、今日の体重を記録する、今日の食事・運動を記録するボタンから記録してみましょう。記録が完了するとカレンダーにアイコンが表示されます。アイコンをクリックすると詳細画面に遷移し、編集、削除ができます。</p>
+        <h3 class="about-howtotitle">①記録する</h3>
+        <p>マイページの、<%= link_to "今日の体重を記録", "", class: 'btn btn-warning' %> <%= link_to "今日の食事・運動を記録", "", class: 'btn btn-success' %>のボタンからそれぞれ記録してみましょう。記録が完了するとカレンダーにアイコンが表示されます。アイコンをクリックすると詳細画面に遷移し、編集、削除ができます。体重はグラフにも反映されるので毎日記録してモチベーションを維持しましょう。</p>
       </div>
     </div>
   </div>
@@ -35,28 +34,29 @@
   <div class="row">
     <div class="col-md-6 col-xs-12 about">
       <div class="about_contents">
-        <h3>②投稿する</h3>
-        <p></p>
+        <h3 class="about-howtotitle">②投稿する</h3>
+        <p><%= link_to "記事投稿へ", "", class: 'btn btn-success' %> のボタンから新規記事投稿してみましょう。効果的なトレーニング、食事法、日記、ダイエット情報など、みんなでシェアして目指せ健康Body!!投稿記事はログインユーザーのみ、投稿一覧から閲覧可能です。</p>
+        <p class="about-gest">※閲覧のみ利用はゲストログインを使用ください。</p>
       </div>
     </div>
     <div class="col-md-6 col-xs-12 about">
       <div class="about_contents">
-        <h3>③いいね、コメント</h3>
-        <p>マイページの、今日の体重を記録する、今日の食事・運動を記録するボタンから記録してみましょう。記録が完了するとカレンダーにアイコンが表示されます。アイコンをクリックすると詳細画面に遷移し、編集、削除ができます。</p>
+        <h3 class="about-howtotitle">③いいね、コメント</h3>
+        <p>投稿された記事に、いいね、コメントが可能です。気になる記事にいいね<i class="fa fa-heart heart_btn" aria-hidden="true" style="color: red;"></i>してみましょう。いいねした記事は、マイページの<%= link_to "お気に入り記事", "", class: 'btn btn-warning' %> から簡単に閲覧できるようになります。</p>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6 col-xs-12 about">
       <div class="about_contents">
-        <h3>④フォローする</h3>
-        <p>マイページの、今日の体重を記録する、今日の食事・運動を記録するボタンから記録してみましょう。記録が完了するとカレンダーにアイコンが表示されます。アイコンをクリックすると詳細画面に遷移し、編集、削除ができます。</p>
+        <h3 class="about-howtotitle">④フォローする</h3>
+        <p>フォローしたい相手のプロフィールにある<button type="button" class="btn btn-info">フォローする</button>のボタンをクリックすることでフォローが可能です。たくさんの仲間とShareHealthyしましょう！！フォロー、フォロワーはマイページから確認できます。</p>
       </div>
     </div>
     <div class="col-md-6 col-xs-12 about">
       <div class="about_contents">
-        <h3>⑤Chatを送る</h3>
-        <p>マイページの、今日の体重を記録する、今日の食事・運動を記録するボタンから記録してみましょう。記録が完了するとカレンダーにアイコンが表示されます。アイコンをクリックすると詳細画面に遷移し、編集、削除ができます。</p>
+        <h3 class="about-howtotitle">⑤Chatを送る</h3>
+        <p>相互フォローすることでChatの送信が可能です。Chatを送りたい相手のプロフィールの<button type="button" class="btn btn-primary">チャットを始める</button> からメッセージを送ってみましょう。</p>
       </div>
     </div>
   </div>
