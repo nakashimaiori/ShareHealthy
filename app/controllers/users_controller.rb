@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id)
+      redirect_to user_path(current_user.id)
     else
       render "edit"
     end
@@ -105,7 +105,6 @@ class UsersController < ApplicationController
 
     @nowchat = Chat.where(user_id: current_user.id).group(:room_id).order(updated_at: :desc)
     @gest = Chat.where(room_id: 6).group(:user_id).pluck(:user_id)[1]
-    # binding.pry
 
   end
 

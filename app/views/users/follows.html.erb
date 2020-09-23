@@ -16,7 +16,7 @@
         <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'40x40' %>
       </td>
       <td class="col-xs-2">
-      <p><%= link_to user.name, user_path(user.id) %></p>
+      <%= link_to user.name, user_path(user.id), class: "linkto" %>
       </td>
       <td class="col-xs-6">
           <p class="intt"><%= cut_off( user.introduction , 15) %></p>

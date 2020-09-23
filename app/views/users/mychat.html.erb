@@ -4,7 +4,6 @@
 
     <% @nowchat.each do |chat| %>
       <%= link_to chat.room_id, chat_path(chat.room_id) %>
-      <%= @gest.user.id %>
     <% end %>
 
   </div>
