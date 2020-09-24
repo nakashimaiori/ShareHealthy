@@ -1,12 +1,18 @@
 <div class="container">
-  <div class="row">
-    <h1>メッセージ　</h1>
-
-    <% @nowchat.each do |chat| %>
-      <%= link_to chat.room_id, chat_path(chat.room_id) %>
-    <% end %>
-
+  <div class="row nowchat-box">
+    <h1>Chat Room</h1>
+    <div class="mychat-box">Chatの中身を確認してみましょう</div>
+      <% @nowchat.each do |chat| %>
+        <table class="table">
+      	  <tr>
+          <% chat.room.user_rooms.each do |chat| %>
+            <% next if current_user == chat.user %>
+               <td width="80"><div class="nowchat"><%= link_to chat.user.name, chat_path(chat.room_id) %></div>
+              </td>
+            <% end %>
+              <td width="200"><div class="now-message"><%= chat.user.name %> <%= cut_off( chat.message ,50) %></div></td>
+          </tr>
+      <% end %>
+      </table>
   </div>
 </div>
-
-

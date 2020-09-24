@@ -104,7 +104,7 @@ class UsersController < ApplicationController
     end
 
     @nowchat = Chat.where(user_id: current_user.id).group(:room_id).order(updated_at: :desc)
-    @gest = Chat.where(room_id: 6).group(:user_id).pluck(:user_id)[1]
+    # @gest = Chat.where(room_id: 6).group(:user_id).pluck(:user_id)[1]
 
   end
 

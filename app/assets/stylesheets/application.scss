@@ -319,11 +319,12 @@ animation: typing 9s steps(11, end);
 
 .detail_box {
   margin-top: 20px;
-  background-color: #ffffff
+  background-color: #ffffff;
 }
 
 .detail_box_in {
   padding: 50px 50px 50px 80px;
+  
 }
 
 .detail_box_user {
@@ -568,14 +569,20 @@ color: #3366CC;
 
 }
 
-// 記録ページ----------------------------------------------------------
+//exit------------------------------------------------
+
+.exit-box {
+  height: 600px;
+}
+
+// 記録ページ-------------------------------------------
 
 .dayrecord-box {
   background-color: #fff;
   margin: 45px;
   padding: 20px;
 }
-// footer------------------------------------------------------------
+// footer---------------------------------------------
 
 footer {
   height: 200px;
@@ -810,7 +817,13 @@ footer {
   display: flex;
   flex-direction: row-reverse;
 }
+.chat-table {
+  height: 60px;
+}
 
+.mychat-box {
+  color: #666666;
+}
 
 .yourchat {
   display: flex;
@@ -833,6 +846,18 @@ footer {
   margin: 0 auto;
 }
 
+.nowchat {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 25px;
+}
+
+.now-message {
+  padding-top: 30px;
+}
+.samon {
+  color: #ff6666;
+}
 .posts {
   padding: 50px;
 }
@@ -893,6 +918,14 @@ footer {
 .message-form {
   width:500px;
   height:30px;
+}
+
+.nowchat-box {
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  margin: 50px 0;
+  padding: 30px;
 }
 
 
@@ -1055,6 +1088,7 @@ footer {
 .mypage_box{
   margin: 50px 0;
   background-color: #fff;
+  background-color: rgba(255,255,255,0.6);
 }
 .user-edit {
   padding: 60px 20px;
