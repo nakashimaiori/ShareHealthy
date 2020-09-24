@@ -6,7 +6,7 @@
   	<h1 class="follower-title">フォロー中</h1>
 
 <% if @user.active_relationships.count == 0 %>
-<p>ユーザーがいません</p>
+<p class="nouser">ユーザーがいません</p>
 <% else %>
 
 <table class="table">

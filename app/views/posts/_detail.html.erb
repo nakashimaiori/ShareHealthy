@@ -1,10 +1,10 @@
 
 <div class="detail_box">
   <div class="detail_box_in">
-  <div class="detail_box_user">
-    <%= link_to user_path(post.user.id) do %>
-      <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %> <%= post.user.name %>
-    <% end %>
+    <div class="detail_box_user">
+      <%= link_to user_path(post.user.id) do %>
+        <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg" %> <%= post.user.name %>
+      <% end %>
     <%= post.updated_at.strftime('%Y/%m/%d') %>に更新
   </div>
   <div class="detail_box_main">
@@ -24,14 +24,11 @@
 
 
     <% if user_signed_in? && current_user.id == post.user_id %>
-      <div class="">
+      <div>
         <%= link_to "記事編集", edit_post_path(post.id),class: 'btn btn-success' %>
         <%= link_to "記事削除", post_path(post.id), method: :delete,data: {confirm: "削除しますか？"},class: 'btn btn-danger' %>
       </div>
     <% end %>
   </div>
-  </div>
+</div>
 
-
-
-  <!-- <p><i class="fas fa-comment"></i>コメント<%= post.post_comments.count %>件</p> -->

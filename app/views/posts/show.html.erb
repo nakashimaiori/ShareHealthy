@@ -1,8 +1,6 @@
 
-<div class="container header_fix">
-
+<div class="container">
   <div class="row">
-
     <%= render 'detail', post: @post %>
 
     <% @post_tags.each do |tag| %>
@@ -13,11 +11,6 @@
     <% end %>
   <div class="comment_box">
     <div class="comment_box_in">
-
-
-
-
-
 
       <%= form_with model: [@post, @post_comment] do |f| %>
 
@@ -44,6 +37,5 @@
       </div>
     </div>
   </div>
-
   </div>
 </div>
