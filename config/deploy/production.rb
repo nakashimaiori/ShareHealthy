@@ -51,7 +51,7 @@
 # ------------------------------------
  server "18.180.198.42",
    user: "ec2-user",
-   roles: %w{app web db},
+   roles: %w{app web db}
 #   ssh_options: {
 #     user: "user_name", # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
