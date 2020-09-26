@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   	@post = Post.new(post_params)
     tag_list = params[:post][:tag_name].split(nil)
     @genres = Genre.all
-    @post.genre_id = params[:genre][:name]
+    @post.genre_id = params[:genre_id]
     @post.user_id = current_user.id
     if @post.save
       @post.save_tag(tag_list)
@@ -85,6 +85,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :genre_id)
   end
 end

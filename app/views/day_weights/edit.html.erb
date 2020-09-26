@@ -22,7 +22,7 @@
   <%= f.label :体重 %>
   <%= f.number_field :weight, step: "0.1", min: 30, max: 200 %>
 
-  <%= f.submit '更新', class: "btn-default btn-red", url: user_day_weight_path(current_user.id, @day_weight.id) ,method: :patch, class: "btn btn-info" %>
+  <%= f.submit '更新', url: user_day_weight_path(current_user.id, @day_weight.id) ,method: :patch, class: "btn-gradation" %>
 
 
 <% end %>

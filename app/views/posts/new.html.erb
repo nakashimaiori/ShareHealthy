@@ -2,6 +2,7 @@
 <div class="d-flex align-items-center">
 
   <% if @post.errors.any? %>
+  <h2><%= "#{@post.errors.full_messages.count}件のエラーが発生しました。" %></h2>
   <div>
     <ul style="color: red">
       <% @post.errors.full_messages.each do |message| %>
@@ -18,7 +19,7 @@
 
     <div class="form-group">
     <%= f.label :genre, '投稿カテゴリー' %>
-  <%= collection_select(:genre, :name, @genres, :id, :name) %><br>
+  <%= f.collection_select( :genre_id, @genres, :id, :name, {:include_blank => true}) %><br>
   <small id="title-tip" class="form-text text-muted">
             カテゴリーを選択してください。
         </small>
