@@ -5,9 +5,8 @@
     </div>
   	<div class="col-xs-6">
       <div class="exit-box">
-	    <h1>退会ページ</h1>
         <p>退会すると今までのデータを復元することが出来ません。</p>
-	    <p> <%= button_to "退会する",  user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+	    <p> <%= button_to "退会する",  user_registration_path, data: { confirm: "本当に退会しますか?" }, method: :delete, class: "btn btn-danger" %></p>
 	  </div>
     </div>
   </div>

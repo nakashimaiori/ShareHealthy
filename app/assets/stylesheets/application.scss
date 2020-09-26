@@ -583,11 +583,14 @@ color: #3366CC;
 }
 
 .exit-box1 {
-  background-color: red;
+  background-image: image-url("top.jpg");
+  background-size: cover;
+  background-position: center;
   height: 535px;
   margin-top: 65px;
   margin-left: 30px;
   width: 400px;
+  border-radius: 20px;
 }
 // 記録ページ-------------------------------------------
 
