@@ -34,9 +34,6 @@ class UsersController < ApplicationController
       end
     end
 
-    # @chatroom = @userEntry.all
-
-
   end
 
   def update
