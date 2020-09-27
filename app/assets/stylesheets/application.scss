@@ -42,6 +42,8 @@
 
 
 body {
+  margin:0;
+  padding:0;
   background-image: image-url("tutui.jpg");
   background-size: cover;
   background-position: center;
@@ -373,10 +375,16 @@ animation: typing 9s steps(11, end);
 .fovorite-kaminari {
   text-align: center;
 }
-.fovorite_box {
-  padding: 80px;
-  margin: 50px 0;
- }
+
+.favorite_box {
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  margin-top: 60px;
+  padding-top: 50px;
+  margin-bottom: 90px;
+  height: 900px;
+}
+
 .fovorite_title {
   margin-bottom: 65px;
 }
