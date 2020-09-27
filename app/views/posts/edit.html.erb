@@ -14,12 +14,12 @@
       <a class="btn btn-outline-info" href="/posts">投稿一覧</a>
   </div>
 </div>
-<%#= form_for @post do |f| %>
+
 <%= form_with model: @post, local: true do |f| %>
 
     <div class="form-group">
     <%= f.label :genre, '投稿カテゴリー' %>
-  <%= collection_select(:genre, :name, Genre.all, :id, :name) %><br>
+  <%= f.collection_select( :genre_id, @genres, :id, :name, {:include_blank => true}) %><br>
   <small id="title-tip" class="form-text text-muted">
             カテゴリーを選択してください。
         </small>
