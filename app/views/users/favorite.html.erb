@@ -3,7 +3,7 @@
   	<div class="index_back">
 
   	  <div class="fovorite_box">
-        <h2 class="fovorite_title">お気に入り</h2>全<%= @favorite_posts.count %>件
+        <h2 class="fovorite_title">お気に入り</h2><%= @favorite_posts.count %>件
         <div>
         <table class="table index_table">
               <% @favorite_posts.each do |post| %>

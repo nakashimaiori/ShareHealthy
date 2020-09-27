@@ -14,7 +14,6 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       @post.save_tag(tag_list)
-      # flash[:notice] = "successfully"
       redirect_to post_path(@post.id)
     else
       render action: :new

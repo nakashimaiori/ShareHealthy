@@ -47,6 +47,9 @@ body {
   background-position: center;
 }
 
+.first {
+  padding-bottom: 10px;
+}
 
 #header {
   background: #fff;
@@ -289,6 +292,7 @@ animation: typing 9s steps(11, end);
   text-align: right;
   margin-top: 35px;
 }
+
 // 複数適用
 
 
@@ -1108,7 +1112,9 @@ footer {
 
 @media screen and (max-width:425px) {
 
-
+.about-1 {
+  font-size: 12px;
+}
 
 .index_table {
   width: 300px;
