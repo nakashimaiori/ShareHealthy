@@ -293,16 +293,12 @@ animation: typing 9s steps(11, end);
   margin-top: 35px;
 }
 
-// 複数適用
-
 
 // kaminari -----------------------------
 
-
-
 .pagination>li>a {
-  border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
+  border: none;
+  color: #696969;
 }
 
 /* 表示しているページ番号のデザイン */
@@ -371,6 +367,12 @@ animation: typing 9s steps(11, end);
 
 // post/fovorite
 
+.favorite_fix {
+  margin-bottom: 50px;
+}
+.fovorite-kaminari {
+  text-align: center;
+}
 .fovorite_box {
   padding: 80px;
   margin: 50px 0;
@@ -533,6 +535,10 @@ animation: typing 9s steps(11, end);
 .favorite_post {
   display: inline-block;
   font-size: 15px;
+}
+
+.fovorite_box {
+
 }
 
 .edit_btn {

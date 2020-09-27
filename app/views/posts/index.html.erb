@@ -31,7 +31,6 @@
           <%= render "genre_bar", genres: @genres %>
 
 
-
         <% if controller.action_name == "search" %>
           <h4 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h4>
 
@@ -69,7 +68,6 @@
             <% end %>
           </table>
         <% end %>
-
         </div>
       </div>
     </div>
