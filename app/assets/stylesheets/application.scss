@@ -335,6 +335,9 @@ animation: typing 9s steps(11, end);
   margin-bottom: 30px;
 }
 
+.comment-form {
+  margin-top: 5px;
+}
 .comment_box {
   margin: 50px 0;
   background-color: rgba(255,255,255,0.8);
@@ -375,6 +378,10 @@ animation: typing 9s steps(11, end);
 .chartkick {
   width: 500px;
   height: 400px;
+}
+
+.error-messages {
+  list-style: none;
 }
 
 
@@ -494,6 +501,10 @@ animation: typing 9s steps(11, end);
   text-align: center;
 }
 
+.follow-chatroom {
+  text-align: left;
+}
+
 .follow-fix {
   height: 800px;
 }
@@ -523,7 +534,7 @@ animation: typing 9s steps(11, end);
 .edit_btn {
   font-size: 50px;
   position: fixed;
-  bottom: 40px;
+  top: 100px;
   right: 20px;
   padding: 6px 40px;
 }
@@ -531,7 +542,10 @@ animation: typing 9s steps(11, end);
 .profile-edit-btn {
   color: #fff;
 }
-
+.profile {
+  text-align: right;
+  margin-left: 310px;
+}
 .chartkick {
   width: 500px;
   height: 400px;
@@ -1083,7 +1097,18 @@ footer {
 
 }
 
+@media screen and (max-width:542px) {
+.top-healthy {
+  font-size: 30px;
+  color: #99CCCC;
+  padding-top: 70px;
+  font-family: arial black;
+}
+}
+
 @media screen and (max-width:425px) {
+
+
 
 .index_table {
   width: 300px;
@@ -1157,6 +1182,30 @@ footer {
 
 .chat-box {
   padding: 0 10px;
+}
+
+.footer_box {
+  padding: 50px 0 0px 30px;
+}
+
+.intt {
+  font-size: 5px;
+}
+
+.words {
+  color: black;
+  font-weight: 900;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 800px;
+  padding: 10px;
+  span {
+    font-size: 60px;
+    text-align: center;
+    // display: inline-block;
+  }
 }
 
 }
