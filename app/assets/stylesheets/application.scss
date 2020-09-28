@@ -536,12 +536,16 @@ animation: typing 9s steps(11, end);
 .new {
   list-style: none;
   font-size: 30px;
+  text-align: center;
+}
+
+.all_post {
+  text-align: center;
 }
 
 .new_post {
   display: inline-block;
   font-size: 15px;
-  margin-left: 20px;
 }
 
 .favorite_post {

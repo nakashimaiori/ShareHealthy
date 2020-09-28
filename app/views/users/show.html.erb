@@ -121,7 +121,8 @@
     <div class="try col-md-6">
       <div class="users_post_box">
         <div class="">
-        <ul class="new">全ての投稿
+        <h2 class="all_post">全ての投稿</h2>
+        <ul class="new">
           <li class="new_post"><%= link_to "記事投稿へ", new_post_path, class: 'btn btn-success' %></li>
           <li class="favorite_post"><%= link_to "お気に入り記事", favorite_path(@user), class: 'btn btn-warning' %></li>
         </ul>

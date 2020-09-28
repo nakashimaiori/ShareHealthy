@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     tag_list = params[:post][:tag_name].split(nil)
     @genres = Genre.all
-    @post.genre_id = params[:genre_id]
+    # @post.genre_id = params[:genre_id]
     @post.user_id = current_user.id
     if @post.save
       @post.save_tag(tag_list)
