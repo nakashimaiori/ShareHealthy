@@ -5,6 +5,6 @@ class DayWeight < ApplicationRecord
   validates :start_time, presence: true
 
   def self.chart_date
-  	order(start_time: :asc).pluck('start_time', 'weight').to_h
+    order(start_time: :asc).pluck('start_time', 'weight').to_h
   end
 end

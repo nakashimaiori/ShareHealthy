@@ -3,25 +3,27 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts =@user.posts.page(params[:page]).reverse_order.order(id: "DESC")
-    #一応これなら表示される↓
+    @posts = @user.posts.page(params[:page]).reverse_order.order(id: "DESC")
+    # 一応これなら表示される↓
     # @day_weights = current_user.day_weights
-     @favorite_posts = @user.favorite_posts.page(params[:page]).reverse_order.order(id: "DESC")
-     start_time = params[:start_time]
-     if start_time.nil?
-       start_time = Date.today
-     end
-     @day_weights = DayWeight.where(user_id: params[:id]).where(start_time: start_time.in_time_zone.all_month)
-     @day_records = DayRecord.where(user_id: params[:id]).where(start_time: start_time.in_time_zone.all_month)
-     @weights = current_user.day_weights
+    @favorite_posts = @user.favorite_posts.page(params[:page]).reverse_order.order(id: "DESC")
+    start_time = params[:start_time]
+    if start_time.nil?
+      start_time = Date.today
+    end
+    @day_weights = DayWeight.where(user_id: params[:id]).
+      where(start_time: start_time.in_time_zone.all_month)
+    @day_records = DayRecord.where(user_id: params[:id]).
+      where(start_time: start_time.in_time_zone.all_month)
+    @weights = current_user.day_weights
 
     # chat
-    @currentUserEntry=UserRoom.where(user_id: current_user.id)
-    @userEntry=UserRoom.where(user_id: @user.id)
+    @currentUserEntry = UserRoom.where(user_id: current_user.id)
+    @userEntry = UserRoom.where(user_id: @user.id)
     unless @user.id == current_user.id
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id
             @isRoom = true
             @roomId = cu.room_id
           end
@@ -33,7 +35,6 @@ class UsersController < ApplicationController
         @user_room = UserRoom.new
       end
     end
-
   end
 
   def update
@@ -87,13 +88,13 @@ class UsersController < ApplicationController
     @user = User.all
     user = current_user
 
-    @currentUserEntry=UserRoom.where(user_id: current_user.id)
-    @userEntry=UserRoom.where(user_id: @user)
+    @currentUserEntry = UserRoom.where(user_id: current_user.id)
+    @userEntry = UserRoom.where(user_id: @user)
 
     unless @user == current_user.id
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id
             @roomId = cu.room_id
           end
         end
@@ -102,14 +103,11 @@ class UsersController < ApplicationController
 
     @nowchat = Chat.where(user_id: current_user.id).group(:room_id).order(updated_at: :desc)
     # @gest = Chat.where(room_id: 6).group(:user_id).pluck(:user_id)[1]
-
   end
-
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :profile_image, :old, :sex, :weight, :tall, :target, :introduction)
   end
-
 end

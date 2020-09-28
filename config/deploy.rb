@@ -40,5 +40,5 @@ set :repo_url, "git@github.com:nakashimaiori/Shareahalthy.git"
 
 set :deploy_to, "/home/ec2-user/ShareHealthy"
 set :rbenv_ruby, '2.5.7'
-set :linked_files, %w{config/master.key .env}
+set :linked_files, %w(config/master.key .env)
 append :linked_dirs, "log", "public", "tmp"
