@@ -11,7 +11,7 @@
   </head>
 
   <body class="nav_open">
-    <!-- <header> -->
+
   <div id="header">
     <h1 class="header_title">Share Healthy</h1>
       <nav>
@@ -40,21 +40,14 @@
       <% end %>
         </ul>
       </nav>
-<!-- ボタン部分ここを後で追加するだけ-->
 <div class="nav_btn" id="nav_btn">
   <span class="hamburger_line hamburger_line1"></span>
   <span class="hamburger_line hamburger_line2"></span>
   <span class="hamburger_line hamburger_line3"></span>
 </div>
 <div class="nav_bg" id="nav_bg"></div>
-<!-- /ボタン部分ここを後で追加するだけ-->
 </div>
-<!-- </header>
- -->    <%= yield %>
+    <%= yield %>
   </body>
-<footer>
-      <div class="footer_box">
-        <div class="footer_box_title">Share Healthy</div><p class="footer-sub">Health is wealth</p>
-      </div>
-    </footer>
+    <%= render "layouts/footer" %>
 </html>

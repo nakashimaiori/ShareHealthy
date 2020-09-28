@@ -309,27 +309,6 @@ animation: typing 9s steps(11, end);
   margin-top: 35px;
 }
 
-
-// kaminari -----------------------------
-
-.pagination>li>a {
-  border: none;
-  color: #696969;
-}
-
-/* 表示しているページ番号のデザイン */
-.pagination>.active>a {
-  background: #93c9ff;
-  border-radius: 15px;
-}
-
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {
-  border-radius: 15px;
-}
-
-
-
 // 投稿詳細ページ(posts/show)
 
 .detail_box {
@@ -661,25 +640,31 @@ color: #3366CC;
 // footer---------------------------------------------
 
 footer {
-  height: 200px;
+  height: 100%;
   background-color: #666;
   bottom: 0;
   width: 100%;
 
 }
 
-.footer_box {
-  padding: 50px 0 0px 100px;
-}
-
 .footer_box_title {
-  font-size: 40px;
+  font-size: 50px;
   color: #fff;
   font-family: baby kruffy;
 }
 
+.footer_box {
+  padding: 50px 0;
+}
+
 .footer-sub {
   font-family: baby kruffy;
+}
+
+.social_font {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #fff;
 }
 
 .font {
@@ -1223,10 +1208,6 @@ footer {
   padding: 0 10px;
 }
 
-.footer_box {
-  padding: 50px 0 0px 30px;
-}
-
 .intt {
   font-size: 5px;
 }
@@ -1390,7 +1371,6 @@ footer {
 
   .nav-list-item-sp {
   display: block;
-}
-
  }
+}
 
