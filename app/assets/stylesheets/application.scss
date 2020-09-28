@@ -595,6 +595,15 @@ animation: typing 9s steps(11, end);
 color: #3366CC;
 }
 
+.simple-calendar {
+  .wday-0 {
+    color: red;
+  }
+  .wday-6 {
+    color: blue;
+  }
+}
+
 @media screen and (max-width:992px) {
   .profile-weight {
     display: none;
