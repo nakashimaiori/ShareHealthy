@@ -40,7 +40,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   margin:0;
   padding:0;
@@ -59,9 +58,11 @@ body {
   flex-flow: row wrap;
   padding: 15px 20px;
 }
+
 #header h1 {
   margin-right: auto;
 }
+
 #header #navi {
   margin-top: 10px;
   display: flex;
@@ -69,16 +70,19 @@ body {
   align-items: center;
   list-style: none;
 }
+
 #header #navi li {
   margin: 0 15px;
   line-height: 100%;
 }
+
 #header #navi li a {
   color: #000;
   text-decoration: none;
 }
 
 // ボタン----------------------------------------------------------
+
 .btn-gradation {
   display: inline-block;
   text-align: left;
@@ -145,7 +149,6 @@ body {
   color: #666666;
 }
 
-
 @media screen and (max-width: 768px) {
   /* bager menu */
   #header #navi {
@@ -162,9 +165,11 @@ body {
     flex-direction: column;
     align-items: baseline;
   }
+
   #header #navi li {
     padding: 10px;
   }
+
   #header .nav_btn {
     width: 44px;
     height: 44px;
@@ -174,6 +179,7 @@ body {
     cursor: pointer;
     position: absolute;
   }
+
   .hamburger_line {
     transition: all 0.6s;
     width: 34px;
@@ -182,15 +188,19 @@ body {
     background-color: #000;
     position: absolute;
   }
+
   .hamburger_line1 {
     top: 10px;
   }
+
   .hamburger_line2 {
     top: 21px;
   }
+
   .hamburger_line3 {
     top: 32px;
   }
+
   .nav_bg {
     opacity: 0;
     transition: all 0.6s;
@@ -208,14 +218,17 @@ body {
   .nav_open #header #navi {
     right: 0;
   }
+
   .nav_open .nav_bg {
     opacity: 0.8;
     visibility: visible;
   }
+
   .nav_open .hamburger_line1 {
     transform: rotate(45deg);
     top: 20px;
   }
+
   .nav_open .hamburger_line2 {
     width: 0;
     left: 50%;
@@ -236,6 +249,7 @@ body {
 .about {
   height: 300px;
 }
+
 .about_title {
   font-size: 60px;
   text-align: center;
@@ -305,13 +319,13 @@ animation: typing 9s steps(11, end);
 
 /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
-  background: #93c9ff;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+  background: #93c9ff;
+  border-radius: 15px;
 }
 
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
-  border-radius: 15px;    /*角を丸くする*/
+  border-radius: 15px;
 }
 
 
@@ -320,7 +334,6 @@ animation: typing 9s steps(11, end);
 
 .detail_box {
   margin-top: 20px;
-  // background-color: #ffffff;
   background-color: rgba(255,255,255,0.5);
   border-radius: 20px;
 }
@@ -329,8 +342,6 @@ animation: typing 9s steps(11, end);
   padding: 50px 50px 50px 80px;
   background-color: rgba(255,255,255,0.5);
   border-radius: 20px;
-
-
 }
 
 .detail_box_user {
@@ -340,6 +351,7 @@ animation: typing 9s steps(11, end);
 .comment-form {
   margin-top: 5px;
 }
+
 .comment_box {
   margin: 50px 0;
   background-color: rgba(255,255,255,0.8);
@@ -354,14 +366,12 @@ animation: typing 9s steps(11, end);
   margin-top: 30px;
 }
 
-.fixed_btn
-{
+.fixed_btn {
   position: fixed;
   bottom: 200px;
   right: 30px;
   padding: 6px 40px;
 }
-
 
 .like_btn {
   padding-right: 8px;
@@ -372,6 +382,7 @@ animation: typing 9s steps(11, end);
 .favorite_fix {
   margin-bottom: 50px;
 }
+
 .fovorite-kaminari {
   text-align: center;
 }
@@ -439,12 +450,12 @@ animation: typing 9s steps(11, end);
   font-family: 'Rubik Mono One', sans-serif;
 }
 
-
 .sub-title {
   font-size: 38px;
   font-family: "serif";
   font-weight: 100;
 }
+
 .words {
   color: black;
   font-weight: 900;
@@ -492,9 +503,11 @@ animation: typing 9s steps(11, end);
 .profile_box_detail {
   margin: 0 auto;
 }
+
 .btn_table {
   padding-left: 50px;
 }
+
 .users_post_box {
   margin-top: 20px;
 }
@@ -516,10 +529,10 @@ animation: typing 9s steps(11, end);
   display: inline-block;
 }
 
-
 .profile_follow {
   list-style: none;
 }
+
 .profile_follow_li {
   display: inline-block;
   margin-left: 10px;
@@ -533,6 +546,7 @@ animation: typing 9s steps(11, end);
 .follow-fix {
   height: 800px;
 }
+
 .genre_btn {
   font-size: 3px;
 }
@@ -545,6 +559,7 @@ animation: typing 9s steps(11, end);
   list-style: none;
   font-size: 30px;
 }
+
 .new_post {
   display: inline-block;
   font-size: 15px;
@@ -554,10 +569,6 @@ animation: typing 9s steps(11, end);
 .favorite_post {
   display: inline-block;
   font-size: 15px;
-}
-
-.fovorite_box {
-
 }
 
 .edit_btn {
@@ -571,11 +582,11 @@ animation: typing 9s steps(11, end);
 .profile-edit-btn {
   color: #fff;
 }
+
 .profile {
-  // text-align: right;
-  // margin-left: 310px;
   right: 0px;
 }
+
 .chartkick {
   width: 500px;
   height: 400px;
@@ -615,7 +626,6 @@ color: #3366CC;
   padding: 60px 200px;
   background-color: rgba(255,255,255,0.8);
   border-radius: 20px;
-
 }
 
 //exit------------------------------------------------
@@ -708,6 +718,7 @@ footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 .box {
   /*設置する親要素ページ全体ならbodyなど*/
   position: relative;
@@ -775,12 +786,12 @@ footer {
   text-align: center;
   padding-top: 100px;
 }
+
 .tag-list {
   padding-top: 10px;
   height: 500px;
   padding: 10px 60px;
   word-break: normal;
-
 }
 
 .yellow {
@@ -793,13 +804,11 @@ footer {
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
-
 }
 
 .vvv {
   padding: 0;
 }
-
 
 .top-tag {
   display: inline-block;
@@ -813,7 +822,6 @@ footer {
 }
 
 // 投稿一覧---------------------------------------------------
-
 
 .searchbox {
   height: 95px;
@@ -861,6 +869,7 @@ footer {
   background-color: rgba(255,255,255,0.8);
   border-radius: 20px;
 }
+
 .select_index {
   padding: 30px;
   margin: 50px 0;
@@ -880,12 +889,12 @@ footer {
   padding: auto;
 }
 
-
 // chatroom
 .mychat {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .chat-table {
   height: 60px;
 }
@@ -898,6 +907,7 @@ footer {
   display: flex;
   flex-direction: row;
 }
+
 .message_form {
   margin-top: 30px;
 }
@@ -924,9 +934,11 @@ footer {
 .now-message {
   padding-top: 30px;
 }
+
 .samon {
   color: #ff6666;
 }
+
 .posts {
   padding: 50px;
 }
@@ -941,7 +953,6 @@ footer {
   margin:10px;
   width:200px;
   word-wrap:break-word;
-
 }
 
 .hukidasi {
@@ -997,7 +1008,6 @@ footer {
   padding: 30px;
 }
 
-
 // ---------------------------------------------------------
 .index_table {
   width: 550px;
@@ -1018,7 +1028,6 @@ footer {
 .like_side {
   display: inline-block;
 }
-
 
 // フォロー ---------------------------------------------------
 
@@ -1053,11 +1062,6 @@ footer {
 .user-edit {
   padding: 60px;
 }
-
-
-
-
-
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
@@ -1089,7 +1093,6 @@ footer {
   top: 100px;
 }
 
-
 .edit_btn {
   display:none;
 }
@@ -1110,6 +1113,7 @@ footer {
 .heart_btn {
   font-size: 15px;
 }
+
 .detail_box_in {
   padding: 50px 50px 50px 50px;
   background-color: rgba(255,255,255,0.6);
@@ -1123,7 +1127,6 @@ footer {
 .chat-box {
   padding: 0 30px;
 }
-
 }
 
 @media screen and (max-width:542px) {
@@ -1144,6 +1147,7 @@ footer {
 .index_table {
   width: 300px;
 }
+
 .like_in_table {
   padding-left: 200px;
   color: #808080;
@@ -1157,6 +1161,7 @@ footer {
   background-color: #fff;
   margin: 20px;
 }
+
 .start-time {
   font-size: 21px;
 }
@@ -1168,14 +1173,17 @@ footer {
 .profile_name {
   text-align: center;
 }
+
 .profile_follow {
   text-align: center;
 }
+
 .mypage_box{
   margin: 50px 0;
   background-color: #fff;
   background-color: rgba(255,255,255,0.6);
 }
+
 .user-edit {
   padding: 60px 20px;
 }
@@ -1238,7 +1246,6 @@ footer {
     // display: inline-block;
   }
 }
-
 }
 // ------------------------------------------------------
 .sign {
@@ -1267,9 +1274,11 @@ footer {
   flex-flow: row wrap;
   padding: 20px 30px;
 }
+
 #header h1 {
   margin-right: auto;
 }
+
 #header #navi {
   margin-top: 10px;
   display: flex;
@@ -1277,16 +1286,17 @@ footer {
   align-items: center;
   list-style: none;
 }
+
 #header #navi li {
   margin: 0 15px;
   line-height: 100%;
 }
+
 #header #navi li a {
   color: #000;
   text-decoration: none;
 }
-/*PCメニュー*/
-/*SPメニュー*/
+
 
 @media screen and (max-width: 950px) {
   /* bager menu */
@@ -1304,9 +1314,11 @@ footer {
     flex-direction: column;
     align-items: baseline;
   }
+
   #header #navi li {
     padding: 10px;
   }
+
   #header .nav_btn {
     width: 44px;
     height: 44px;
@@ -1316,6 +1328,7 @@ footer {
     cursor: pointer;
     position: absolute;
   }
+
   .hamburger_line {
     transition: all 0.6s;
     width: 34px;
@@ -1324,15 +1337,19 @@ footer {
     background-color: #000;
     position: absolute;
   }
+
   .hamburger_line1 {
     top: 10px;
   }
+
   .hamburger_line2 {
     top: 21px;
   }
+
   .hamburger_line3 {
     top: 32px;
   }
+
   .nav_bg {
     opacity: 0;
     transition: all 0.6s;
@@ -1350,18 +1367,22 @@ footer {
   .nav_open #header #navi {
     right: 0;
   }
+
   .nav_open .nav_bg {
     opacity: 0.8;
     visibility: visible;
   }
+
   .nav_open .hamburger_line1 {
     transform: rotate(45deg);
     top: 20px;
   }
+
   .nav_open .hamburger_line2 {
     width: 0;
     left: 50%;
   }
+
   .nav_open .hamburger_line3 {
     transform: rotate(-45deg);
     top: 20px;
