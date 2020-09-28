@@ -70,9 +70,9 @@
 
       <div class="profile_box">
         <% unless @user.old.present? || @user.sex.present? || @user.tall.present? || @user.weight.present? || @user.target.present? || @user.introduction? %>
-          <p>↓↓プロフィールを登録してください</p>
+          <p class="registration">↓プロフィールを登録してください　　</p>
         <% else %>
-      <table>
+      <table class="profile_box_detail">
         <tr>
           <% if @user.old.present? %>
             <td><p><%= @user.old %>歳</p></td>
@@ -114,7 +114,7 @@
       <p><%= @user.introduction %></p>
     <% end %>
     </div>
-      <button type="button" class="btn-gradation2"><i class="glyphicon glyphicon-cog"></i> <%= link_to "Edit Profile", edit_user_path(@user.id),class: "url"%></button>
+      <div class="registration"><button type="button" class="btn-gradation2"><i class="glyphicon glyphicon-cog"></i> <%= link_to "Edit Profile", edit_user_path(@user.id),class: "url"%></button></div>
 
 
     </div>

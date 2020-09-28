@@ -478,13 +478,20 @@ animation: typing 9s steps(11, end);
 }
 
 .profile_box {
-  margin: 30px 0 0 30px;
+  text-align: center;
+  margin: 20px 30px;
+  padding: 20px 0;
+  background-color: #EEEEEE;
+  border-radius: 20px;
 }
 .profile_name {
   font-size: 40px;
   margin: 20px 0 20px 0;
 }
 
+.profile_box_detail {
+  margin: 0 auto;
+}
 .btn_table {
   padding-left: 50px;
 }
@@ -494,6 +501,10 @@ animation: typing 9s steps(11, end);
 
 .chart_box {
   margin-top: 60px;
+}
+
+.registration {
+  text-align: center;
 }
 
 .record_btn {
@@ -516,7 +527,7 @@ animation: typing 9s steps(11, end);
 }
 
 .follow-chatroom {
-  text-align: left;
+  text-align: center;
 }
 
 .follow-fix {
@@ -561,8 +572,9 @@ animation: typing 9s steps(11, end);
   color: #fff;
 }
 .profile {
-  text-align: right;
-  margin-left: 310px;
+  // text-align: right;
+  // margin-left: 310px;
+  right: 0px;
 }
 .chartkick {
   width: 500px;
@@ -576,7 +588,6 @@ animation: typing 9s steps(11, end);
 
 .update-btn {
   text-align: right;
-  padding-right: 90px;
 }
 
 .apple {
