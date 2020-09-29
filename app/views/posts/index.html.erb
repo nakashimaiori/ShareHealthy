@@ -1,77 +1,29 @@
 <div class="container">
-    <div class="searchbox">
-      <div class="searchbox_in">
-      <%= search_form_for @search do |f| %>
-        <%= f.search_field :title_or_content_cont,placeholder: '検索するワードを入力' %>
-        <%= f.submit "検索", class: "btn-gradation3" %><p> </p>
-      <% end %>
-      </div>
 
-      <div class="sortbox">
-        <%= form_with model: @post, url: select_path, method: :get, local: true do |form| %>
-          <%= form.select :keyword, [ ['投稿が新しい順', 'new'],
-                                    ['投稿が古い順', 'old'],
-                                    ['いいねが多い順', 'likes'],
-                                    ['いいねが少ない順', 'dislikes'],
-                                  ], { :include_blank => "選択してください ▼" }, :required => true  %>
-           <%= form.submit '並び替え', class: "btn-gradation3" %>
-        <% end %>
-      </div>
-    </div>
+  <%= render "posts/searchbar", search: @search, post: @post %>
 
-
-<div class="po">
   <div class="row">
-
     <div class="index_back">
       <div class="index_back_box">
         <div class="col-xs-offset-2 col-md-offset-3">
 
           <%= render "genre_bar", genres: @genres %>
 
-
         <% if controller.action_name == "search" %>
-          <h4 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h4>
+          <h4 class="title"><%= @genre.name %>
+            <span>(全 <%= @posts.count %> 件)</span>
+          </h4>
 
-          <table class="table index_table">
-
-            <% @posts.each do |post| %>
-            <tr>
-              <td class="td_index"><%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'20x20' %>
-                  <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
-                  <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
-                  <h3><%= link_to post.title, post_path(post.id) %></h3>
-                  <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
-              </td>
-              <td></td>
-            </tr>
-            <% end %>
-          </table>
-
+          <%= render "posts/post", posts: @posts %>
 
         <% else %>
 
-
-          <table class="table index_table">
-
-            <% @search_posts.each do |post| %>
-            <tr>
-              <td><%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'20x20' %>
-              <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
-              <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
-              <h3><%= link_to post.title, post_path(post.id) %></h3>
-              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
-              </td>
-            </tr>
-            <% end %>
-          </table>
+          <%= render "posts/post", posts: @search_posts %>
         <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>
-
 
 
 <%= link_to new_post_path do %>
