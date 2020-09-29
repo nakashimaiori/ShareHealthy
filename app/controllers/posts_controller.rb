@@ -76,7 +76,7 @@ class PostsController < ApplicationController
   def tagsearch
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
-    @posts = @tag.posts.all.order(id: "DESC")
+    @posts = @tag.posts.all.order(id: "DESC").page(params[:page])
   end
 
   private

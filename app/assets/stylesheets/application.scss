@@ -365,17 +365,22 @@ animation: typing 9s steps(11, end);
   text-align: center;
 }
 
+.tag-kaminari {
+  margin-left: 180px;
+}
+
 .favorite_box {
   background-color: rgba(255,255,255,0.8);
   border-radius: 20px;
   margin-top: 60px;
-  padding-top: 50px;
+  padding: 50px;
   margin-bottom: 90px;
   height: 900px;
 }
 
 .fovorite_title {
-  margin-bottom: 65px;
+  margin: 65px 50px;
+  padding-top: 50px;
 }
 
 .chartkick {
@@ -835,6 +840,11 @@ footer {
   color: #808080;
 }
 
+.tagserch-box {
+  margin-bottom: 50px;
+  height: 900px;
+}
+
 @media screen and (max-width:1200px) {
   .like_in_table {
   padding-left: 260px;
@@ -1238,6 +1248,10 @@ footer {
     text-align: center;
     // display: inline-block;
   }
+}
+
+.tag-kaminari {
+  margin-left: 100px;
 }
 }
 // ------------------------------------------------------

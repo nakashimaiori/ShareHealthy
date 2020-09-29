@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="searchbox">
       <div class="searchbox_in">
       <%= search_form_for @search do |f| %>
@@ -21,7 +20,7 @@
     </div>
 
 
-<div class="">
+<div class="po">
   <div class="row">
 
     <div class="index_back">
@@ -35,7 +34,6 @@
           <h4 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h4>
 
           <table class="table index_table">
-
 
             <% @posts.each do |post| %>
             <tr>
