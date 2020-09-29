@@ -13,6 +13,9 @@
           <h4 class="title"><%= @genre.name %>
             <span>(全 <%= @posts.count %> 件)</span>
           </h4>
+          <% if @posts.count == 0 %>
+            <div class="genre-nothing col-xs-offset-3">投稿がありません。</div>
+          <% end %>
 
           <%= render "posts/post", posts: @posts %>
 
