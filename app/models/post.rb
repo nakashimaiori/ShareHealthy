@@ -40,7 +40,7 @@ class Post < ApplicationRecord
       all.order(created_at: :ASC)
     when 'likes'
       find(Favorite.group(:post_id).order(Arel.sql('count(post_id) desc')).pluck(:post_id))
-    when 'minilikes'
+    when 'dislikes'
       find(Favorite.group(:post_id).order(Arel.sql('count(post_id) asc')).pluck(:post_id))
     end
   end
