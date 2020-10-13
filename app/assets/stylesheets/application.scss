@@ -531,12 +531,18 @@ animation: typing 9s steps(11, end);
   font-size: 15px;
 }
 
+.fa-pencil-alt {
+  font-size: 30px;
+}
+
 .edit_btn {
-  font-size: 50px;
+  color: gray;
+  font-size: 70px;
   position: fixed;
   top: 100px;
-  right: 20px;
-  padding: 6px 40px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .profile-edit-btn {
