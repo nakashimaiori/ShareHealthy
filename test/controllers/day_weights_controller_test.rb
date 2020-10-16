@@ -15,5 +15,4 @@ class DayWeightsControllerTest < ActionDispatch::IntegrationTest
     get day_weights_edit_url
     assert_response :success
   end
-
 end

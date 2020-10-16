@@ -1,26 +1,24 @@
 Rails.application.routes.draw do
-
-
   get 'rooms/show'
   # get 'day_records/show'
   # get 'day_records/new'
   get 'relationships/create'
   get 'relationships/destroy'
   devise_for :users, controllers: {
-  sessions: 'users/sessions',
-  passwords: 'users/passwords',
-  registrations: 'users/registrations'
-}
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+  }
 
   devise_for :admins, controllers: {
-  sessions: 'admins/sessions'
-}
+    sessions: 'admins/sessions',
+  }
 
   root to: 'homes#top'
   post '/homes/guest_sign_in', to: 'homes#new_guest'
   get '/user/exit' => 'users#exit'
   resources :chats, only: [:create, :show]
-  resources :rooms, only: [:create,:show]
+  resources :rooms, only: [:create, :show]
   get 'favorite/:id' => 'users#favorite', as: 'favorite'
   get 'mychat/:id' => 'users#mychat', as: 'mychat'
 
@@ -30,8 +28,8 @@ Rails.application.routes.draw do
     get :followers, on: :member
 
     member do
-    get "exit"
-    # patch "withdraw"
+      get "exit"
+      # patch "withdraw"
     end
 
     resources :day_weights, except: :show

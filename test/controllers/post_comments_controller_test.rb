@@ -10,5 +10,4 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
     get post_comments_destroy_url
     assert_response :success
   end
-
 end

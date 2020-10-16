@@ -1,32 +1,28 @@
-
-
-
-
-
-<div class="container header_fix">
+<div class="container">
   <div class="row">
-  	<div class="index_back">
-
-  	  <div class="fovorite_box">
-        <h2 class="fovorite_title"><%= "タグが" %>
-		<strong><%= "#{@tag.tag_name}" %></strong>
-		<%= "の投稿一覧" %></h2>
-
-        <div>
-        <table class="table index_table">
+  	<div class="index_back tagserch-box">
+      <div class="col-xs-offset-2 col-md-offset-3">
+  	    <div class="fovorite_box">
+          <h2 class="fovorite_title"><%= "#" %>
+		        <strong><%= "#{@tag.tag_name}" %></strong>
+		        <%= "投稿一覧" %></h2>
+          <div>
+            <table class="table index_table">
               <% @posts.each do |post| %>
-                    <tr>
-                      <td>
-                        <p><%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
-                        <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
-                        <h5><%= link_to post.title, post_path(post.id) %></h5><p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
+                <tr>
+                  <td>
+                    <p><%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
+                    <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
+                    <h5><%= link_to post.title, post_path(post.id) %></h5><p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
 
-                      </td>
-                    </tr>
+                  </td>
+                </tr>
               <% end %>
-        </table>
+            </table>
+              <div class="tag-kaminari"><%= paginate @posts %></div>
+          </div>
+	      </div>
       </div>
-	    </div>
     </div>
   </div>
 </div>

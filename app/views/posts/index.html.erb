@@ -1,5 +1,6 @@
 <div class="container">
 
+
     <div class="searchbox">
       <div class="searchbox_in">
       <%= search_form_for @search do |f| %>
@@ -20,62 +21,34 @@
       </div>
     </div>
 
+  <%= render "posts/searchbar", search: @search, post: @post %>
 
-<div class="">
+
   <div class="row">
-
     <div class="index_back">
       <div class="index_back_box">
         <div class="col-xs-offset-2 col-md-offset-3">
 
           <%= render "genre_bar", genres: @genres %>
 
-
-
         <% if controller.action_name == "search" %>
-          <h4 class="title"><%= @genre.name %><span>(全 <%= @posts.count %> 件)</span></h4>
+          <h4 class="title"><%= @genre.name %>
+            <span>(全 <%= @posts.count %> 件)</span>
+          </h4>
+          <% if @posts.count == 0 %>
+            <div class="genre-nothing col-xs-offset-3">投稿がありません。</div>
+          <% end %>
 
-          <table class="table index_table">
-
-
-            <% @posts.each do |post| %>
-            <tr>
-              <td class="td_index"><%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'20x20' %>
-                  <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
-                  <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
-                  <h3><%= link_to post.title, post_path(post.id) %></h3>
-                  <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
-              </td>
-              <td></td>
-            </tr>
-            <% end %>
-          </table>
-
+          <%= render "posts/post", posts: @posts %>
 
         <% else %>
 
-
-          <table class="table index_table">
-
-            <% @search_posts.each do |post| %>
-            <tr>
-              <td><%= attachment_image_tag post.user, :profile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'20x20' %>
-              <p class="post_index"><%= post.user.name %>が<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>に投稿</p>
-              <div class="genre_btn"><span style="background-color:#ffcc99"><%= post.genre.name %></span></div>
-              <h3><%= link_to post.title, post_path(post.id) %></h3>
-              <p class="like_in_table"><strong>いいね</strong> <%= post.favorites.count%>　<i class="fas fa-comment"></i> <%= post.post_comments.count %>件</p>
-              </td>
-            </tr>
-            <% end %>
-          </table>
+          <%= render "posts/post", posts: @search_posts %>
         <% end %>
-
         </div>
       </div>
     </div>
   </div>
-</div>
-
 
 
 <%= link_to new_post_path do %>

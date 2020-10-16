@@ -19,7 +19,7 @@
 
     <div class="form-group">
     <%= f.label :genre, '投稿カテゴリー' %>
-  <%= f.collection_select( :genre_id, @genres, :id, :name, {:include_blank => true}) %><br>
+  <%= f.collection_select( :genre_id, @genres, :id, :name) %><br>
   <small id="title-tip" class="form-text text-muted">
             カテゴリーを選択してください。
         </small>
