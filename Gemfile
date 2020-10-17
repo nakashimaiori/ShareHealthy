@@ -83,4 +83,5 @@ gem 'rails-i18n'
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'omniauth-google-oauth2'
 

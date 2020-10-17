@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   # get 'day_records/new'
   get 'relationships/create'
   get 'relationships/destroy'
-  devise_for :users, controllers: {
-  sessions: 'users/sessions',
-  passwords: 'users/passwords',
-  registrations: 'users/registrations'
-}
+#   devise_for :users, controllers: {
+#   sessions: 'users/sessions',
+#   passwords: 'users/passwords',
+#   registrations: 'users/registrations'
+# }
+devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
   devise_for :admins, controllers: {
   sessions: 'admins/sessions'
