@@ -70,9 +70,9 @@
 
       <div class="profile_box">
         <% unless @user.old.present? || @user.sex.present? || @user.tall.present? || @user.weight.present? || @user.target.present? || @user.introduction? %>
-          <p>↓↓プロフィールを登録してください</p>
+          <p class="registration">↓プロフィールを登録してください　　</p>
         <% else %>
-      <table>
+      <table class="profile_box_detail">
         <tr>
           <% if @user.old.present? %>
             <td><p><%= @user.old %>歳</p></td>
@@ -114,14 +114,15 @@
       <p><%= @user.introduction %></p>
     <% end %>
     </div>
-      <button type="button" class="btn-gradation2"><i class="glyphicon glyphicon-cog"></i> <%= link_to "Edit Profile", edit_user_path(@user.id),class: "url"%></button>
+      <div class="registration"><button type="button" class="btn-gradation2"><i class="glyphicon glyphicon-cog"></i> <%= link_to "Edit Profile", edit_user_path(@user.id),class: "url"%></button></div>
 
 
     </div>
     <div class="try col-md-6">
       <div class="users_post_box">
         <div class="">
-        <ul class="new">全ての投稿
+        <h2 class="all_post">全ての投稿</h2>
+        <ul class="new">
           <li class="new_post"><%= link_to "記事投稿へ", new_post_path, class: 'btn btn-success' %></li>
           <li class="favorite_post"><%= link_to "お気に入り記事", favorite_path(@user), class: 'btn btn-warning' %></li>
         </ul>
@@ -193,10 +194,7 @@
     <% end %>
 
 <% end %>
-
-
     </div>
-
     <div class="col-md-6">
       <div class="chart_box">
         <div class="record_btn">

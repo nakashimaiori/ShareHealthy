@@ -65,7 +65,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari', '~> 1.2.1'
 gem 'rubocop-airbnb'
 gem 'pry-byebug'
 gem 'font-awesome-sass', '~> 5.4.1'
@@ -79,9 +79,16 @@ group :production do
 end
 gem 'rails-i18n'
 
+<<<<<<< HEAD
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   gem 'omniauth-google-oauth2'
 
+=======
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano3-puma'
+gem 'capistrano-rbenv'
+>>>>>>> 9ed9a6d89ec232c8de8e353d337bf175fdcfb847

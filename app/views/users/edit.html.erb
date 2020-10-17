@@ -79,7 +79,7 @@
   <% if @user.email == "guest@.com" %>
     <p>ゲストユーザーは退会できません</p>
   <% else %>
-      <%= link_to "退会画面へ", user_exit_path %>
+      <p><%= link_to "退会画面へ", user_exit_path %></p>
   <% end %>
 
 

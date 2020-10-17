@@ -1,20 +1,17 @@
 class PostsController < ApplicationController
-
   def new
-  	@post = Post.new
-  	@genres = Genre.all
-
+    @post = Post.new
+    @genres = Genre.all
   end
 
   def create
-  	@post = Post.new(post_params)
+    @post = Post.new(post_params)
     tag_list = params[:post][:tag_name].split(nil)
     @genres = Genre.all
-    @post.genre_id = params[:genre_id]
+    # @post.genre_id = params[:genre_id]
     @post.user_id = current_user.id
     if @post.save
       @post.save_tag(tag_list)
-      # flash[:notice] = "successfully"
       redirect_to post_path(@post.id)
     else
       render action: :new
@@ -22,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
-  	@post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post_comment = PostComment.new
     @user = @post.user
     @post_tags = @post.tags
@@ -30,7 +27,7 @@ class PostsController < ApplicationController
 
   def index
     @genres = Genre.all
-  	@posts = Post.all.order(id: "DESC")
+    @posts = Post.all.order(id: "DESC")
   end
 
   def edit
@@ -79,7 +76,7 @@ class PostsController < ApplicationController
   def tagsearch
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
-    @posts = @tag.posts.all.order(id: "DESC")
+    @posts = @tag.posts.all.order(id: "DESC").page(params[:page])
   end
 
   private
