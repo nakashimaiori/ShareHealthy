@@ -5,6 +5,12 @@
   <h1 class="login-up">Log in</h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+
   <div class="field">
     <%= f.label :name %><br />
   <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
