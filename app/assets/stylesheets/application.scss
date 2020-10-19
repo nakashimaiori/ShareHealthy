@@ -47,6 +47,10 @@ body {
   background-position: center;
 }
 
+.sample {
+  table-layout: fixed;
+}
+
 
 #header {
   background: #fff;
@@ -333,6 +337,11 @@ animation: typing 9s steps(11, end);
 
 .detail_box_user {
   margin-bottom: 30px;
+}
+
+.wrap {
+  width:500px;
+  word-wrap:break-word;
 }
 
 .comment-form {
