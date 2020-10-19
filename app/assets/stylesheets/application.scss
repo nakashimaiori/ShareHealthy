@@ -1024,10 +1024,10 @@ footer {
   padding: 60px;
 }
 
-
-
-
-
+.wrap {
+  width:400px;
+  word-wrap:break-word;
+ }
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
@@ -1044,6 +1044,13 @@ footer {
   display: inline-block;
 }
 
+.comment-name {
+  font-size: 10px;
+}
+.wrap {
+  width:280px;
+  word-wrap:break-word;
+}
 .index_table {
   width: 350px;
 }
@@ -1096,6 +1103,14 @@ footer {
 
 }
 
+@media screen and (max-width:627px) {
+
+.wrap {
+  width:200px;
+  word-wrap:break-word;
+ }
+}
+
 @media screen and (max-width:542px) {
 .top-healthy {
   font-size: 30px;
@@ -1103,6 +1118,16 @@ footer {
   padding-top: 70px;
   font-family: arial black;
 }
+
+.wrap {
+  width:120px;
+  word-wrap:break-word;
+ }
+
+.comment-time {
+  font-size: 9px;
+}
+
 }
 
 @media screen and (max-width:425px) {

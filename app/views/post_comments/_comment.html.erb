@@ -8,9 +8,9 @@
             <%= attachment_image_tag @user, :profile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle profile-img", fallback: "no_image.jpg", size:'30x30' %>
           <% end %>
         </td>
-          <td><%= post_comment.user.name %></td>
+          <td class="comment-name">　<%= post_comment.user.name %></td>
           <td class="wrap"><%= post_comment.comment %></td>
-          <td ><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          <td class="comment-time"><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <% if post_comment.user == current_user %>
             <td>
               <%= link_to post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true do %>
