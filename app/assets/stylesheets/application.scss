@@ -474,6 +474,10 @@ animation: typing 9s steps(11, end);
 
 // マイページ(users/show)--------------------------------------------------
 
+.e_btn {
+  background-color: red;
+}
+
 .mypage_box{
   margin: 100px 0;
   background-color: #fff;
@@ -551,16 +555,22 @@ animation: typing 9s steps(11, end);
 
 .fa-pencil-alt {
   font-size: 30px;
+  padding-top: 25px;
+  color: gray;
 }
 
-.edit_btn {
-  color: gray;
-  font-size: 70px;
+.e_btn {
   position: fixed;
   top: 100px;
   right: 10px;
-  background-color: #fff;
-  border-radius: 50%;
+  display: block;
+  width: 80px;/*幅*/
+  height: 80px;/*高さ*/
+  background: #fff;/*背景色*/
+  text-align: center;/*中央寄せ*/
+  border-radius: 50%;/*角丸く*/
+  transition: .3s;/*滑らかな動きに*/
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);/*影*/
 }
 
 .profile-edit-btn {
@@ -1296,6 +1306,14 @@ footer {
 /*SPメニュー*/
 
 @media screen and (max-width: 950px) {
+
+  .fa-pencil-alt {
+ display: none;
+}
+
+.e_btn {
+ display: none;
+}
   /* bager menu */
   #header #navi {
     transition: all 0.6s;
