@@ -1,9 +1,12 @@
 <%#= link_to  "Chatroom",mychat_path(current_user.id) %>
 
 <div class="container">
-  <%= link_to new_post_path do %>
-    <i class="fas fa-pencil-alt edit_btn"></i>
-  <% end %>
+
+  <div class="e_btn">
+    <%= link_to new_post_path do %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+  </div>
   <div class="mypage_box">
 
     <div class="detail_box_in">
