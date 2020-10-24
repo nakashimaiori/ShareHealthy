@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions',
   }
 
+  get  'inquiry' => 'inquiry#index'
+  post 'inquiry/confirm' => 'inquiry#confirm'
+  post 'inquiry/thanks' => 'inquiry#thanks'
   root to: 'homes#top'
   post '/homes/guest_sign_in', to: 'homes#new_guest'
   get '/user/exit' => 'users#exit'
