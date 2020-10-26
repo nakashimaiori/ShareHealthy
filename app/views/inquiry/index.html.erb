@@ -1,4 +1,6 @@
-<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+<div class="container">
+  <div class="inquiry-box">
+  <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
   <div class="page-header">
     <h1>お問い合わせ</h1>
   </div>
@@ -30,3 +32,5 @@
   </table>
   <%= f.submit '確認', class: 'btn btn-primary' %>
 <% end %>
+  </div>
+</div>
