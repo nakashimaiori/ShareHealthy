@@ -1305,6 +1305,12 @@ footer {
 /*PCメニュー*/
 /*SPメニュー*/
 
+@media screen and (max-width: 991px) {
+  footer {
+    height: 350px;
+  }
+}
+
 @media screen and (max-width: 950px) {
 
   .fa-pencil-alt {
@@ -1395,6 +1401,10 @@ footer {
   .nav-list-item-sp {
   display: block;
 }
+
+ footer {
+  height: 400px;
+ }
 
  }
 
