@@ -380,6 +380,7 @@ animation: typing 9s steps(11, end);
   padding: 80px;
   margin: 50px 0;
  }
+
 .fovorite_title {
   margin-bottom: 65px;
 }
@@ -393,7 +394,9 @@ animation: typing 9s steps(11, end);
   list-style: none;
 }
 
-
+.f-box {
+  height: 400px;
+}
 // ------------------------------------------------
 
 .nav-list-item {
