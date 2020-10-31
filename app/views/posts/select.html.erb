@@ -1,6 +1,10 @@
 <div class ="container">
   <div class ="row">
+
+    <%= render "posts/searchbar", search: @search, post: @post %>
+
     <div class="index_back select_index">
+
       <div class="col-xs-offset-2 col-md-offset-3">
         <div>
           <% if @selection == "new" %>
