@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
 
@@ -70,6 +71,7 @@ $(document).on("turbolinks:load", function(){
     $("body").removeClass("nav_open");// .menu-triggerクリック時に行われる処理
   });
 });
+
 
 
 
