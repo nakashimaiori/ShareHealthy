@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
 
@@ -58,20 +57,23 @@ $(function(){
 });
 
 
-$(document).on("turbolinks:load", function(){
-  // $('.form-froala').froalaEditor({
-  //   heightMin: 500,
-  //   heightMax: 750,
-  // })
+// $(document).on("turbolinks:load", function(){
 
-  $('#nav_btn').on('click', function(event) {
-    $("body").toggleClass("nav_open");// .menu-triggerクリック時に行われる処理
-  });
-  $('#nav_bg').on('click', function(event) {
-    $("body").removeClass("nav_open");// .menu-triggerクリック時に行われる処理
-  });
-});
+//   $('#nav_btn').on('click', function(event) {
+//     $("body").toggleClass("nav_open");// .menu-triggerクリック時に行われる処理
+//   });
+//   $('#nav_bg').on('click', function(event) {
+//     $("body").removeClass("nav_open");// .menu-triggerクリック時に行われる処理
+//   });
+// });
 
+function click_open(){
+  $("body").toggleClass("nav_open");
+}
+
+function click_close(){
+  $("body").removeClass("nav_open");
+}
 
 
 

@@ -12,7 +12,6 @@
 
   <body class="nav_open">
 
-
   <div id="header">
     <h1 class="header_title">Share Healthy</h1>
       <nav>
@@ -42,14 +41,16 @@
       <% end %>
         </ul>
       </nav>
-<div class="nav_btn" id="nav_btn">
+<div class="nav_btn" id="nav_btn" onclick="click_open()">
   <span class="hamburger_line hamburger_line1"></span>
   <span class="hamburger_line hamburger_line2"></span>
   <span class="hamburger_line hamburger_line3"></span>
 </div>
-<div class="nav_bg" id="nav_bg"></div>
+<div class="nav_bg" id="nav_bg" onclick="click_close()"></div>
 </div>
+
     <%= yield %>
+
   </body>
     <%= render "layouts/footer" %>
 </html>
