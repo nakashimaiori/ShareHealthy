@@ -33,7 +33,7 @@ class User < ApplicationRecord
   has_many :user_rooms, dependent: :destroy
 
   validates :email, presence: true
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 20 }
   validates :encrypted_password, presence: true
 
   def followed_by?(user)

@@ -7,8 +7,8 @@ class Post < ApplicationRecord
   has_many :tag_maps, dependent: :destroy
   has_many :tags, through: :tag_maps
 
-  validates :title, presence: true
-  validates :content, presence: true
+  validates :title, presence: true, length: { maximum: 30 }
+  validates :content, presence: true, length: { maximum: 10000 }
   # validates :genre_id, presence: true
 
   def favorited_by?(user)
