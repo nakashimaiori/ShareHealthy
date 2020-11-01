@@ -32,9 +32,10 @@ class User < ApplicationRecord
   has_many :chats, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
 
-  validates :email, presence: true
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
+  validates :name, presence: true, length: { in: 2..15 }
   validates :encrypted_password, presence: true
+  validates :introduction, length: { maximum: 200 }
 
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
