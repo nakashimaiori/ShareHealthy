@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   get 'rooms/show'
-  # get 'day_records/show'
-  # get 'day_records/new'
   get 'relationships/create'
   get 'relationships/destroy'
   devise_for :users, controllers: {
@@ -32,7 +30,6 @@ Rails.application.routes.draw do
 
     member do
       get "exit"
-      # patch "withdraw"
     end
 
     resources :day_weights, except: :show
