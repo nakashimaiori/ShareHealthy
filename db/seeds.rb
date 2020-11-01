@@ -8,7 +8,7 @@
 
 
 Admin.create!(
-   name: 'iori',
-   email: 'iori@com',
-   password: 'aaaaaa',
+   name: ENV['ADMIN_NAME'],
+   email: ENV['ADMIN_EMAIL'],
+   password: ENV['ADMIN_PASS'],
 )
