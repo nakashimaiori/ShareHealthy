@@ -42,8 +42,11 @@ class DayRecordsController < ApplicationController
 
   def update
     @day_record = current_user.day_records.find(params[:id])
-    @day_record.update(day_record_params)
-    redirect_to user_day_record_path(current_user.id, @day_record.id)
+    if  @day_record.update(day_record_params)
+        redirect_to user_day_record_path(current_user.id, @day_record.id)
+    else
+      render "edit"
+    end
   end
 
   def destroy
