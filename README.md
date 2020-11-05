@@ -36,3 +36,7 @@ https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1d
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - 仮想環境：Vagrant,VirtualBox
+
+## About me
+
+新卒で２年間、地元の金融機関に勤務しておりました。2020年7月からWebエンジニアを目指して勉強中です。
