@@ -61,6 +61,10 @@ https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1d
 
 ![D804986B-4DD0-4E87-AD9B-2A876EA40D9B_1_201_a](https://user-images.githubusercontent.com/67674103/98460242-e64d8700-21e5-11eb-9d3d-c9b3dfa390c0.jpeg)
 
+## ER図
+
+![Untitled Diagram](https://user-images.githubusercontent.com/67674103/98462391-63cdc300-21f7-11eb-919d-45df53b2fac7.png)
+
 
 ## About me
 
