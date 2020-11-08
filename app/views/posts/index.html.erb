@@ -9,28 +9,29 @@
 
           <%= render "genre_bar", genres: @genres %>
 
-        <% if controller.action_name == "search" %>
-          <h4 class="title"><%= @genre.name %>
-            <span>(全 <%= @posts.count %> 件)</span>
-          </h4>
-          <% if @posts.count == 0 %>
-            <div class="genre-nothing col-xs-offset-3">投稿がありません。</div>
+          <% if controller.action_name == "search" %>
+            <h4 class="title"><%= @genre.name %>
+              <span>(全 <%= @posts.count %> 件)</span>
+            </h4>
+            <% if @posts.count == 0 %>
+              <div class="genre-nothing col-xs-offset-3">投稿がありません。</div>
+            <% end %>
+
+            <%= render "posts/post", posts: @posts %>
+
+          <% else %>
+
+            <%= render "posts/post", posts: @search_posts %>
+
           <% end %>
-
-          <%= render "posts/post", posts: @posts %>
-
-        <% else %>
-
-          <%= render "posts/post", posts: @search_posts %>
-        <% end %>
         </div>
       </div>
     </div>
   </div>
 
 
-<%= link_to new_post_path do %>
-  <i class="fas fa-pencil-alt edit_btn"></i>
-<% end %>
+<%#= link_to new_post_path do %>
+  <!-- <i class="fas fa-pencil-alt edit_btn"></i> -->
+<%# end %>
 
 </div>

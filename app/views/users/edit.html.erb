@@ -7,6 +7,18 @@
 
   <%= form_for(@user, url:user_path(current_user.id)) do |f| %>
 
+  <% if @user.errors.any? %>
+  <h2><%= "#{@user.errors.full_messages.count}件のエラーが発生しました。" %></h2>
+   <%#= @post.errors.inspect %>
+  <div>
+    <ul style="color: red">
+      <% @user.errors.full_messages.each do |message| %>
+        <li class="error-messages"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 
       <div class="form-group"><%= attachment_image_tag @user, :profile_image, :fill, 120,120, fallback: "no_image.jpg", size: "120x120" %>
       <%= f.attachment_field :profile_image, class: 'image-prev' %>

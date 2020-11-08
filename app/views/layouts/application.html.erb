@@ -18,6 +18,7 @@
         <ul id="navi">
           <% if user_signed_in? %>
         <li class="nav-list-item"><%= link_to "Top", root_path, class: "font" %></li>
+        <li class="nav-list-item"><%= link_to "About", about_path, class: "font" %></li>
         <li class="nav-list-item"><%= link_to "My Page", user_path(current_user.id), class: "font" %></li>
         <li class="nav-list-item"><%= link_to "記事一覧", posts_path, class: "font" %></li>
         <li class="nav-list-item nav-list-item-sp"><%= link_to "記事投稿", new_post_path, class: "font" %></li>
@@ -40,14 +41,16 @@
       <% end %>
         </ul>
       </nav>
-<div class="nav_btn" id="nav_btn">
+<div class="nav_btn" id="nav_btn" onclick="click_open()">
   <span class="hamburger_line hamburger_line1"></span>
   <span class="hamburger_line hamburger_line2"></span>
   <span class="hamburger_line hamburger_line3"></span>
 </div>
-<div class="nav_bg" id="nav_bg"></div>
+<div class="nav_bg" id="nav_bg" onclick="click_close()"></div>
 </div>
+
     <%= yield %>
+
   </body>
     <%= render "layouts/footer" %>
 </html>

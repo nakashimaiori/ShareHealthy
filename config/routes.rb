@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   get 'rooms/show'
-  # get 'day_records/show'
-  # get 'day_records/new'
   get 'relationships/create'
   get 'relationships/destroy'
 <<<<<<< HEAD
@@ -23,6 +21,9 @@ devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
     sessions: 'admins/sessions',
   }
 
+  get  'inquiry' => 'inquiry#index'
+  post 'inquiry/confirm' => 'inquiry#confirm'
+  post 'inquiry/thanks' => 'inquiry#thanks'
   root to: 'homes#top'
   post '/homes/guest_sign_in', to: 'homes#new_guest'
   get '/user/exit' => 'users#exit'
@@ -38,7 +39,6 @@ devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
     member do
       get "exit"
-      # patch "withdraw"
     end
 
     resources :day_weights, except: :show

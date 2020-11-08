@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -79,16 +80,10 @@ group :production do
 end
 gem 'rails-i18n'
 
-<<<<<<< HEAD
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rbenv'
-  gem 'omniauth-google-oauth2'
 
-=======
 gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano3-puma'
 gem 'capistrano-rbenv'
->>>>>>> 9ed9a6d89ec232c8de8e353d337bf175fdcfb847
+gem 'omniauth-google-oauth2'
+gem 'rb-readline'

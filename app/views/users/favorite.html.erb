@@ -1,9 +1,16 @@
 <div class="container">
   <div class="row">
   	<div class="favorite_box">
-      <div class="col-xs-offset-2 col-md-offset-3">
+      <div class="col-xs-offset-2 col-md-offset-3 f-box">
 
         <h2 class="fovorite_title">お気に入り</h2><%= @favorite_posts.count %>件
+
+        <% if @favorite_posts.count == 0 %>
+          <div class="f-box">お気に入りの記事はありません。</div>
+        <% end %>
+
+        <% if @favorite_posts.count == 1 %>
+          <div class="f-box">
 
         <table class="table index_table">
           <% @favorite_posts.each do |post| %>
@@ -17,6 +24,8 @@
           <% end %>
         </table>
       </div>
+    </div>
+    <% end %>
         <div class="fovorite-kaminari">
           <%= paginate @favorite_posts %>
         </div>

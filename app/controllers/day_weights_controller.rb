@@ -13,8 +13,11 @@ class DayWeightsController < ApplicationController
 
   def update
     @day_weight = current_user.day_weights.find(params[:id])
-    @day_weight.update(day_weight_params)
-    redirect_to user_path(current_user.id)
+    if  @day_weight.update(day_weight_params)
+        redirect_to user_path(current_user.id)
+    else
+      render "edit"
+    end
   end
 
   def create

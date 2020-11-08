@@ -46,9 +46,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-  end
-
   def edit
     @user = User.find(params[:id])
     if @user == current_user
