@@ -57,6 +57,11 @@ https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1d
 - JSライブラリ：jQuery
 - 仮想環境：Vagrant,VirtualBox
 
+## インフラ構成図
+
+![sharehealthy 2020-11-08 17 05 39](https://user-images.githubusercontent.com/67674103/98460142-ef8a2400-21e4-11eb-81b3-cc6d146edbf9.jpeg)
+
+
 ## About me
 
 新卒で２年間、地元の金融機関に勤務しておりました。2020年7月からWebエンジニアを目指して勉強中です。
