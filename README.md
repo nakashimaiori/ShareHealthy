@@ -36,8 +36,8 @@ http://sharehealthy.work/
 - お問い合わせ機能(action mailer)
 - カレンダー表示　（シンプルカレンダー）
 - グラフ表示(chartkick)
-- レスポンシブデザイン
 - ruby構文規約チェックツール(rubocop)
+- レスポンシブデザイン
 
 詳細は下記よりご確認ください。
 
