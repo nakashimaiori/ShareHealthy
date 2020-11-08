@@ -39,6 +39,8 @@ http://sharehealthy.work/
 - ruby構文規約チェックツール(rubocop)
 - レスポンシブデザイン
 
+![E14AC37B-2594-4EF0-B06A-7FBA2BD6D5B2_1_105_c](https://user-images.githubusercontent.com/67674103/98458678-a4691480-21d6-11eb-8fb0-c39f761e8700.jpeg)
+
 詳細は下記よりご確認ください。
 
 
