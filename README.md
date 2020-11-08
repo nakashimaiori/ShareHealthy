@@ -28,6 +28,18 @@ http://sharehealthy.work/
 ## 設計書
 
 ### 機能一覧
+- ログイン機能(devise)
+- 投稿、編集、削除　
+- いいね、コメント、フォロー、DM機能(ajax処理)
+- 検索機能(ransack)
+- タグ機能
+- お問い合わせ機能(action mailer)
+- カレンダー表示　（シンプルカレンダー）
+- グラフ表示(chartkick)
+- レスポンシブデザイン
+- ruby構文規約チェックツール(rubocop)
+
+詳細は下記よりご確認ください。
 https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1dVPI/edit#gid=0
 
 ## 開発環境
