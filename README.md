@@ -1,6 +1,5 @@
 # Share Healthy
 
-![Uploading Animated GIF-downsized_small.gif…]()
 
 ## サイト概要
 日々の運動、体重、食事を記録するサイトです。また、ダイエット法や日記を記事にしてみんなにシェアできます。
