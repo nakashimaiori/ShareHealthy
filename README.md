@@ -1,6 +1,7 @@
 # Share Healthy
 
-![Uploading Animated GIF-downsized.gif…]()
+![Animated GIF-downsized](https://user-images.githubusercontent.com/67674103/98459382-a2568400-21dd-11eb-9ec5-c2932da93410.gif)
+
 
 
 ## サイト概要
