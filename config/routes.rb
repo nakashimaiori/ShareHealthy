@@ -2,20 +2,18 @@ Rails.application.routes.draw do
   get 'rooms/show'
   get 'relationships/create'
   get 'relationships/destroy'
-<<<<<<< HEAD
 #   devise_for :users, controllers: {
 #   sessions: 'users/sessions',
 #   passwords: 'users/passwords',
 #   registrations: 'users/registrations'
 # }
-devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-=======
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
     registrations: 'users/registrations',
   }
->>>>>>> 9ed9a6d89ec232c8de8e353d337bf175fdcfb847
+
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
