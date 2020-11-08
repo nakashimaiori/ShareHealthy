@@ -40,6 +40,8 @@ http://sharehealthy.work/
 - ruby構文規約チェックツール(rubocop)
 
 詳細は下記よりご確認ください。
+
+
 https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1dVPI/edit#gid=0
 
 ## 開発環境
