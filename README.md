@@ -59,7 +59,7 @@ https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1d
 
 ## インフラ構成図
 
-![D804986B-4DD0-4E87-AD9B-2A876EA40D9B_1_201_a](https://user-images.githubusercontent.com/67674103/98460242-e64d8700-21e5-11eb-9d3d-c9b3dfa390c0.jpeg)
+![1E1CF403-860C-4427-9137-D93C55619AF4_1_201_a](https://user-images.githubusercontent.com/67674103/98463663-1dc92d00-2200-11eb-8dae-21b1b6a31153.jpeg)
 
 ## ER図
 
