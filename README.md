@@ -1,7 +1,5 @@
 # Share Healthy
 
-![Animated GIF-downsized](https://user-images.githubusercontent.com/67674103/98459382-a2568400-21dd-11eb-9ec5-c2932da93410.gif)
-
 ![49a2d75594b6820d6d9ade1f5fd4b5b5](https://user-images.githubusercontent.com/67674103/98493927-08dfae80-227f-11eb-8c3a-a63e2f2d2bc5.gif)
 
 
