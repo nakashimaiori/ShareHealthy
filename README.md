@@ -35,6 +35,7 @@ http://sharehealthy.work/
 ### 機能一覧
 - ログイン機能(devise)
 - 投稿、編集、削除　
+- ページネーション機能　（kaminari）
 - いいね、コメント、フォロー、DM機能(ajax処理)
 - 検索機能(ransack)
 - タグ機能
