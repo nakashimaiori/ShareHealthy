@@ -47,13 +47,13 @@
       <div class="form-group">
 
 
-    <% if @user.email == "guest@.com" %>
-      <p>ゲストユーザーのemail変更はできません</p>
-    <% else %>
+    <%# if @user.email == "guest@.com" %>
+      <!-- <p>ゲストユーザーのemail変更はできません</p> -->
+    <%# else %>
 
       <p>Email
       <%= f.text_field :email, class: "form-control" %></p>
-    <% end %>
+    <%# end %>
   </div>
       <div class="form-group">
 
