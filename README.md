@@ -1,11 +1,12 @@
 # Share Healthy
 
-![Animated GIF-downsized](https://user-images.githubusercontent.com/67674103/98459382-a2568400-21dd-11eb-9ec5-c2932da93410.gif)
+![49a2d75594b6820d6d9ade1f5fd4b5b5](https://user-images.githubusercontent.com/67674103/98493927-08dfae80-227f-11eb-8c3a-a63e2f2d2bc5.gif)
+
 
 
 
 ## サイト概要
-日々の運動、体重、食事を記録するサイトです。また、ダイエット法や日記を記事にしてみんなにシェアできます。
+日々の運動、体重、食事を記録するサイトです。また、ダイエット法や日記をみんなにシェアできます。
 
 ### URL
 http://sharehealthy.work/
@@ -34,6 +35,7 @@ http://sharehealthy.work/
 ### 機能一覧
 - ログイン機能(devise)
 - 投稿、編集、削除
+- ページネーション機能　（kaminari）
 - いいね、コメント、フォロー、DM機能(ajax処理)
 - 検索機能(ransack)
 - タグ機能
@@ -59,8 +61,10 @@ https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1d
 
 ## インフラ構成図
 
-![D804986B-4DD0-4E87-AD9B-2A876EA40D9B_1_201_a](https://user-images.githubusercontent.com/67674103/98460242-e64d8700-21e5-11eb-9d3d-c9b3dfa390c0.jpeg)
+![1E1CF403-860C-4427-9137-D93C55619AF4_1_201_a](https://user-images.githubusercontent.com/67674103/98463663-1dc92d00-2200-11eb-8dae-21b1b6a31153.jpeg)
 
+## ER図
+![Untitled Diagram](https://user-images.githubusercontent.com/67674103/98488977-64a23b80-226f-11eb-95dd-e0e501369cd2.png)
 
 
 ## About me
