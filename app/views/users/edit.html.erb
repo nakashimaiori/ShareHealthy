@@ -88,7 +88,7 @@
 
     <p class="update-btn"><%= f.submit "Update", class: "btn-gradation profile" %></p>
   <% end %>
-  <% if @user.email == "guest@.com" %>
+  <% if @user.email == "guest@gmail.com" %>
     <p>ゲストユーザーは退会できません</p>
   <% else %>
       <p><%= link_to "退会画面へ", user_exit_path %></p>
