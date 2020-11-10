@@ -43,6 +43,7 @@ http://sharehealthy.work/
 - カレンダー表示　（シンプルカレンダー）
 - グラフ表示(chartkick)
 - ruby構文規約チェックツール(rubocop)
+- テスト(RSpec)
 - レスポンシブデザイン
 
 ![E14AC37B-2594-4EF0-B06A-7FBA2BD6D5B2_1_105_c](https://user-images.githubusercontent.com/67674103/98458678-a4691480-21d6-11eb-8fb0-c39f761e8700.jpeg)
