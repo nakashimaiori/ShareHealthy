@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :post do
     association :user
-    genre_id {1}
-    content {"test"}
+    association :genre
     title {"test"}
+    content {"test"}
   end
 end
