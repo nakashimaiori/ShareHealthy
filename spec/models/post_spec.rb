@@ -17,7 +17,7 @@ RSpec.describe Post, type: :model do
     end
 
     it "タイトルが30文字以内でないと投稿できない" do
-      post = build(:post, title: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+      post = build(:post, title: "a" * 31)
       post.valid?
       expect(post.errors[:title]).to include("は30文字以下に設定して下さい。")
     end
