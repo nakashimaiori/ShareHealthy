@@ -1,17 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  context "データが正しく保存される" do
-    before do
-      @post = Post.new
-      @post.title = "タイトル"
-      @post.content = "今日も晴れです。"
-      @post.save
-    end
-    it "全て入力してあるので保存される" do
-      expect(@post).to be_valid
-    end
+
+  before do
+    @user = FactoryBot.build(:user)
   end
+
   context "データが正しく保存されない" do
     before do
       @post = Post.new
@@ -27,7 +21,7 @@ RSpec.describe Post, type: :model do
   it "全て入力してあるので保存される" do
       user = create(:user)
       genre = create(:genre)
-      @post = build(:title, :content, user_id: user.id, genre_id: genre.id)
-      expect(message).to be_valid
+      post = build(:title, :content, user_id: user.id, genre_id: genre.id)
+      expect(post).to be_valid
     end
 end
