@@ -10,7 +10,6 @@ RSpec.describe Chat, type: :model do
   end
 
   context "データが正しく保存されない" do
-
   	it "messageが入力されていなければ保存されない" do
       chat = build(:chat, message: nil)
       chat.valid?
