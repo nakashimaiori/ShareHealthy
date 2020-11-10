@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+
   context "全て入力されているので保存される" do
     it "全て入力してあるので保存される" do
       post = create(:post)
@@ -47,4 +48,22 @@ RSpec.describe Post, type: :model do
     end
 
   end
+end
+
+RSpec.describe "Post", type: :request do
+  let(:post) { create(:post) }
+
+    describe 'GET #index' do
+      it 'リクエストが成功すること' do
+        get posts_url
+        expect(response.status).to eq 200
+      end
+    end
+
+    describe 'GET #show' do
+      it 'リクエストが成功すること' do
+        get posts_url post.id
+        expect(response.status).to eq 200
+      end
+    end
 end
