@@ -3,13 +3,25 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   context "全て入力されているので保存される" do
     it "全て入力してあるので保存される" do
-      post = build(:post)
+      post = create(:post)
       post.valid?
       expect(post).to be_valid
     end
   end
 
   context "データが正しく保存されない(バリテーション)" do
+    it "ユーザーIDがなければ登録できない" do
+      post = build(:post, user_id: nil)
+      post.valid?
+      expect(post.errors[:user_id]).to include("が入力されていません。")
+    end
+
+    it "ジャンルIDがなければ登録できない" do
+      post = build(:post, genre_id: nil)
+      post.valid?
+      expect(post.errors[:genre_id]).to include("が入力されていません。")
+    end
+
     it "タイトルがなければ投稿できない" do
       post = build(:post, title: nil)
       post.valid?
