@@ -24,4 +24,10 @@ RSpec.describe Post, type: :model do
       expect(@post.errors[:title]).to include("が入力されていません。")
     end
   end
+  it "全て入力してあるので保存される" do
+      user = create(:user)
+      genre = create(:genre)
+      @post = build(:title, :content, user_id: user.id, genre_id: genre.id)
+      expect(message).to be_valid
+    end
 end
