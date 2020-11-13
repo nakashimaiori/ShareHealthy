@@ -70,4 +70,4 @@ https://docs.google.com/spreadsheets/d/1-v_DltaFwfD5mmrK_9QtNL4X6WMki9R62gQevJ1d
 
 ## About me
 
-新卒で２年間、地元の信用金庫に勤務しておりました。2020年7月からWebエンジニアを目指して勉強中です。
+新卒で約２年間、地元の信用金庫に勤務しておりました。2020年7月からWebエンジニアを目指して勉強中です。
