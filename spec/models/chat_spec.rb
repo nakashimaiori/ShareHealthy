@@ -22,4 +22,12 @@ RSpec.describe Chat, type: :model do
       expect(chat.errors[:message]).to include("は200文字以下に設定して下さい。")
     end
   end
+
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1となっている' do
+        expect(Chat.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
+  end
 end

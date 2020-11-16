@@ -29,4 +29,12 @@ RSpec.describe DayWeight, type: :model do
       expect(day_weight.errors[:weight]).to include("が入力されていません。")
     end
   end
+
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1となっている' do
+        expect(DayWeight.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
+  end
 end

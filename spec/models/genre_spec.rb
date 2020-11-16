@@ -22,4 +22,12 @@ RSpec.describe Genre, type: :model do
       expect(genre.errors[:name]).to include("は15文字以下に設定して下さい。")
     end
   end
+
+  describe 'アソシエーションのテスト' do
+    context 'Postモデルとの関係' do
+      it '1:Nとなっている' do
+        expect(User.reflect_on_association(:posts).macro).to eq :has_many
+      end
+    end
+  end
 end
