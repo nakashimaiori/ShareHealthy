@@ -42,7 +42,7 @@ http://sharehealthy.work/
 - お問い合わせ機能(action mailer)
 - カレンダー表示　（シンプルカレンダー）
 - グラフ表示(chartkick)
-- ruby構文規約チェックツール(rubocop)
+- Ruby構文規約チェックツール(rubocop)
 - テスト(RSpec)
 - レスポンシブデザイン
 
