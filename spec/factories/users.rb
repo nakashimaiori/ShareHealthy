@@ -5,4 +5,11 @@ FactoryBot.define do
     password {"000000"}
     password_confirmation {"000000"}
   end
+
+  factory :user1 do
+  	sequence(:name) {"aaa"}
+    sequence(:email) {"aaa@gmail.com"}
+    password {"000000"}
+    password_confirmation {"000000"}
+  end
 end
