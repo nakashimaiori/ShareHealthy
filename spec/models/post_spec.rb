@@ -56,6 +56,12 @@ RSpec.describe Post, type: :model do
       end
     end
 
+    context 'Genreモデルとの関係' do
+      it 'N:1となっている' do
+        expect(Post.reflect_on_association(:genre).macro).to eq :belongs_to
+      end
+    end
+
     context 'PostCommrntモデルとの関係' do
       it '1:Nとなっている' do
         expect(Post.reflect_on_association(:post_comments).macro).to eq :has_many
