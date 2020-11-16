@@ -35,4 +35,18 @@ RSpec.describe PostComment, type: :model do
       expect(post_comment.errors[:comment]).to include("は200文字以下に設定して下さい。")
     end
   end
+
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1となっている' do
+        expect(PostComment.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
+
+    context 'Postモデルとの関係' do
+      it 'N:1となっている' do
+        expect(PostComment.reflect_on_association(:post).macro).to eq :belongs_to
+      end
+    end
+  end
 end
