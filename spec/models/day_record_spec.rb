@@ -53,4 +53,12 @@ RSpec.describe Chat, day_record: :model do
       expect(day_record.errors[:memo]).to include("は300文字以下に設定して下さい。")
     end
   end
+
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1となっている' do
+        expect(DayRecord.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
+  end
 end
