@@ -5,6 +5,7 @@ RSpec.describe "UserAuthentications", type: :request do
   let(:user_params) { attributes_for(:user) }
   let(:invalid_user_params) { attributes_for(:user, name: "") }
 
+
   describe 'ユーザー新規登録' do
     context 'パラメータが妥当な場合' do
       it 'リクエストが成功すること' do
@@ -43,17 +44,18 @@ RSpec.describe "UserAuthentications", type: :request do
     end
   end
 
-  describe 'ユーザーログイン' do
-    before do
-      visit new_user_session_path
+  describe "ログインページが" do
+    it '正しく表示されること' do
+      get new_user_session_path
+      expect(response).to have_http_status(200)
     end
+  end
 
-    context 'ログイン画面に遷移' do
-      it 'ログインに成功する' do
-        fill_in "メールアドレス", with: user.email
-        fill_in 'パスワード', with: user.password
-        click_button 'ログイン'
-        expect(page).to have_content 'ログインしました。'
+  describe 'ユーザーログイン' do
+    context 'ログインしていないユーザー' do
+      it 'ログインページへリダイレクトする' do
+        get user_path user.id
+        expect(response).to redirect_to new_user_session_path
       end
     end
   end
