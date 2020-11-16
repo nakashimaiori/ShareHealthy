@@ -43,7 +43,7 @@ RSpec.describe PostComment, type: :model do
       end
     end
 
-    context 'Postモデルとの関係' do
+    context 'PostCommentモデルとの関係' do
       it 'N:1となっている' do
         expect(PostComment.reflect_on_association(:post).macro).to eq :belongs_to
       end
