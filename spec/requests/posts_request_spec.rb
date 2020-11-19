@@ -1,31 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe "Post", type: :request do
-  describe '新規投稿ページ' do
-    context "新規投稿ページが正しく表示される" do
+  describe 'ログインしていない場合' do
+    context "新規投稿ページ" do
       before do
         get new_post_path
       end
-      it 'リクエストは200 OKとなること' do
-        expect(response.status).to eq 200
+      it 'リダイレクトされること' do
+        expect(response).to redirect_to  new_user_session_path
       end
     end
   end
 
   # let(:post) { create(:post) }　これを書けば、それぞれ post = build(:post)を定義する必要なし。
-  describe 'GET #index' do
-    it 'リクエストが成功すること' do
+  context 'GET #index' do
+    it 'リダイレクトされること' do
       post = build(:post)
       get posts_url
-      expect(response.status).to eq 200
+      expect(response).to redirect_to  new_user_session_path
     end
   end
 
-  describe 'GET #show' do
-    it 'リクエストが成功すること' do
+  context 'GET #show' do
+    it 'リダイレクトされること' do
       post = build(:post)
       get posts_url post.id
-      expect(response.status).to eq 200
+      expect(response).to redirect_to  new_user_session_path
     end
   end
 end
