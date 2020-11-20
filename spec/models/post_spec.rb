@@ -73,5 +73,11 @@ RSpec.describe Post, type: :model do
         expect(Post.reflect_on_association(:favorites).macro).to eq :has_many
       end
     end
+
+    context 'Tagモデルとの関係' do
+      it '1:Nとなっている' do
+        expect(Tag.reflect_on_association(:posts).macro).to eq :has_many
+      end
+    end
   end
 end
