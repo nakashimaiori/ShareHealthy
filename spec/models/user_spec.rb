@@ -36,6 +36,30 @@ RSpec.describe User, type: :model do
         user.valid?
         expect(user.errors[:email]).to include("が入力されていません。")
       end
+
+      it '一意であること' do
+        # 登録できたら失敗
+        user = build(:user)
+        user_2 = build(:user)
+        user.email = 'test1@test.co.jp' 
+        user.save
+        user_2.email = 'test1@test.co.jp'
+        user_2.save
+        user_2.valid?
+        expect(user_2).to be_invalid
+        # expect(test_user_2).not_to be_validの上記と同じ意味
+      end
+
+      it '一意でない場合はエラーが出る' do
+        user = build(:user)
+        user_2 = build(:user)
+        user.email = 'test1@test.co.jp'
+        user.save
+        user_2.email = 'test1@test.co.jp'
+        user_2.save
+        user_2.valid?
+        expect(user_2.errors[:email]).to include("は既に使用されています。")
+      end
     end
 
     context 'introductionカラム' do
