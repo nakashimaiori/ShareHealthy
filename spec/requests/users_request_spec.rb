@@ -59,4 +59,32 @@ RSpec.describe "UserAuthentications", type: :request do
       end
     end
   end
+
+
+  describe "ユーザー編集ページを表示(GET #edit)" do
+    context "未ログインの場合" do
+      it "ログインページへリダイレクトすること" do
+        get edit_user_path user.id
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+
+    # context "ログインしている場合" do
+    #   context "本人の場合" do
+    #     it "リクエストが成功すること" do
+    #       user = build(:user, id: 3)
+    #       get edit_user_path (3)
+    #       expect(response).to have_http_status "200"
+    #     end
+    #   end
+
+    #   context "他のユーザーの場合" do
+    #     it "ログイン前トップページへリダイレクトすること" do
+    #       user = build(:user, id: 5)
+    #       get edit_user_path user.id
+    #       expect(response).to redirect_to root_path
+    #     end
+    #   end
+    # end
+  end
 end
