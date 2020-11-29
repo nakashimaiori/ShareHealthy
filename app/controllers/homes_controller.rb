@@ -7,7 +7,7 @@ class HomesController < ApplicationController
   end
 
   def new_guest
-    user = User.find_or_create_by!(email: 'guest@gmail.com', name: 'ゲストユーザー') do |u|
+    user = User.find_or_create_by!(email: 'gues@gmail.com', name: 'ゲスト') do |u|
       u.password = "gestgest"
     end
     sign_in user

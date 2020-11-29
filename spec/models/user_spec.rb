@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
         # 登録できたら失敗
         user = build(:user)
         user_2 = build(:user)
-        user.email = 'test1@test.co.jp' 
+        user.email = 'test1@test.co.jp'
         user.save
         user_2.email = 'test1@test.co.jp'
         user_2.save
