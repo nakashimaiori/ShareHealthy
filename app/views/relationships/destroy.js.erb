@@ -1,1 +1,1 @@
-$("#foll_<%= user.id %>").html("<%= escape_javascript(render 'users/follow_form', user: user ) %>");
+$("#foll_<%= @user.id %>").html("<%= j(render 'users/follow_form', user: @user ) %>");
