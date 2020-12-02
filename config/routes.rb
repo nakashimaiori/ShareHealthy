@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'rooms/show'
-  get 'relationships/create'
-  get 'relationships/destroy'
+  # get 'relationships/create'
+  # get 'relationships/destroy'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
